@@ -1,15 +1,15 @@
 import React from "react";
 import {
-  GiRunningShoe,
   GiOfficeChair,
   GiKitchenKnives,
   GiTable,
   GiFlowerPot,
+  GiBedLamp,
 } from "react-icons/gi";
+import { FaUsers } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
-import { GiBedLamp } from "react-icons/gi";
-
+import { BiLogOutCircle, BiLogInCircle } from "react-icons/bi";
 export const navItems = [
   {
     id: 1,
@@ -43,14 +43,19 @@ export const sideBarItems = [
     arrowDown: <IoMdArrowDropdown />,
     subLinks: [
       {
-        url: "/",
+        url: "/signup",
         text: "Sign Up",
-        icon: <CgProfile className="icon-small" />,
+        icon: <FaUsers className="icon-small" />,
       },
       {
         url: "/",
         text: "Log In",
-        icon: <GiRunningShoe className="icon-small" />,
+        icon: <BiLogInCircle className="icon-small" />,
+      },
+      {
+        url: "/",
+        text: "Log Out",
+        icon: <BiLogOutCircle className="icon-small" />,
       },
     ],
   },

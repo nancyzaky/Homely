@@ -54,6 +54,7 @@ code {
   z-index: 2;
   margin-top: 1.2rem;
   letter-spacing: 3px;
+  font-weight: bold;
 }
 .active {
   left: 0;
@@ -114,4 +115,8 @@ code {
   border-radius: 50%;
   text-align: center;
   color: white;
+}
+.pic {
+  height: 500px;
+  width: 800px;
 }

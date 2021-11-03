@@ -32,7 +32,7 @@ const ChairThree = () => {
     <>
       <div style={{ width: "100%", height: "90%", display: "flex" }}>
         <motion.div
-          drag
+          // drag
           style={{ height: "100%", width: "45%", cursor: "pointer" }}
           onClick={() => {
             console.log("hi");
@@ -49,7 +49,7 @@ const ChairThree = () => {
 
             <Suspense fallback={null}>
               <Model receiveShadow />
-              <Texts word={"living Room"} />
+              <Texts word={"LIVING ROOMS"} />
               <OrbitControls
                 enableRotate={true}
                 enableZoom={true}
@@ -64,7 +64,7 @@ const ChairThree = () => {
           </Canvas>
         </motion.div>
         <div
-          style={{ height: "100%", width: "55%" }}
+          style={{ height: "100%", width: "55%", cursor: "pointer" }}
           onClick={() => {
             console.log("hi");
           }}
@@ -80,7 +80,7 @@ const ChairThree = () => {
 
             <Suspense fallback={null}>
               <OfficeModel receiveShadow />
-              <Texts word={"OFFICE"} />
+              <Texts word={"OFFICES"} />
               <OrbitControls
                 enableRotate={true}
                 enableZoom={true}

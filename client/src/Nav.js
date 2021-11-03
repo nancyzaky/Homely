@@ -15,7 +15,7 @@ const Nav = () => {
     <>
       <nav className="nav">
         <Link
-          to="/"
+          to="#"
           style={{
             color: "white",
             marginLeft: "2rem",
@@ -63,7 +63,7 @@ const Nav = () => {
       <nav className={subMenu ? "sub-menu active" : "sub-menu"}>
         <div style={{ width: "100%" }}>
           <Link
-            to="/"
+            to="#"
             style={{
               color: "white",
               marginLeft: "2rem",

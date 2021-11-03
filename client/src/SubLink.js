@@ -21,7 +21,7 @@ const SubLink = ({ item }) => {
       {pointUp &&
         item.subLinks.map((sub) => {
           return (
-            <Link className="drop-down-link ">
+            <Link to={sub.url} className="drop-down-link ">
               {sub.icon}
               <span style={{ marginLeft: "15px" }}>{sub.text}</span>
             </Link>
