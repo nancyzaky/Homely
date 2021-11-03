@@ -1,13 +1,117 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: "100%";
+}
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.nav {
+  background-color: #242526;
+  height: 100px;
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 30px;
+  top: 0;
+}
+.sub-menu {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  justify-content: center;
+  top: 0;
+  display: flex;
+  background-color: #242526;
+  position: absolute;
+  transition: 900ms;
+
+  left: -100%;
+  z-index: 2;
+  margin-top: 1.2rem;
+  letter-spacing: 3px;
+}
+.active {
+  left: 0;
+  transition: 450ms;
+}
+.icon {
+  display: flex;
+  font-size: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  list-style: none;
+  height: 60px;
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+  /* border: 4px solid #632ce4; */
+}
+.icon:hover {
+  background-color: #3b3d42;
+  /* background-color: grey; */
+}
+
+.link-icon {
+  font-size: 18px;
+}
+
+.drop-down-link {
+  /* background-color: #1e2846; */
+  background-color: rgb(170, 164, 164);
+
+  height: 60px;
+  padding-left: 3rem;
+  text-decoration: none;
+  font-size: 18px;
+  align-items: center;
+  display: flex;
+  color: white;
+}
+.drop-down-link:hover {
+  background-color: #424953;
+}
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 10;
+}
+
+.header {
+  background-color: rgb(73, 71, 71);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
 }
