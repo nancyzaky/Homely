@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const SubLink = ({ item }) => {
   const [pointUp, setPointUp] = useState(false);
+
   return (
     <>
       <Link
         to={item.url}
         className="icon"
         onClick={() => {
-          setPointUp(!pointUp);
+          if (item.subLinks) {
+            setPointUp(!pointUp);
+          }
         }}
       >
         <div className="link-icon">
@@ -21,7 +24,7 @@ const SubLink = ({ item }) => {
       {pointUp &&
         item.subLinks.map((sub) => {
           return (
-            <Link to={sub.url} className="drop-down-link ">
+            <Link to={sub.url} className="drop-down-link " key={sub.id}>
               {sub.icon}
               <span style={{ marginLeft: "15px" }}>{sub.text}</span>
             </Link>

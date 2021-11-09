@@ -30,6 +30,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.user-name {
+  color: white;
+  font-size: 14px;
+}
 .nav {
   background-color: #242526;
   height: 100px;
@@ -38,28 +42,29 @@ code {
   justify-content: flex-start;
   font-size: 30px;
   top: 0;
+  width: 100%;
 }
 .sub-menu {
   width: 250px;
-  height: 100vh;
+  height: 300vh;
   position: fixed;
   justify-content: center;
-  top: 0;
+  top: 10;
   display: flex;
-  background-color: #242526;
+  background-color: rgb(37, 36, 39);
   position: absolute;
   transition: 900ms;
-
   left: -100%;
   z-index: 2;
-  margin-top: 1.2rem;
   letter-spacing: 3px;
   font-weight: bold;
+  overflow: auto;
 }
 .active {
   left: 0;
   transition: 450ms;
 }
+
 .icon {
   display: flex;
   font-size: 1rem;
@@ -84,7 +89,7 @@ code {
 
 .drop-down-link {
   /* background-color: #1e2846; */
-  background-color: rgb(170, 164, 164);
+  background-color: rgb(86, 86, 96);
 
   height: 60px;
   padding-left: 3rem;
@@ -95,7 +100,7 @@ code {
   color: white;
 }
 .drop-down-link:hover {
-  background-color: #424953;
+  background-color: #767d86;
 }
 .container {
   margin: 0 auto;
@@ -115,8 +120,178 @@ code {
   border-radius: 50%;
   text-align: center;
   color: white;
+  cursor: pointer;
 }
 .pic {
   height: 500px;
   width: 800px;
+}
+.sofa-intro {
+  background-image: url("https://cdn.pixabay.com/photo/2021/10/22/00/59/restaurant-6730811_1280.jpg");
+  height: 60%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.intro-top {
+  width: 100%;
+  height: 10%;
+}
+.pic-small {
+  height: 300px;
+  width: 600px;
+  transition: 900ms;
+  transition-delay: 1s;
+}
+
+.product {
+  padding-top: 2rem;
+  padding-left: 1rem;
+  display: flex;
+  background-color: transparent;
+  height: 400px;
+}
+.filter {
+  height: 8%;
+  width: 100%;
+  background-color: rgb(224, 223, 223);
+  margin-top: 2rem;
+}
+.item-desc-header {
+  display: absolute;
+  color: gray;
+  font-weight: bolder;
+  letter-spacing: 2px;
+}
+.item-desc-header:hover {
+  color: green;
+}
+.pic-big {
+  height: 70%;
+  width: 60%;
+  padding-left: 2rem;
+}
+.line {
+  margin-top: 1%;
+  border-bottom: solid 0.1px rgb(243, 237, 237);
+  width: 95%;
+  display: flex;
+  margin-left: 2rem;
+}
+.top-section {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  /* border: 0.2rem solid black; */
+}
+.heart {
+  padding-right: 1rem;
+  font-size: 28px;
+  cursor: pointer;
+}
+.btn {
+  width: 10rem;
+  height: 2.4rem;
+  /* color: white; */
+  /* background-color: black; */
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  letter-spacing: 3px;
+  border-style: none;
+  background-color: rgb(173, 177, 185);
+  background-color: rgb(21, 83, 21);
+}
+.heart-fill {
+  color: red;
+  padding-right: 2rem;
+}
+.heart-void {
+  color: grey;
+  padding-right: 2rem;
+}
+.pic-smallest {
+  height: 100px;
+  width: 150px;
+}
+
+.line-small {
+  margin-top: 1%;
+  border-bottom: solid 0.2px rgb(214, 207, 207);
+  width: 61%;
+  display: flex;
+  margin-left: 2rem;
+}
+
+.line-wide {
+  margin-top: 5%;
+  border-bottom: solid 4px rgb(241, 236, 236);
+  width: 98%;
+  display: flex;
+  margin-left: 1rem;
+}
+.sub-cart {
+  width: 400px;
+  height: 100vh;
+  justify-content: center;
+  top: 10;
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  display: fixed;
+  transition: 900ms;
+  right: -100%;
+  z-index: 2;
+  letter-spacing: 3px;
+  font-weight: bold;
+  overflow: auto;
+  box-shadow: 5px 10px 18px #8cbbd4;
+  cursor: pointer;
+  padding-left: 1rem;
+  overflow: scroll;
+}
+.active-cart {
+  right: 0;
+  transition: 900ms;
+}
+
+li {
+  list-style: none;
+}
+
+.modal-small {
+  height: 300px;
+  width: 300px;
+  box-shadow: 5px 10px 18px #8cbbd4;
+  position: fixed;
+  top: 20%;
+  background-color: rgb(248, 247, 243);
+  right: 40%;
+  text-align: center;
+}
+
+.cart-main {
+  background-color: rgb(248, 245, 244);
+  height: 100%;
+  width: 100%;
+  margin-top: -1rem;
+  display: flex;
+}
+.cart-details {
+  width: 65%;
+  height: 100%;
+  display: inline-block;
+  background-color: white;
+  margin-left: 6rem;
+  margin-right: 3rem;
+  margin-top: 4rem;
+  display: grid;
+}
+.cart-summary {
+  width: 35%;
+  height: 100%;
+  display: inline-block;
+  background-color: white;
+  margin-left: 2rem;
+  margin-right: 3rem;
+  margin-top: 4rem;
 }

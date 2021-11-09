@@ -23,7 +23,9 @@ const SignUp = () => {
       }),
     }).then((resp) => {
       if (resp.ok) {
-        resp.json().then((d) => console.log(d));
+        resp.json().then((d) => {
+          history.push("/login");
+        });
       } else {
         resp.json().then((d) => setErrors(d.errors));
       }
@@ -32,7 +34,7 @@ const SignUp = () => {
   return (
     <div style={{ height: "100%", width: "100%" }}>
       <form type="submit">
-        <label Htmlfor="name" id="name">
+        <label htmlFor="name" id="name">
           Name
         </label>
         <br></br>
@@ -43,7 +45,7 @@ const SignUp = () => {
           }}
         ></input>
         <br></br>
-        <label Htmlfor="email" id="email">
+        <label htmlFor="email" id="email">
           Email
         </label>
         <br></br>
@@ -54,7 +56,7 @@ const SignUp = () => {
           }}
         ></input>
         <br></br>
-        <label Htmlfor="password" id="password">
+        <label htmlFor="password" id="password">
           PassWord
         </label>
 
@@ -67,7 +69,7 @@ const SignUp = () => {
           }}
         ></input>
         <br></br>
-        <label Htmlfor="passwordC" id="passwordC">
+        <label htmlFor="passwordC" id="passwordC">
           PassWord Confirmation
         </label>
         <br></br>
