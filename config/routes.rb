@@ -4,7 +4,7 @@ Rails.application.routes.draw do
       resources :favorites, only: [:create]
 
   end
-  resources :carts, only: [:create, :show, :update]
+  resources :carts, only: [:create, :show, :update, :destroy]
   resources :sessions, only: [:create]
   resources :products, only: [:show, :index]
 #  get "/product/:cat", to: "products#getcat"

@@ -100,7 +100,7 @@ const ChairThree = () => {
           <Canvas
             colorManagement
             shadowMap
-            camera={{ position: [1, 2, 5], fov: 50 }}
+            camera={{ position: [1, 2, 5], fov: 30 }}
           >
             <directionalLight intensity={0.7} castShadow />
             <ambientLight intensity={1} />

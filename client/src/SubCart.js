@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { GrFormClose } from "react-icons/gr";
+import SubCartItem from "./SubCartItem";
 const SubCart = ({ modal, changeQuantity, handleCart }) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
+
   useEffect(() => {
     fetch("/me")
       .then((resp) => resp.json())
@@ -15,7 +17,7 @@ const SubCart = ({ modal, changeQuantity, handleCart }) => {
           .then((resp) => resp.json())
           .then((d) => setData(d));
       });
-  });
+  }, [modal]);
   console.log(data);
   return (
     <nav className={modal ? "sub-cart active-cart" : "sub-cart"}>
@@ -57,70 +59,7 @@ const SubCart = ({ modal, changeQuantity, handleCart }) => {
       </ul>
       <li>
         {data.map((product) => {
-          return (
-            <ul
-              style={{
-                display: "flex",
-                paddingTop: "1rem",
-              }}
-            >
-              <li
-                style={{
-                  display: "inline",
-                  height: "20px",
-                  paddingRight: "2rem",
-                }}
-              >
-                {" "}
-                <img
-                  src={product.pictures[0].url}
-                  alt="pic"
-                  style={{ height: "80px", width: "150px" }}
-                />
-              </li>
-              <li
-                style={{
-                  display: "inline",
-                  width: "15px",
-                  paddingRight: "5rem",
-                }}
-              >
-                <h5>{product.name}</h5>
-                <h5>${product.price}</h5>
-              </li>
-              <li
-                style={{
-                  display: "inline",
-                  width: "15px",
-                  paddingRight: "5rem",
-                  paddingTop: "1rem",
-                }}
-              >
-                <label
-                  style={{
-                    color: "grey",
-                    paddingLeft: "0.5rem",
-                  }}
-                >
-                  Qty:{" "}
-                </label>
-                <br></br>
-                <input
-                  type="number"
-                  value={0}
-                  style={{
-                    width: "3.5rem",
-                    height: "1.5rem",
-                    marginTop: "1rem",
-                    textAlign: "center",
-                  }}
-                  onChange={(e) => {
-                    changeQuantity(e.target.value);
-                  }}
-                ></input>{" "}
-              </li>
-            </ul>
-          );
+          return <SubCartItem key={product.id} product={product} />;
         })}
       </li>
     </nav>

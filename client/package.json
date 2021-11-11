@@ -9,6 +9,8 @@
   "dependencies": {
     "@react-three/drei": "^7.13.1",
     "@react-three/fiber": "^7.0.17",
+    "@stripe/react-stripe-js": "^1.6.0",
+    "@stripe/stripe-js": "^1.21.1",
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",

@@ -88,7 +88,7 @@ const Sofa = ({ userId }) => {
     }, 3000);
   }, [addToCart]);
   return (
-    <div style={{ width: "100%", height: "100%" }}>
+    <div style={{ width: "100%", height: "100%", display: "fixed" }}>
       <SubCart
         modal={modal}
         changeQuantity

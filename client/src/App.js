@@ -33,7 +33,8 @@ function App() {
         <Nav user={user} changeUser={changeUser} />
         <Switch>
           <Route exact path="/">
-            {/* <ChairThree /> */}
+            <ChairThree />
+            <BedModel />
           </Route>
           <Route exact path="/signup">
             <SignUp />
@@ -52,7 +53,6 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      {/* <BedModel /> */}
     </>
   );
 }

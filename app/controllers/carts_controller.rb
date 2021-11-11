@@ -13,20 +13,21 @@ rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   def show
 
     items = User.find(params[:id]).carts
-    arr = []
-    items.each do |item|
-     pdct =   Product.find(item.product_id)
 
-    arr << pdct
-    end
-    render json: arr
+    render json: items
   end
 
   def update
-    cart = Cart.find_by(user_id:params[:user_id], product_id: params[:product_id])
-    cart.update
+    cart = Cart.find_by(user_id:params[:id], product_id: params[:product_id])
+    cart.update(quantity: params[:quantity])
+    render json: cart
   end
+def destroy
 
+  cart = Cart.find(params[:id])
+  cart.delete
+  head :no_content
+end
   private
   def cart_params
 params.permit(:user_id, :product_id, :quantity)

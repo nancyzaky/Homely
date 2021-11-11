@@ -8,7 +8,7 @@ export default function BedModel() {
   return (
     <div
       style={{
-        height: "70%",
+        height: "100%",
         width: "100%",
         cursor: "pointer",
       }}
@@ -19,10 +19,10 @@ export default function BedModel() {
       <Canvas
         colorManagement
         shadowMap
-        camera={{ position: [1, 2, 5], fov: 90 }}
+        // camera={{ position: [-5, -5, -5], fov: 120 }}
       >
-        <directionalLight intensity={1} castShadow />
-        <ambientLight intensity={1} />
+        <directionalLight intensity={0.5} castShadow />
+        <ambientLight intensity={0.5} />
         <pointLight position={[10, 0, 10]} />
 
         <Suspense fallback={null}>
@@ -69,10 +69,10 @@ const Beds = ({ ...props }) => {
   const group = useRef();
   const { nodes, materials } = useGLTF("/greenChair.glb");
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null} scale={[0.02, 0.02, 0.02]}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
-          <group position={[0.18, 44.37, 0.85]} rotation={[-Math.PI / 2, 0, 0]}>
+          <group position={[0.18, 8.37, 0.85]} rotation={[-Math.PI / 2, 0, 0]}>
             <mesh
               geometry={nodes.Moby_Accent_Chair_Pine_Green_BRASS_0.geometry}
               material={materials.BRASS}
@@ -183,3 +183,53 @@ useGLTF.preload("/greenChair.glb");
 // };
 
 // useGLTF.preload("/flower.glb");
+//   const group = useRef();
+//   const { nodes, materials } = useGLTF("/g.glb");
+//   return (
+//     <group ref={group} {...props} dispose={null} scale={[0.01, 0.01, 0.01]}>
+//       <group rotation={[-Math.PI / 2, 0, 0]}>
+//         <group rotation={[Math.PI / 2, 0, 0]}>
+//           <group position={[2.45, 34.43, 0.05]} rotation={[-Math.PI / 2, 0, 0]}>
+//             <mesh
+//               geometry={
+//                 nodes.Luciano_Left_Hand_Facing_Corner_Sofa_TanLeather_LEATHER_0
+//                   .geometry
+//               }
+//               material={
+//                 nodes.Luciano_Left_Hand_Facing_Corner_Sofa_TanLeather_LEATHER_0
+//                   .material
+//               }
+//             />
+//             <mesh
+//               geometry={
+//                 nodes
+//                   .Luciano_Left_Hand_Facing_Corner_Sofa_TanLeather_LEATHER_0001
+//                   .geometry
+//               }
+//               material={
+//                 nodes
+//                   .Luciano_Left_Hand_Facing_Corner_Sofa_TanLeather_LEATHER_0001
+//                   .material
+//               }
+//             />
+//             <mesh
+//               geometry={
+//                 nodes.Luciano_Left_Hand_Facing_Corner_Sofa_TanLeather_STEEL_0
+//                   .geometry
+//               }
+//               material={materials.STEEL}
+//             />
+//           </group>
+//           <group rotation={[-Math.PI / 2, 0, 0]} scale={2}>
+//             <mesh
+//               geometry={nodes.Plane001_FLOOR_0.geometry}
+//               material={materials.FLOOR}
+//             />
+//           </group>
+//         </group>
+//       </group>
+//     </group>
+//   );
+// };
+
+// useGLTF.preload("/g.glb");
