@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { GrFormClose } from "react-icons/gr";
 import SubCartItem from "./SubCartItem";
-const SubCart = ({ modal, changeQuantity, handleCart }) => {
+import Loading from "./Loading";
+const SubCart = ({ modal, changeQuantity, handleCart, changeCount }) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
-
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
+    setLoading(true);
     fetch("/me")
       .then((resp) => resp.json())
       .then((d) => {
@@ -15,13 +18,19 @@ const SubCart = ({ modal, changeQuantity, handleCart }) => {
         }
         fetch(`/carts/${d.id}`)
           .then((resp) => resp.json())
-          .then((d) => setData(d));
+          .then((d) => {
+            console.log(d);
+            setData(d);
+            changeCount(d);
+            setLoading(false);
+          });
       });
   }, [modal]);
   console.log(data);
   return (
     <nav className={modal ? "sub-cart active-cart" : "sub-cart"}>
       {error && <h3>Please Log in first</h3>}
+
       <span
         style={{
           float: "right",
@@ -33,6 +42,7 @@ const SubCart = ({ modal, changeQuantity, handleCart }) => {
       >
         <GrFormClose onClick={handleCart} />
       </span>
+      {loading && <Loading />}
       <ul
         style={{
           textAlign: "center",
@@ -54,14 +64,24 @@ const SubCart = ({ modal, changeQuantity, handleCart }) => {
             height: "50px",
           }}
         >
-          <button className="btn">Check Out</button>
+          <Link to="/cart">
+            <button className="btn">Check Out</button>
+          </Link>
         </li>
       </ul>
-      <li>
-        {data.map((product) => {
-          return <SubCartItem key={product.id} product={product} />;
-        })}
-      </li>
+      {!loading && (
+        <li>
+          {data.map((product) => {
+            return (
+              <SubCartItem
+                key={product.id}
+                product={product}
+                changeCount={changeCount}
+              />
+            );
+          })}
+        </li>
+      )}
     </nav>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BsTrash } from "react-icons/bs";
 
-const CartItem = ({ item, handleUpdate, user, deleteItem }) => {
+const CartItem = ({ item, handleUpdate, user, deleteItem, changeCount }) => {
   const [num, setNum] = useState(item.quantity);
   const handleDelete = () => {
     fetch(`/carts/${item.id}`, {

@@ -20,7 +20,9 @@ rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   def update
     cart = Cart.find_by(user_id:params[:id], product_id: params[:product_id])
     cart.update(quantity: params[:quantity])
-    render json: cart
+        all_user_carts = User.find(params[:id]).carts
+
+    render json: all_user_carts
   end
 def destroy
 

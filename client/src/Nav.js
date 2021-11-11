@@ -12,10 +12,11 @@ import { Link } from "react-router-dom";
 import { IoMdCloseCircle } from "react-icons/io";
 import { sideBarItems } from "./Data";
 import SubLink from "./SubLink";
-import { FaFacebook, FaTwitterSquare } from "react-icons/fa";
+import { FaTwitterSquare } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import { ImFacebook2 } from "react-icons/im";
 
-const Nav = ({ user, changeUser }) => {
+const Nav = ({ user, changeUser, count }) => {
   const [subMenu, setSubMenu] = useState(false);
   const closeSub = () => {
     setSubMenu(false);
@@ -103,6 +104,7 @@ const Nav = ({ user, changeUser }) => {
           </motion.li>
           <motion.li
             className="header"
+            style={{ fontSize: "22px" }}
             animate={{ x: 950, opacity: 1 }}
             whileHover={{ scale: 1.5, color: "lightBlue" }}
             initial={{ opacity: 0.1 }}
@@ -112,7 +114,7 @@ const Nav = ({ user, changeUser }) => {
               duration: "2",
             }}
           >
-            <FaFacebook style={{ marginTop: "8px" }} />
+            <ImFacebook2 style={{ marginTop: "11px" }} />
           </motion.li>
           <motion.li
             className="header"
@@ -128,6 +130,7 @@ const Nav = ({ user, changeUser }) => {
             <TiHeart style={{ marginTop: "8px" }} />
           </motion.li>
           <motion.li
+            style={{ display: "grid" }}
             className="header"
             animate={{ x: 970, opacity: 1 }}
             whileHover={{ scale: 1.5, color: "lightBlue" }}
@@ -149,17 +152,16 @@ const Nav = ({ user, changeUser }) => {
                 height: "20px",
                 fontWeight: "bold",
                 float: "right",
+                display: "absolute",
               }}
             >
-              1
+              {count}
             </div>{" "}
             <Link to="/cart">
               <AiOutlineShoppingCart
                 style={{
                   color: "white",
                   marginTop: "8px",
-                  gridColumn: "1",
-                  gridRow: "1",
                 }}
               />
             </Link>
@@ -168,7 +170,7 @@ const Nav = ({ user, changeUser }) => {
       </nav>
 
       <nav className={subMenu ? "sub-menu active" : "sub-menu"}>
-        <div style={{ width: "100%" }}>
+        <div style={{ width: "100%", paddingTop: "2.7rem" }}>
           {sideBarItems.map((item) => {
             return <SubLink item={item} />;
           })}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const SubCartItem = ({ product }) => {
+const SubCartItem = ({ product, changeCount }) => {
   const [quantity, setQuantity] = useState(product.quantity);
   const [user, setUser] = useState(0);
   const handleUpdate = (value, ids) => {
@@ -10,7 +10,10 @@ const SubCartItem = ({ product }) => {
       body: JSON.stringify({ quantity: value, product_id: ids }),
     })
       .then((resp) => resp.json())
-      .then((d) => console.log(d));
+      .then((d) => {
+        console.log(d);
+        changeCount(d);
+      });
   };
   useEffect(() => {
     fetch("/me")

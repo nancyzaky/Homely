@@ -4,8 +4,9 @@ import { ImHeart, ImCart } from "react-icons/im";
 import { motion } from "framer-motion";
 import SubCart from "./SubCart";
 import SmallModal from "./SmallModal";
+import Loading from "./Loading";
 
-const Sofa = ({ userId }) => {
+const Sofa = ({ userId, changeCount }) => {
   const [quantity, setQuantity] = useState(1);
   const [modal, setModal] = useState(false);
   const [error, setError] = useState(false);
@@ -88,12 +89,14 @@ const Sofa = ({ userId }) => {
     }, 3000);
   }, [addToCart]);
   return (
-    <div style={{ width: "100%", height: "100%", display: "fixed" }}>
+    <div style={{ width: "100%", height: "100%" }}>
+      {loading && <Loading />}
       <SubCart
         modal={modal}
         changeQuantity
         handleCart={handleCart}
         userId={userId}
+        changeCount={changeCount}
       />
       <div className="top-section">
         <h2 style={{ color: "grey", paddingLeft: "1rem", paddingTop: "1rem" }}>
@@ -127,6 +130,7 @@ const Sofa = ({ userId }) => {
               }}
             ></input> */}
           </ul>
+          <h5>${product.price * quantity}</h5>
           <section className="heart">
             <button
               className="btn"
@@ -139,7 +143,6 @@ const Sofa = ({ userId }) => {
               Add To Cart
             </button>
           </section>
-          <h5 style={{ paddingLeft: "4rem" }}>${product.price * quantity}</h5>
         </div>
       </div>
       <div className="line"></div>

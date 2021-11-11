@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { IoIosArrowDown } from "react-icons/io";
+import Loading from "./Loading";
 const Sofas = () => {
   const [sofas, setAllSofas] = useState([]);
   const [index, setIndex] = useState(0);
@@ -23,6 +24,7 @@ const Sofas = () => {
 
   return (
     <div style={{ width: "100%", height: "100%" }}>
+      {loading && <Loading />}
       <section className="intro-top"></section>
       <section className="sofa-intro"></section>
       <section className="filter">
