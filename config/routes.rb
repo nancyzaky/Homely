@@ -16,11 +16,11 @@ Rails.application.routes.draw do
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
 
-  get '/order/success' do
-  session = Stripe::Checkout::Session.retrieve(params[:session_id])
-  customer = Stripe::Customer.retrieve(session.customer)
+#   get '/order/success' do
+#   session = Stripe::Checkout::Session.retrieve(params[:session_id])
+#   customer = Stripe::Customer.retrieve(session.customer)
 
-  "<html><body><h1>Thanks for your order</h1></body></html>"
-end
+#   "<html><body><h1>Thanks for your order</h1></body></html>"
+# end
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end

@@ -4,7 +4,7 @@ before_action :authorize
 
   def create
     user = User.find_by(email: params[:email])
-    PostMailer.post_created.deliver_later
+    # PostMailer.post_created.deliver_now
 
     if user&.authenticate(params[:password])
 

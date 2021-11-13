@@ -33,7 +33,6 @@ const Sofa = ({ userId, changeCount }) => {
       .then((d) => {
         if (d.error) {
           setError(true);
-          // setModal(false);
         } else {
           setSuccess(true);
         }
@@ -84,14 +83,17 @@ const Sofa = ({ userId, changeCount }) => {
     setQuantity(num);
   };
   useEffect(() => {
-    setTimeout(() => {
+    let timer = setTimeout(() => {
       setError(false);
     }, 3000);
+    return () => clearTimeout(timer);
   }, [addToCart]);
   return (
     <div style={{ width: "100%", height: "100%" }}>
       {loading && <Loading />}
       <SubCart
+        addToCart={addToCart}
+        success={success}
         modal={modal}
         changeQuantity
         handleCart={handleCart}
@@ -166,6 +168,7 @@ const Sofa = ({ userId, changeCount }) => {
           product.pictures.map((pic) => {
             return (
               <motion.li
+                key={pic.id}
                 style={{
                   display: "inline",
                   cursor: "pointer",

@@ -1,17 +1,14 @@
 class CheckoutController < ApplicationController
 
   def create
-    product = Product.find(params[:id])
-    tot = params[:tot]
+
+   products =  params[:items].map do |item|
+
+
+      {"name" =>item[:product][:name], "amount" =>item[:product][:price]*100,  "currency" => "usd" , "quantity" =>item[:quantity]}
+     end
   session = Stripe::Checkout::Session.create({
-
-    line_items: [{
-      name: product.name,
-      amount: tot,
-      currency: "usd",
-       quantity: 1
-
-    }],
+   line_items:products,
     payment_method_types: [
       'card',
     ],
@@ -23,3 +20,15 @@ class CheckoutController < ApplicationController
   render json: session.to_json
   end
 end
+
+
+   # line_items: [{
+    #   name: product.name,
+    #   amount: tot,
+    #   currency: "usd",
+    #    quantity: 1
+
+    # }, {  name: "whatever",
+    #   amount: 45,
+    #   currency: "usd",
+    #    quantity: 1}],

@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import { BsTrash } from "react-icons/bs";
+import { motion } from "framer-motion";
 
-const CartItem = ({ item, handleUpdate, user, deleteItem, changeCount }) => {
+const CartItem = ({
+  item,
+  handleUpdate,
+  user,
+  deleteItem,
+  changeCount,
+  index,
+}) => {
   const [num, setNum] = useState(item.quantity);
   const handleDelete = () => {
     fetch(`/carts/${item.id}`, {
@@ -11,7 +19,7 @@ const CartItem = ({ item, handleUpdate, user, deleteItem, changeCount }) => {
   };
   return (
     <>
-      <ul
+      <motion.ul
         style={{
           display: "flex",
           justifyContent: "start",
@@ -19,6 +27,22 @@ const CartItem = ({ item, handleUpdate, user, deleteItem, changeCount }) => {
           textAlign: "center",
           paddingTop: "2rem",
         }}
+        variants={{
+          hidden: {
+            opacity: 0,
+            x: -100,
+          },
+          visible: (index) => ({
+            opacity: 1,
+            x: 0,
+            transition: {
+              delay: index * 0.025,
+            },
+          }),
+        }}
+        initial="hidden"
+        animate="visible"
+        custom={index}
       >
         <li
           style={{
@@ -39,7 +63,15 @@ const CartItem = ({ item, handleUpdate, user, deleteItem, changeCount }) => {
         </li>
         <li style={{ display: "inline-block", width: "20%" }}>
           <input
-            style={{ width: "2rem", height: "2rem", borderRadius: "20%" }}
+            style={{
+              width: "2rem",
+              height: "2rem",
+              borderRadius: "20%",
+              border: "1px solid rgb(243, 237, 237)",
+              textAlign: "center",
+              justifyContent: "center",
+            }}
+            min="1"
             type="number"
             value={num}
             onChange={(e) => {
@@ -54,7 +86,7 @@ const CartItem = ({ item, handleUpdate, user, deleteItem, changeCount }) => {
         <li style={{ width: "10%", fontSize: "22px", color: "red" }}>
           <BsTrash onClick={handleDelete} />
         </li>
-      </ul>
+      </motion.ul>
       <div className="line"></div>
     </>
   );

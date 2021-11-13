@@ -57,17 +57,20 @@ export const sideBarItems = [
     arrowDown: <IoMdArrowDropdown />,
     subLinks: [
       {
+        id: 1,
         url: "/signup",
         text: "Sign Up",
         icon: <FaUsers className="icon-small" />,
       },
       {
+        id: 2,
         url: "/login",
         text: "Log In",
         icon: <BiLogInCircle className="icon-small" />,
       },
 
       {
+        id: 3,
         url: "/cart",
         text: "Cart",
         icon: <ImCart className="icon-small" />,
@@ -83,6 +86,7 @@ export const sideBarItems = [
     arrowDown: <IoMdArrowDropdown />,
     subLinks: [
       {
+        id: 4,
         url: "/sofa",
         text: "Sofas",
         icon: <GiSofa className="icon-small" />,
@@ -112,5 +116,20 @@ export const sideBarItems = [
     url: "/",
     text: "Out Door",
     icon: <GiFlowerPot className="icon-small" />,
+  },
+];
+
+export const shopLook = [
+  {
+    id: 1,
+    url: "https://cdn-media-lib.article.com/mediaLibrary/49155175-4674-410d-a747-62c01ad95870.jpg?h=0.5&q=40",
+  },
+  {
+    id: 2,
+    url: "https://cdn-media-lib.article.com/mediaLibrary/f2b55270-dfff-4728-94f0-aed0857bc778.jpg?h=0.5&q=40",
+  },
+  {
+    id: 3,
+    url: "https://cdn-media-lib.article.com/mediaLibrary/5822c4c1-77ec-4f70-8543-cd1d94efaf1d.jpg?h=0.5&q=40",
   },
 ];

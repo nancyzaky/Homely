@@ -3,7 +3,15 @@ import { Link } from "react-router-dom";
 import { GrFormClose } from "react-icons/gr";
 import SubCartItem from "./SubCartItem";
 import Loading from "./Loading";
-const SubCart = ({ modal, changeQuantity, handleCart, changeCount }) => {
+import { AnimatePresence, motion } from "framer-motion";
+const SubCart = ({
+  modal,
+  changeQuantity,
+  handleCart,
+  changeCount,
+  addToCart,
+  success,
+}) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -25,8 +33,7 @@ const SubCart = ({ modal, changeQuantity, handleCart, changeCount }) => {
             setLoading(false);
           });
       });
-  }, [modal]);
-  console.log(data);
+  }, [success]);
   return (
     <nav className={modal ? "sub-cart active-cart" : "sub-cart"}>
       {error && <h3>Please Log in first</h3>}
@@ -65,22 +72,27 @@ const SubCart = ({ modal, changeQuantity, handleCart, changeCount }) => {
           }}
         >
           <Link to="/cart">
-            <button className="btn">Check Out</button>
+            <button className="btn" style={{ color: "white" }}>
+              Check Out
+            </button>
           </Link>
         </li>
       </ul>
       {!loading && (
-        <li>
-          {data.map((product) => {
-            return (
-              <SubCartItem
-                key={product.id}
-                product={product}
-                changeCount={changeCount}
-              />
-            );
-          })}
-        </li>
+        <AnimatePresence>
+          <li>
+            {data.map((product, index) => {
+              return (
+                <SubCartItem
+                  key={product.id}
+                  index={index}
+                  product={product}
+                  changeCount={changeCount}
+                />
+              );
+            })}
+          </li>
+        </AnimatePresence>
       )}
     </nav>
   );

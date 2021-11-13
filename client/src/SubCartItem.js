@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-
-const SubCartItem = ({ product, changeCount }) => {
+import { motion } from "framer-motion";
+const SubCartItem = ({ product, changeCount, index }) => {
   const [quantity, setQuantity] = useState(product.quantity);
   const [user, setUser] = useState(0);
   const handleUpdate = (value, ids) => {
@@ -19,13 +19,29 @@ const SubCartItem = ({ product, changeCount }) => {
     fetch("/me")
       .then((resp) => resp.json())
       .then((d) => setUser(d.id));
-  });
+  }, []);
   return (
-    <ul
+    <motion.ul
       style={{
         display: "flex",
         paddingTop: "1rem",
       }}
+      variants={{
+        hidden: {
+          opacity: 0,
+          y: -100,
+        },
+        visible: (index) => ({
+          opacity: 1,
+          y: 0,
+          transition: {
+            delay: index * 0.4,
+          },
+        }),
+      }}
+      initial="hidden"
+      animate="visible"
+      custom={index}
     >
       <li
         style={{
@@ -83,7 +99,7 @@ const SubCartItem = ({ product, changeCount }) => {
           }}
         ></input>{" "}
       </li>
-    </ul>
+    </motion.ul>
   );
 };
 

@@ -7,6 +7,8 @@
     "node": "16.x"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
     "@react-three/drei": "^7.13.1",
     "@react-three/fiber": "^7.0.17",
     "@stripe/react-stripe-js": "^1.6.0",

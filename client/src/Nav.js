@@ -5,6 +5,8 @@ import {
   AiFillInstagram,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
+import Badge from "@material-ui/core/Badge";
+
 import { TiHeart } from "react-icons/ti";
 import { VscCircleFilled } from "react-icons/vsc";
 import { RiMenuUnfoldFill } from "react-icons/ri";
@@ -13,7 +15,7 @@ import { IoMdCloseCircle } from "react-icons/io";
 import { sideBarItems } from "./Data";
 import SubLink from "./SubLink";
 import { FaTwitterSquare } from "react-icons/fa";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ImFacebook2 } from "react-icons/im";
 
 const Nav = ({ user, changeUser, count }) => {
@@ -141,7 +143,7 @@ const Nav = ({ user, changeUser, count }) => {
               duration: "2",
             }}
           >
-            {" "}
+            {/* {" "}
             <div
               style={{
                 color: "white",
@@ -156,14 +158,16 @@ const Nav = ({ user, changeUser, count }) => {
               }}
             >
               {count}
-            </div>{" "}
+            </div>{" "} */}
             <Link to="/cart">
-              <AiOutlineShoppingCart
-                style={{
-                  color: "white",
-                  marginTop: "8px",
-                }}
-              />
+              <Badge color="secondary" badgeContent={count}>
+                <AiOutlineShoppingCart
+                  style={{
+                    color: "white",
+                    marginTop: "8px",
+                  }}
+                />
+              </Badge>
             </Link>
           </motion.li>
         </ul>
@@ -172,7 +176,7 @@ const Nav = ({ user, changeUser, count }) => {
       <nav className={subMenu ? "sub-menu active" : "sub-menu"}>
         <div style={{ width: "100%", paddingTop: "2.7rem" }}>
           {sideBarItems.map((item) => {
-            return <SubLink item={item} />;
+            return <SubLink item={item} key={item.id} />;
           })}
           <div className="link-icon" onClick={handlLogOut}>
             <Link to="/" className="icon">

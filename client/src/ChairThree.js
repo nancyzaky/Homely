@@ -40,12 +40,11 @@ const ChairThree = () => {
         }}
       >
         <motion.div
-          drag
+          // drag
           style={{
             height: "100%",
-            width: "45%",
+            width: "100%",
             cursor: "pointer",
-            // backgroundColor: "rgb(225, 231, 231)",
           }}
           onClick={() => {
             console.log("hi");
@@ -61,7 +60,7 @@ const ChairThree = () => {
           <Canvas
             colorManagement
             shadowMap
-            camera={{ position: [1, 2, 5], fov: 30 }}
+            camera={{ position: [1, 2, 5], fov: 25 }}
           >
             <directionalLight intensity={1} castShadow />
             <ambientLight intensity={1} />
@@ -85,7 +84,7 @@ const ChairThree = () => {
             </Suspense>
           </Canvas>
         </motion.div>
-        <motion.div
+        {/* <motion.div
           drag
           style={{
             height: "100%",
@@ -96,8 +95,8 @@ const ChairThree = () => {
           onClick={() => {
             console.log("hi");
           }}
-        >
-          <Canvas
+        > */}
+        {/* <Canvas
             colorManagement
             shadowMap
             camera={{ position: [1, 2, 5], fov: 30 }}
@@ -120,8 +119,8 @@ const ChairThree = () => {
                 position={[1, 0, 0]}
               />
             </Suspense>
-          </Canvas>
-        </motion.div>
+          </Canvas> */}
+        {/* </motion.div> */}
       </div>
     </>
   );

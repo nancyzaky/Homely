@@ -10,6 +10,7 @@ import LogIn from "./LogIn";
 import Sofas from "./Sofas";
 import Sofa from "./Sofa";
 import Cart from "./Cart";
+import Look from "./Look";
 function App() {
   const [user, setUser] = useState("");
   const [userId, setUserId] = useState(0);
@@ -57,8 +58,10 @@ function App() {
         <Nav user={user} changeUser={changeUser} count={count} />
         <Switch>
           <Route exact path="/">
-            {/* <ChairThree />
-            <BedModel /> */}
+            {/* <BedModel /> */}
+
+            {/* <ChairThree /> */}
+            <Home />
           </Route>
           <Route exact path="/signup">
             <SignUp />
@@ -81,6 +84,9 @@ function App() {
           </Route>
           <Route exact path="/success">
             <Success />
+          </Route>
+          <Route exact path="/look/:id">
+            <Look />
           </Route>
         </Switch>
       </Router>

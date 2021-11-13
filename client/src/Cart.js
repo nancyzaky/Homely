@@ -1,16 +1,29 @@
 import React, { useState, useEffect } from "react";
 import CartItem from "./CartItem";
 import Loading from "./Loading";
+import { motion, AnimatePresence } from "framer-motion";
+
 const Cart = ({ changeCount }) => {
   const [user, setUser] = useState("");
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [totPrice, setTotPrice] = useState(0);
   const deleteItem = (key) => {
     let newArr = items.filter((product) => {
       return product.id !== key;
     });
     setItems(newArr);
     changeCount(newArr);
+    calcTot(newArr);
+  };
+  const calcTot = (arr) => {
+    let tot = 0;
+
+    arr.forEach((item) => {
+      tot += parseInt(item.product.price * item.quantity);
+    });
+    setTotPrice(tot);
+    return tot;
   };
   const handleUpdate = (value, ids) => {
     fetch(`/carts/${user}`, {
@@ -19,7 +32,10 @@ const Cart = ({ changeCount }) => {
       body: JSON.stringify({ quantity: value, product_id: ids }),
     })
       .then((resp) => resp.json())
-      .then((d) => changeCount(d));
+      .then((d) => {
+        calcTot(d);
+        changeCount(d);
+      });
   };
   useEffect(() => {
     setLoading(true);
@@ -31,23 +47,20 @@ const Cart = ({ changeCount }) => {
           .then((resp) => resp.json())
           .then((d) => {
             setItems(d);
+            calcTot(d);
             setLoading(false);
           });
       });
   }, []);
 
   const fetchCheckOut = () => {
-    let tot = 0;
-    items.forEach((item) => {
-      tot += parseInt(item.product.price * item.quantity);
-    });
-    console.log(tot, items[0].id);
     /* global Stripe */
 
     fetch("/checkout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ tot: tot * 100, id: items[0].product.id }),
+      // body: JSON.stringify({ tot: totPrice * 100, id: items[0].product.id }),
+      body: JSON.stringify({ items: items }),
     })
       .then(function (response) {
         console.log(response);
@@ -70,29 +83,30 @@ const Cart = ({ changeCount }) => {
         {loading && <Loading />}
         {!loading && (
           <>
-            <ul className="cart-details">
-              {items.map((item) => {
-                return (
-                  <CartItem
-                    key={item.id}
-                    item={item}
-                    handleUpdate={handleUpdate}
-                    user={user}
-                    deleteItem={deleteItem}
-                    changeCount={changeCount}
-                  />
-                );
-              })}
-            </ul>
-
+            <AnimatePresence>
+              <ul className="cart-details">
+                {items.map((item, index) => {
+                  return (
+                    <CartItem
+                      key={item.id}
+                      item={item}
+                      handleUpdate={handleUpdate}
+                      user={user}
+                      deleteItem={deleteItem}
+                      changeCount={changeCount}
+                      index={index}
+                    />
+                  );
+                })}
+              </ul>
+            </AnimatePresence>
             <ul className="cart-summary">
-              {/* <Pay /> */}
               <h3>Check Out Summary</h3>
               <h4>Deliver To:</h4>
               <h5>Subtotal</h5>
               <h5>Discount:</h5>
               <h6>Tax</h6>
-              <h6>TOTAL</h6>
+              <h6>TOTAL ${totPrice}</h6>
               <button onClick={fetchCheckOut}>Pay</button>
             </ul>
           </>
