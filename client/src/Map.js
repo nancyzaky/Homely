@@ -28,7 +28,6 @@ const Map = ({ adjustAddress, hideMap, address }) => {
     setCenter(obj);
   };
   const key = process.env.REACT_APP_API_KEY;
-  console.log(key);
 
   const { isLoaded, loadError } = useJsApiLoader({
     id: "google-map-script",
@@ -87,11 +86,8 @@ function Search({ changeLongLat, adjustAddress, hideMap }) {
           setValue(address, false);
           clearSuggestions();
           try {
-            console.log(address);
             let result = await getGeocode({ address });
-            console.log(result);
             const { lat, lng } = await getLatLng(result[0]);
-            console.log({ lat, lng });
             changeLongLat({ lat, lng });
           } catch (error) {
             console.log("error");
