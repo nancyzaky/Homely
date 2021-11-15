@@ -11,11 +11,15 @@ import Sofas from "./Sofas";
 import Sofa from "./Sofa";
 import Cart from "./Cart";
 import Look from "./Look";
+import Favs from "./Favs";
+import SubCart from "./SubCart";
+import Favorite from "./Favorite";
 function App() {
   const [user, setUser] = useState("");
   const [userId, setUserId] = useState(0);
   const [favorites, setFavorites] = useState([]);
   const [count, setCount] = useState(0);
+
   const changeUser = (name) => {
     setUser(name);
   };
@@ -56,12 +60,15 @@ function App() {
     <>
       <Router>
         <Nav user={user} changeUser={changeUser} count={count} />
+
         <Switch>
           <Route exact path="/">
-            {/* <BedModel /> */}
-
-            {/* <ChairThree /> */}
+            <ChairThree />
             <Home />
+            <Favs />
+          </Route>
+          <Route exact path="/favorite">
+            <Favorite />
           </Route>
           <Route exact path="/signup">
             <SignUp />
@@ -69,10 +76,10 @@ function App() {
           <Route exact path="/login">
             <LogIn changeUser={changeUser} />
           </Route>
-          <Route exact path="/sofa">
+          <Route exact path="/item/:cat">
             <Sofas />
           </Route>
-          <Route exact path="/sofa/:id">
+          <Route exact path="/product/:id">
             <Sofa
               userId={userId}
               favorites={favorites}

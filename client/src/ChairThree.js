@@ -7,6 +7,7 @@ import {
   Box,
   Text,
   Stats,
+  Plane,
 } from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import Model from "./Model";
@@ -20,6 +21,7 @@ const Texts = ({ word }) => {
         scale={[3, 3, 3]}
         color="pink"
         // default
+        castShadow
         anchorX="center" // default
         anchorY="middle" // default
       >
@@ -35,7 +37,7 @@ const ChairThree = () => {
       <div
         style={{
           width: "100%",
-          height: "70%",
+          height: "100%",
           display: "flex",
         }}
       >
@@ -62,13 +64,28 @@ const ChairThree = () => {
             shadowMap
             camera={{ position: [1, 2, 5], fov: 25 }}
           >
-            <directionalLight intensity={1} castShadow />
-            <ambientLight intensity={1} />
-            <pointLight position={[10, 0, 10]} />
+            <directionalLight
+              intensity={0.5}
+              castShadow
+              shadow-mapSize-height={512}
+              shadow-mapSize-width={512}
+            />
+            <ambientLight intensity={0.6} />
+            <pointLight position={[20, 10, 10]} />
+            <spotLight
+              distance={1}
+              decay={0.2}
+              penumbera={0.5}
+              angel={Math.PI / 4.0}
+              position={[0, 10, 10]}
+              castShadow
+            />
 
             <Suspense fallback={null}>
-              <Model receiveShadow />
-              <Texts word={"LIVING ROOMS"} />
+              <Model castShadow />
+              <Texts word={"Furniture"} />
+              <meshStandardMaterial attach="material" color="0x808080" />
+
               {spin && (
                 <OrbitControls
                   enableRotate={true}
@@ -82,6 +99,14 @@ const ChairThree = () => {
                 />
               )}
             </Suspense>
+            {/* <Plane
+              receiveShadow
+              rotation={[-Math.PI / 2, 0, 0]}
+              position={[0, 0, 0]}
+              args={[5, 5, 5, 5]}
+            >
+              <meshPhongMaterial attach="material" color="grey" />
+            </Plane> */}
           </Canvas>
         </motion.div>
         {/* <motion.div

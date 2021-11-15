@@ -6,7 +6,7 @@ import SubCart from "./SubCart";
 import SmallModal from "./SmallModal";
 import Loading from "./Loading";
 
-const Sofa = ({ userId, changeCount }) => {
+const Sofa = ({ userId, changeCount, changeSuccess }) => {
   const [quantity, setQuantity] = useState(1);
   const [modal, setModal] = useState(false);
   const [error, setError] = useState(false);
@@ -91,6 +91,7 @@ const Sofa = ({ userId, changeCount }) => {
   return (
     <div style={{ width: "100%", height: "100%" }}>
       {loading && <Loading />}
+
       <SubCart
         addToCart={addToCart}
         success={success}
@@ -100,6 +101,7 @@ const Sofa = ({ userId, changeCount }) => {
         userId={userId}
         changeCount={changeCount}
       />
+
       <div className="top-section">
         <h2 style={{ color: "grey", paddingLeft: "1rem", paddingTop: "1rem" }}>
           {product.name}
@@ -160,8 +162,9 @@ const Sofa = ({ userId, changeCount }) => {
           onClick={handleFav}
         />
       </motion.div>
-      <img src={image} alt="pic" className="pic-big" />
-
+      <motion.div style={{ height: "100%", width: "100%" }} drag>
+        <img src={image} alt="pic" className="pic-big" />{" "}
+      </motion.div>
       <div className="line-small"></div>
       <ul style={{ display: "flex" }}>
         {product.pictures &&

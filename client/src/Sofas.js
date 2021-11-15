@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { IoIosArrowDown } from "react-icons/io";
 import Loading from "./Loading";
 import SofaItem from "./SofaItem";
 const Sofas = () => {
+  const { cat } = useParams();
   const [sofas, setAllSofas] = useState([]);
   const [loading, setLoading] = useState(false);
   const fetchUrl = () => {
+    console.log(cat);
     setLoading(true);
-    fetch(`/products`)
+    fetch(`/product/${cat}`)
       .then((resp) => resp.json())
       .then((d) => {
         console.log(d);
@@ -20,7 +22,7 @@ const Sofas = () => {
   const handleHover = (key) => {};
   useEffect(() => {
     fetchUrl();
-  }, []);
+  }, [cat]);
 
   return (
     <div style={{ width: "100%", height: "100%" }}>

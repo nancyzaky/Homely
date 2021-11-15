@@ -14,7 +14,7 @@ const SofaItem = ({ sofa }) => {
         stifness: 80,
       }}
     >
-      <Link to={`/sofa/${sofa.id}`}>
+      <Link to={`/product/${sofa.id}`}>
         <img
           src={sofa.pictures[index].url}
           className="pic-small"

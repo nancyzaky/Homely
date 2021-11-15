@@ -4,11 +4,15 @@ rescue_from ActiveRecord::RecordNotFound, with: :authorize
  product = Product.create!(product_params)
  render json: product, status: :created
   end
-# def getcat
-# products = Product.find_by(cat: params[:cat])
-# #  products = Product.all
-# render json: products
-# end
+
+
+def getcat
+
+products = Product.where(cat: params[:cat])
+
+#  products = Product.all
+render json: products, include: :pictures
+end
 def index
 
  products = Product.all

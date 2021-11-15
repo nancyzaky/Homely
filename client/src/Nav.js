@@ -172,9 +172,16 @@ const Nav = ({ user, changeUser, count }) => {
           </motion.li>
         </ul>
       </nav>
-
       <nav className={subMenu ? "sub-menu active" : "sub-menu"}>
-        <div style={{ width: "100%", paddingTop: "2.7rem" }}>
+        <div
+          style={{
+            width: "100%",
+
+            border: "0.2rem solid red",
+            overFlow: "auto",
+            position: "absolute",
+          }}
+        >
           {sideBarItems.map((item) => {
             return <SubLink item={item} key={item.id} />;
           })}

@@ -2,12 +2,27 @@ import React, { useState, useEffect } from "react";
 import CartItem from "./CartItem";
 import Loading from "./Loading";
 import { motion, AnimatePresence } from "framer-motion";
-
+import {
+  GoogleMap,
+  useJsApiLoader,
+  Marker,
+  InfoWindow,
+} from "@react-google-maps/api";
+import Map from "./Map";
 const Cart = ({ changeCount }) => {
   const [user, setUser] = useState("");
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
   const [totPrice, setTotPrice] = useState(0);
+  const [showMap, setShowMap] = useState(false);
+  const [address, setAddress] = useState("");
+  const adjustAddress = (ad) => {
+    setAddress(ad);
+  };
+  const hideMap = () => {
+    setShowMap(false);
+  };
+
   const deleteItem = (key) => {
     let newArr = items.filter((product) => {
       return product.id !== key;
@@ -55,11 +70,11 @@ const Cart = ({ changeCount }) => {
 
   const fetchCheckOut = () => {
     /* global Stripe */
-
+    const key = process.env.REACT_APP_API_STRIPE;
+    var stripe = Stripe(key);
     fetch("/checkout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      // body: JSON.stringify({ tot: totPrice * 100, id: items[0].product.id }),
       body: JSON.stringify({ items: items }),
     })
       .then(function (response) {
@@ -102,13 +117,41 @@ const Cart = ({ changeCount }) => {
             </AnimatePresence>
             <ul className="cart-summary">
               <h3>Check Out Summary</h3>
-              <h4>Deliver To:</h4>
+              <h4>
+                Deliver To:{" "}
+                {address ? (
+                  <h4>
+                    {address}{" "}
+                    <a href="#" onClick={() => setShowMap(true)}>
+                      Click to change address
+                    </a>
+                  </h4>
+                ) : (
+                  <a
+                    href="#"
+                    onClick={() => {
+                      setShowMap(true);
+                    }}
+                  >
+                    Click to view on map
+                  </a>
+                )}
+              </h4>
               <h5>Subtotal</h5>
               <h5>Discount:</h5>
               <h6>Tax</h6>
               <h6>TOTAL ${totPrice}</h6>
               <button onClick={fetchCheckOut}>Pay</button>
             </ul>
+            {showMap && (
+              <aside className="modal-big">
+                <Map
+                  adjustAddress={adjustAddress}
+                  hideMap={hideMap}
+                  address={address}
+                />
+              </aside>
+            )}
           </>
         )}
       </div>
