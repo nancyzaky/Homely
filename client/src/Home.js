@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { motion, AnimatePresence, useCycle } from "framer-motion";
 import { shopLook } from "./Data";
 import { Link } from "react-router-dom";
+import Subscribe from "./Subscribe";
+import MostLoved from "./MostLoved";
 const Home = () => {
   return (
     <>
@@ -16,7 +18,7 @@ const Home = () => {
       >
         {shopLook.map((look) => {
           return (
-            <div className="container-shop ">
+            <div className="container-shop " key={look.id}>
               <img
                 onClick={(e) => {
                   console.log(e.clientX, e.clientY);
@@ -55,6 +57,9 @@ const Home = () => {
             </div>
           );
         })}
+        <div className="line-wide"></div>
+        <Subscribe />
+        <MostLoved />
       </div>
     </>
   );

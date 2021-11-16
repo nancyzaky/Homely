@@ -576,5 +576,34 @@ li {
   flex-direction: row;
   height: 100%;
   width: 100%;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
+}
+
+.sub-section {
+  width: 100%;
+  height: 300px;
+  background-color: rgb(47, 46, 46);
+  color: white;
+  display: flex;
+}
+.sub-cont {
+  background-color: rgb(246, 243, 243);
+  height: 490px;
+  width: 100%;
+  display: flex;
+  letter-spacing: 3px;
+}
+.sub-img {
+  width: 70%;
+  height: 100%;
+  /* background-image: url("https://images.pexels.com/photos/5696273/pexels-photo-5696273.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"); */
+  background-image: url("https://cdn-cms-assets.article.com/1yHVuqoF8kUXuOFmjsKfMm-3efdfea64530104da2676e02454c0335?w=2600&q=60&fm=webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.success-msg {
+  height: 1rem;
+  color: rgb(36, 31, 31);
+  width: 100%;
+  background-color: rgb(197, 231, 197);
 }

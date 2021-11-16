@@ -87,7 +87,7 @@ const Sofa = ({ userId, changeCount, changeSuccess }) => {
       setError(false);
     }, 3000);
     return () => clearTimeout(timer);
-  }, [addToCart]);
+  }, [success]);
   return (
     <div style={{ width: "100%", height: "100%" }}>
       {loading && <Loading />}

@@ -1,17 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FcDislike } from "react-icons/fc";
+import SubCart from "./SubCart";
+import SmallModal from "./SmallModal";
 
-const FavItem = ({ fav, changeFav }) => {
+const FavItem = ({ fav, changeFav, changeCount, user }) => {
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      setSuccess(false);
+      setError(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [error, success]);
   const deleteFav = () => {
-    fetch(`/me`)
+    fetch(`/users/${user}/favorites/${fav.id}`, {
+      method: "DELETE",
+    });
+    changeFav(fav.id);
+  };
+  const addToCart = () => {
+    fetch(`/carts`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        user_id: user,
+        product_id: fav.product.id,
+        quantity: 1,
+      }),
+    })
       .then((resp) => resp.json())
       .then((d) => {
-        if (d.id > 0) {
-          fetch(`/users/${d.id}/favorites/${fav.id}`, {
-            method: "DELETE",
-          });
-          changeFav(fav.id);
+        if (d.error) {
+          console.log(d.error);
+          setError(d.error);
+        } else if (d.length > 0) {
+          setSuccess(true);
+          changeCount(d);
         }
       });
   };
@@ -22,12 +48,12 @@ const FavItem = ({ fav, changeFav }) => {
         style={{
           width: "400px",
           height: "300px",
-          // display: "grid",
           paddingLeft: "2rem",
           paddingRight: "2rem",
           justifyContent: "center",
           textAlign: "center",
           paddingTop: "2rem",
+          paddingBottom: "6rem",
         }}
       >
         <motion.span
@@ -61,8 +87,17 @@ const FavItem = ({ fav, changeFav }) => {
           >
             <IoMdHeartDislike className="heart-fill" />
           </motion.div> */}
-          <button className="btn">Add To Cart</button>
+          <button className="btn" onClick={addToCart}>
+            Add To Cart
+          </button>
+          {success && (
+            <div className="success-msg">
+              {" "}
+              {success && <h6>Item added to cart</h6>}
+            </div>
+          )}
         </div>
+        {error.length > 0 && <SmallModal />}
       </li>
 
       {/* <div className="line"></div> */}

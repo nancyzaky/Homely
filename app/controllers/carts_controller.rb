@@ -6,10 +6,13 @@ rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
       return render json: {error: "Item Already Added To Cart"}
     else
   cart = Cart.create!(cart_params)
-  render json: cart, status: :created
+  all_user_carts = User.find(params[:user_id]).carts
+
+  render json: all_user_carts, status: :created
     end
   end
-
+# Cart.joins(:items).group(:url).order("count_id DESC").limit(7).count(:id)
+# Cart.joins(:products).order("count_id DESC").limit(7).count(:id)
   def show
 
     items = User.find(params[:id]).carts
@@ -28,6 +31,7 @@ def destroy
 
   cart = Cart.find(params[:id])
   cart.delete
+
   head :no_content
 end
   private

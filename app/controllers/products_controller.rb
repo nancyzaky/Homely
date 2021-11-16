@@ -13,11 +13,11 @@ products = Product.where(cat: params[:cat])
 #  products = Product.all
 render json: products, include: :pictures
 end
-def index
+# def index
 
- products = Product.all
- render json: products, includes: :pictures
-end
+#  products = Product.all
+#  render json: products, includes: :pictures
+# end
 def show
   product = Product.find(params[:id])
   render json: product,  includes: :pictures

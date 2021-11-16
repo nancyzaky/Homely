@@ -129,7 +129,9 @@ const Nav = ({ user, changeUser, count }) => {
               duration: "2",
             }}
           >
-            <TiHeart style={{ marginTop: "8px" }} />
+            <Link to="/favorite">
+              <TiHeart style={{ marginTop: "8px", color: "white" }} />
+            </Link>
           </motion.li>
           <motion.li
             style={{ display: "grid" }}

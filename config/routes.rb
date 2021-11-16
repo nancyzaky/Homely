@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :checkout, only: [:create]
   get "/product/:cat", to: "products#getcat"
  delete "/logout", to: "sessions#destroy"
-
+get "/bestsellers", to: "favorites#most_fav"
   get "/me", to: "users#show"
   delete "/favorites/:product_id/:user_id", to: "favorites#destroy"
   # Routing logic: fallback requests for React Router.

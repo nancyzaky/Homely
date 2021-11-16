@@ -24,19 +24,32 @@ const Cart = ({ changeCount }) => {
   };
 
   const deleteItem = (key) => {
-    let newArr = items.filter((product) => {
-      return product.id !== key;
+    // let newArr = items.filter((product) => {
+    //   return product.id !== key;
+    // });
+    // setItems(newArr);
+    // changeCount(newArr);
+    // calcTot(newArr);
+    fetch(`/carts/${key}`, {
+      method: "DELETE",
     });
-    setItems(newArr);
-    changeCount(newArr);
-    calcTot(newArr);
+    fetch(`/carts/${user}`)
+      .then((resp) => resp.json())
+      .then((d) => {
+        setItems(d);
+        changeCount(d);
+        calcTot(d);
+      });
   };
   const calcTot = (arr) => {
     let tot = 0;
-
-    arr.forEach((item) => {
-      tot += parseInt(item.product.price * item.quantity);
-    });
+    if (arr.length < 0) {
+      return 0;
+    } else {
+      arr.forEach((item) => {
+        tot += parseInt(item.product.price * item.quantity);
+      });
+    }
     setTotPrice(tot);
     return tot;
   };
@@ -49,6 +62,7 @@ const Cart = ({ changeCount }) => {
       .then((resp) => resp.json())
       .then((d) => {
         calcTot(d);
+        console.log(d);
         changeCount(d);
       });
   };

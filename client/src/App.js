@@ -14,6 +14,8 @@ import Look from "./Look";
 import Favs from "./Favs";
 import SubCart from "./SubCart";
 import Favorite from "./Favorite";
+import Review from "./Review";
+
 function App() {
   const [user, setUser] = useState("");
   const [userId, setUserId] = useState(0);
@@ -26,9 +28,11 @@ function App() {
   const changeCount = (items) => {
     console.log(items);
     let tots = 0;
-    items.forEach((item) => {
-      tots += item.quantity;
-    });
+    if (items.length) {
+      items.forEach((item) => {
+        tots += item.quantity;
+      });
+    }
     setCount(tots);
   };
   useEffect(() => {
@@ -63,12 +67,13 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-            <ChairThree />
+            {/* <ChairThree /> */}
             <Home />
-            <Favs />
+            {/* <Favs /> */}
+            {/* <Review /> */}
           </Route>
           <Route exact path="/favorite">
-            <Favorite />
+            <Favorite changeCount={changeCount} />
           </Route>
           <Route exact path="/signup">
             <SignUp />

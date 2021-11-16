@@ -3,10 +3,10 @@ import FavItem from "./FavItem";
 import { motion } from "framer-motion";
 import { ImHeart } from "react-icons/im";
 import { Link } from "react-router-dom";
-const Favorite = () => {
+const Favorite = ({ changeCount }) => {
   const [favs, setFavs] = useState([]);
   const [error, setError] = useState(false);
-
+  const [user, setUser] = useState(0);
   const changeFav = (num) => {
     let newArr = favs.filter((fav) => {
       return parseInt(fav.id) !== parseInt(num);
@@ -18,6 +18,7 @@ const Favorite = () => {
       .then((resp) => resp.json())
       .then((d) => {
         if (d.id > 0) {
+          setUser(d.id);
           fetch(`/users/${d.id}/favorites`)
             .then((resp) => resp.json())
             .then((d) => setFavs(d));
@@ -105,7 +106,15 @@ const Favorite = () => {
         {!error && (
           <ul className="fav-list">
             {favs.map((fav) => {
-              return <FavItem fav={fav} key={fav.id} changeFav={changeFav} />;
+              return (
+                <FavItem
+                  fav={fav}
+                  key={fav.id}
+                  changeFav={changeFav}
+                  changeCount={changeCount}
+                  user={user}
+                />
+              );
             })}
           </ul>
         )}

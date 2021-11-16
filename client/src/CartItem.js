@@ -11,12 +11,12 @@ const CartItem = ({
   index,
 }) => {
   const [num, setNum] = useState(item.quantity);
-  const handleDelete = () => {
-    fetch(`/carts/${item.id}`, {
-      method: "DELETE",
-    });
-    deleteItem(item.id);
-  };
+  // const handleDelete = () => {
+  //   fetch(`/carts/${item.id}`, {
+  //     method: "DELETE",
+  //   });
+  //   deleteItem(item.id);
+  // };
   return (
     <>
       <motion.ul
@@ -84,7 +84,7 @@ const CartItem = ({
           ${item.product.price * num}
         </li>
         <li style={{ width: "10%", fontSize: "22px", color: "red" }}>
-          <BsTrash onClick={handleDelete} />
+          <BsTrash onClick={() => deleteItem(item.id)} />
         </li>
       </motion.ul>
       <div className="line"></div>

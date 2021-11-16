@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { shopLook } from "./Data";
+import LookItem from "./LookItem";
 const Look = () => {
   const { id } = useParams();
   const [look, setLook] = useState([]);
   const [img, setImg] = useState("");
   const [active, setActive] = useState(false);
+
   useEffect(() => {
     console.log(id);
     let looks = shopLook.find((item) => {
@@ -26,26 +28,7 @@ const Look = () => {
         }}
       ></img>
       {look.map((product) => {
-        return (
-          <>
-            <Link to={`/product/${product.productId}`}>
-              <div
-                className={active ? "look-item active" : "look-item"}
-                key={product.id}
-                style={{ top: product.top, left: product.left }}
-              >
-                <img src={product.image} alt="pic" className="look-pic" />
-                <h5 style={{ paddingLeft: "8rem", color: "red" }}>
-                  ${product.price}
-                </h5>
-              </div>
-              <div
-                className={product.point}
-                style={{ top: product.arrowTop, left: product.arrowLeft }}
-              ></div>
-            </Link>
-          </>
-        );
+        return <LookItem product={product} key={product.id} active={active} />;
       })}
       {/* <div
         style={{
@@ -155,6 +138,7 @@ const Look = () => {
           top: "200px",
           left: "45%",
           color: "white",
+          height: "3rem",
         }}
         onClick={() => {
           setActive(!active);

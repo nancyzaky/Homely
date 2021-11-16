@@ -25,7 +25,7 @@ const Sofas = () => {
   }, [cat]);
 
   return (
-    <div style={{ width: "100%", height: "100%" }}>
+    <>
       {loading && <Loading />}
       <section className="intro-top"></section>
       <section className="sofa-intro"></section>
@@ -59,7 +59,7 @@ const Sofas = () => {
           })}
         </ul>
       )}
-    </div>
+    </>
   );
 };
 
