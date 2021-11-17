@@ -18,6 +18,7 @@ const Cart = ({ changeCount, items, setItems }) => {
   const [address, setAddress] = useState("");
   const adjustAddress = (ad) => {
     setAddress(ad);
+    console.log(address);
   };
   const hideMap = () => {
     setShowMap(false);
