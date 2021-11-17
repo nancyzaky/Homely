@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+
   def create
     find_item = Cart.find_by(product_id: params[:product_id], user_id:params[:user_id])
     if find_item
@@ -11,8 +12,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   render json: all_user_carts, status: :created
     end
   end
-# Cart.joins(:items).group(:url).order("count_id DESC").limit(7).count(:id)
-# Cart.joins(:products).order("count_id DESC").limit(7).count(:id)
+
   def show
 
     items = User.find(params[:id]).carts

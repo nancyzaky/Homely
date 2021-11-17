@@ -59,7 +59,7 @@ const Home = () => {
         })}
         <div className="line-wide"></div>
         <Subscribe />
-        <MostLoved />
+        {/* <MostLoved /> */}
       </div>
     </>
   );

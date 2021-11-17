@@ -2,14 +2,7 @@ import React, { useState } from "react";
 import { BsTrash } from "react-icons/bs";
 import { motion } from "framer-motion";
 
-const CartItem = ({
-  item,
-  handleUpdate,
-  user,
-  deleteItem,
-  changeCount,
-  index,
-}) => {
+const CartItem = ({ item, handleUpdate, user, deleteItem, index }) => {
   const [num, setNum] = useState(item.quantity);
   // const handleDelete = () => {
   //   fetch(`/carts/${item.id}`, {

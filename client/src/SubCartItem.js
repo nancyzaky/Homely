@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-const SubCartItem = ({ product, changeCount, index }) => {
+const SubCartItem = ({ product, changeCount, index, items, setItems }) => {
   const [quantity, setQuantity] = useState(product.quantity);
   const [user, setUser] = useState(0);
   const handleUpdate = (value, ids) => {
@@ -11,8 +11,9 @@ const SubCartItem = ({ product, changeCount, index }) => {
     })
       .then((resp) => resp.json())
       .then((d) => {
-        console.log(d);
-        changeCount(d);
+        setItems(d);
+        // console.log(d);
+        // changeCount(d);
       });
   };
   useEffect(() => {

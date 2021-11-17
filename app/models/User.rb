@@ -2,7 +2,7 @@ class User < ApplicationRecord
  has_secure_password
  has_many :products, through: :favorites
  has_many :favorites
- has_many :carts
+ has_many :carts, -> {order(:created_at)}
  has_many :products, through: :carts
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i.freeze
 

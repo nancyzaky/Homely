@@ -607,3 +607,18 @@ li {
   width: 100%;
   background-color: rgb(197, 231, 197);
 }
+
+.most-loved-cont {
+  background-color: #333;
+  background: linear-gradient(to right, #333, #333 50%, #eee 100%, #333 75%);
+  width: 100%;
+  display: block;
+  text-align: center;
+  height: 500px;
+}
+.img-details {
+  display: flex;
+  padding-top: 25vh;
+  width: 100%;
+  padding-left: 25vw;
+}

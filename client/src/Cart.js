@@ -9,9 +9,9 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 import Map from "./Map";
-const Cart = ({ changeCount }) => {
+const Cart = ({ changeCount, items, setItems }) => {
   const [user, setUser] = useState("");
-  const [items, setItems] = useState([]);
+
   const [loading, setLoading] = useState(false);
   const [totPrice, setTotPrice] = useState(0);
   const [showMap, setShowMap] = useState(false);
@@ -37,8 +37,8 @@ const Cart = ({ changeCount }) => {
       .then((resp) => resp.json())
       .then((d) => {
         setItems(d);
-        changeCount(d);
-        calcTot(d);
+        // changeCount(d);
+        // calcTot(d);
       });
   };
   const calcTot = (arr) => {
@@ -61,9 +61,7 @@ const Cart = ({ changeCount }) => {
     })
       .then((resp) => resp.json())
       .then((d) => {
-        calcTot(d);
-        console.log(d);
-        changeCount(d);
+        setItems(d);
       });
   };
   useEffect(() => {

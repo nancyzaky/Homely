@@ -178,9 +178,7 @@ const Nav = ({ user, changeUser, count }) => {
         <div
           style={{
             width: "100%",
-
-            border: "0.2rem solid red",
-            overFlow: "auto",
+            overFlowX: "auto",
             position: "absolute",
           }}
         >

@@ -6,7 +6,7 @@ import SubCart from "./SubCart";
 import SmallModal from "./SmallModal";
 import Loading from "./Loading";
 
-const Sofa = ({ userId, changeCount, changeSuccess }) => {
+const Sofa = ({ userId, changeCount, changeSuccess, setItems, items }) => {
   const [quantity, setQuantity] = useState(1);
   const [modal, setModal] = useState(false);
   const [error, setError] = useState(false);
@@ -87,20 +87,24 @@ const Sofa = ({ userId, changeCount, changeSuccess }) => {
       setError(false);
     }, 3000);
     return () => clearTimeout(timer);
-  }, [success]);
+  }, [success, error]);
   return (
     <div style={{ width: "100%", height: "100%" }}>
       {loading && <Loading />}
 
-      <SubCart
-        addToCart={addToCart}
-        success={success}
-        modal={modal}
-        changeQuantity
-        handleCart={handleCart}
-        userId={userId}
-        changeCount={changeCount}
-      />
+      {success && (
+        <SubCart
+          addToCart={addToCart}
+          success={success}
+          modal={modal}
+          changeQuantity
+          handleCart={handleCart}
+          userId={userId}
+          setItems={setItems}
+          items={items}
+          // changeCount={changeCount}
+        />
+      )}
 
       <div className="top-section">
         <h2 style={{ color: "grey", paddingLeft: "1rem", paddingTop: "1rem" }}>

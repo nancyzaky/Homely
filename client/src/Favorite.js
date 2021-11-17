@@ -3,7 +3,7 @@ import FavItem from "./FavItem";
 import { motion } from "framer-motion";
 import { ImHeart } from "react-icons/im";
 import { Link } from "react-router-dom";
-const Favorite = ({ changeCount }) => {
+const Favorite = ({ changeCount, items, setItems }) => {
   const [favs, setFavs] = useState([]);
   const [error, setError] = useState(false);
   const [user, setUser] = useState(0);
@@ -113,6 +113,7 @@ const Favorite = ({ changeCount }) => {
                   changeFav={changeFav}
                   changeCount={changeCount}
                   user={user}
+                  setItems={setItems}
                 />
               );
             })}

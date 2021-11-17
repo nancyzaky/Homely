@@ -17,11 +17,11 @@ end
   end
 
   def most_fav
-favs = Favorite.joins(:product).group(:product_id).order("Count_id DESC"
-).limit(5).count(:id)
-arr = favs.keys
-products = Product.find(arr)
-render json: products
+favs = Product.joins(:favorites).group("products.id").order("count(product_id) DESC"
+).limit(5)
+# arr = favs.keys
+# products = Product.find(arr)
+render json: favs
   end
 def index
   user = User.find(params[:user_id])

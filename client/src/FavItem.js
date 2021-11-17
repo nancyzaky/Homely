@@ -4,7 +4,7 @@ import { FcDislike } from "react-icons/fc";
 import SubCart from "./SubCart";
 import SmallModal from "./SmallModal";
 
-const FavItem = ({ fav, changeFav, changeCount, user }) => {
+const FavItem = ({ fav, changeFav, changeCount, user, setItems }) => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   useEffect(() => {
@@ -37,7 +37,7 @@ const FavItem = ({ fav, changeFav, changeCount, user }) => {
           setError(d.error);
         } else if (d.length > 0) {
           setSuccess(true);
-          changeCount(d);
+          setItems(d);
         }
       });
   };

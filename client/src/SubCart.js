@@ -11,6 +11,8 @@ const SubCart = ({
   changeCount,
   addToCart,
   success,
+  setItems,
+  items,
 }) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
@@ -28,12 +30,13 @@ const SubCart = ({
           .then((resp) => resp.json())
           .then((d) => {
             console.log(d);
+            setItems(d);
             setData(d);
-            changeCount(d);
+            // changeCount(d);
             setLoading(false);
           });
       });
-  }, [success]);
+  }, []);
   return (
     <nav className={modal ? "sub-cart active-cart" : "sub-cart"}>
       {error && <h3>Please Log in first</h3>}
@@ -87,7 +90,8 @@ const SubCart = ({
                   key={product.id}
                   index={index}
                   product={product}
-                  changeCount={changeCount}
+                  items={items}
+                  setItems={setItems}
                 />
               );
             })}
