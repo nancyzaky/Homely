@@ -11,11 +11,18 @@ import {
 import Map from "./Map";
 const Cart = ({ changeCount, items, setItems }) => {
   const [user, setUser] = useState("");
-
+  const [val, setVal] = useState("");
   const [loading, setLoading] = useState(false);
   const [totPrice, setTotPrice] = useState(0);
   const [showMap, setShowMap] = useState(false);
   const [address, setAddress] = useState("");
+  const [discountApplied, setDiscountApplied] = useState(false);
+  const checkDiscount = () => {
+    if (val === "Final-week-20") {
+      setDiscountApplied(true);
+      setTotPrice(totPrice - totPrice / 5);
+    }
+  };
   const adjustAddress = (ad) => {
     setAddress(ad);
     console.log(address);
@@ -25,12 +32,6 @@ const Cart = ({ changeCount, items, setItems }) => {
   };
 
   const deleteItem = (key) => {
-    // let newArr = items.filter((product) => {
-    //   return product.id !== key;
-    // });
-    // setItems(newArr);
-    // changeCount(newArr);
-    // calcTot(newArr);
     fetch(`/carts/${key}`, {
       method: "DELETE",
     });
@@ -38,8 +39,6 @@ const Cart = ({ changeCount, items, setItems }) => {
       .then((resp) => resp.json())
       .then((d) => {
         setItems(d);
-        // changeCount(d);
-        // calcTot(d);
       });
   };
   const calcTot = (arr) => {
@@ -88,7 +87,7 @@ const Cart = ({ changeCount, items, setItems }) => {
     fetch("/checkout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: items }),
+      body: JSON.stringify({ items: items, discountApplied: discountApplied }),
     })
       .then(function (response) {
         console.log(response);
@@ -129,7 +128,9 @@ const Cart = ({ changeCount, items, setItems }) => {
               </ul>
             </AnimatePresence>
             <ul className="cart-summary">
-              <h3>Check Out Summary</h3>
+              <h3 style={{ textAlign: "center", color: "grey" }}>
+                Check Out Summary
+              </h3>
               <h4>
                 Deliver To:{" "}
                 {address ? (
@@ -150,11 +151,41 @@ const Cart = ({ changeCount, items, setItems }) => {
                   </a>
                 )}
               </h4>
-              <h5>Subtotal</h5>
-              <h5>Discount:</h5>
-              <h6>Tax</h6>
-              <h6>TOTAL ${totPrice}</h6>
-              <button onClick={fetchCheckOut}>Pay</button>
+              <h5>Subtotal ${totPrice}</h5>
+              <h5>
+                Discount Code{" "}
+                <input
+                  style={{
+                    height: "1.5rem",
+                    width: "8rem",
+                    marginLeft: "3rem",
+                  }}
+                  value={val}
+                  onChange={(e) => {
+                    setVal(e.target.value);
+                  }}
+                ></input>{" "}
+                <button onClick={checkDiscount}>Apply</button>
+              </h5>
+
+              <h6
+                style={{
+                  paddingTop: "4rem",
+                  color: "red",
+                  paddingLeft: "10rem",
+                  fontWeight: "bold",
+                  fontSize: "15px",
+                }}
+              >
+                TOTAL ${totPrice}
+              </h6>
+              <button
+                onClick={fetchCheckOut}
+                className="btn"
+                style={{ marginTop: "1rem", marginLeft: "8rem" }}
+              >
+                Pay
+              </button>
             </ul>
             {showMap && (
               <aside className="modal-big">

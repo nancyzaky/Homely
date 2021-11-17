@@ -3,9 +3,13 @@ class CheckoutController < ApplicationController
   def create
 
    products =  params[:items].map do |item|
+   if params[:discountApplied]
+    item_price = item[:product][:price]*100 - ((item[:product][:price]*100) /5)
+   else
+item_price = item[:product][:price]*100
+   end
 
-
-      {"name" =>item[:product][:name], "amount" =>item[:product][:price]*100,  "currency" => "usd" , "quantity" =>item[:quantity]}
+      {"name" =>item[:product][:name], "amount" =>item_price,  "currency" => "usd" , "quantity" =>item[:quantity]}
      end
   session = Stripe::Checkout::Session.create({
    line_items:products,
