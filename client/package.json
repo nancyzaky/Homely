@@ -9,6 +9,7 @@
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.1",
     "@reach/combobox": "^0.16.3",
     "@react-google-maps/api": "^2.5.0",
     "@react-three/drei": "^7.13.1",
