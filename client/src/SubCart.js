@@ -36,11 +36,11 @@ const SubCart = ({
             setLoading(false);
           });
       });
-  }, []);
+  }, [setItems]);
   return (
     <nav className={modal ? "sub-cart active-cart" : "sub-cart"}>
       {error && <h3>Please Log in first</h3>}
-
+      <div className="scroller"></div>
       <span
         style={{
           float: "right",

@@ -58,12 +58,14 @@ const Nav = ({ user, changeUser, count }) => {
               }}
               onClick={() => {
                 setSubMenu(!subMenu);
+                console.log("hi");
               }}
             />
           ) : (
             <RiMenuUnfoldFill
               onClick={() => {
                 setSubMenu(!subMenu);
+                console.log("hi");
               }}
             />
           )}

@@ -118,26 +118,7 @@ const Sofa = ({ userId, changeCount, changeSuccess, setItems, items }) => {
             marginLeft: "56rem",
           }}
         >
-          <ul style={{ display: "grid" }}>
-            {/* <label
-              style={{
-                color: "gray",
-                letterSpacing: "3px",
-                borderStyle: "none",
-                paddingRight: "1rem",
-              }}
-            >
-              Qty:{" "}
-            </label>
-            <input
-              type="number"
-              value={quantity}
-              style={{ width: "3rem", height: "1rem" }}
-              onChange={(e) => {
-                setQuantity(e.target.value);
-              }}
-            ></input> */}
-          </ul>
+          <ul style={{ display: "grid" }}></ul>
           <h5>${product.price * quantity}</h5>
           <section className="heart">
             <button
@@ -166,11 +147,11 @@ const Sofa = ({ userId, changeCount, changeSuccess, setItems, items }) => {
           onClick={handleFav}
         />
       </motion.div>
-      <motion.div style={{ height: "100%", width: "100%" }} drag>
+      <motion.div style={{ height: "90%", width: "90%" }} drag>
         <img src={image} alt="pic" className="pic-big" />{" "}
       </motion.div>
-      <div className="line-small"></div>
-      <ul style={{ display: "flex" }}>
+      {/* <div className="line-small"></div> */}
+      <ul style={{ display: "flex", marginTop: "-8rem" }}>
         {product.pictures &&
           product.pictures.map((pic) => {
             return (
@@ -194,7 +175,7 @@ const Sofa = ({ userId, changeCount, changeSuccess, setItems, items }) => {
           })}
       </ul>
       <div className="line-wide"></div>
-      <ul style={{ height: "100%", display: "flex" }}>
+      <ul style={{ height: "100%", display: "flex", paddingTop: "3rem" }}>
         <section
           style={{
             width: "25%",

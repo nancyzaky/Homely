@@ -93,7 +93,7 @@ const ChairThree = () => {
                   rotateSpeed={0.5}
                   enablePan={true}
                   panSpeed={0.4}
-                  // autoRotate={true}
+                  autoRotate={true}
                   zoomSpeed={0.4}
                   position={[1, 0, 0]}
                 />

@@ -15,13 +15,16 @@ import Favs from "./Favs";
 import SubCart from "./SubCart";
 import Favorite from "./Favorite";
 import Review from "./Review";
+import MostLoved from "./MostLoved";
+
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   const [user, setUser] = useState("");
   const [userId, setUserId] = useState(0);
   const [favorites, setFavorites] = useState([]);
   const [items, setItems] = useState([]);
-  //const [count, setCount] = useState(0);
+
   let count = 0;
   items.forEach((item) => {
     count += item.quantity;
@@ -29,16 +32,7 @@ function App() {
   const changeUser = (name) => {
     setUser(name);
   };
-  // const changeCount = (items) => {
-  //   console.log(items);
-  //   let tots = 0;
-  //   if (items.length) {
-  //     items.forEach((item) => {
-  //       tots += item.quantity;
-  //     });
-  //   }
-  //   setCount(tots);
-  // };
+
   useEffect(() => {
     fetch("/me")
       .then((resp) => resp.json())
@@ -53,13 +47,6 @@ function App() {
             .then((resp) => resp.json())
             .then((d) => {
               setItems(d);
-              // if (d.length === 0) {
-              //   setCount(0);
-              // } else {
-              //   d.forEach((cart) => {
-              //     allItemsCount += parseInt(cart.quantity);
-              //   });
-              //   setCount(allItemsCount);
             });
         }
       });
@@ -69,43 +56,54 @@ function App() {
     <>
       <Router>
         <Nav user={user} changeUser={changeUser} count={count} />
-
         <Switch>
-          <Route exact path="/">
-            <ChairThree />
-            <Home />
-            {/* <Favs /> */}
-            {/* <Review /> */}
-          </Route>
-          <Route exact path="/favorite">
-            <Favorite setItems={setItems} items={items} />
-          </Route>
-          <Route exact path="/signup">
-            <SignUp />
-          </Route>
-          <Route exact path="/login">
-            <LogIn changeUser={changeUser} />
-          </Route>
-          <Route exact path="/item/:cat">
-            <Sofas />
-          </Route>
-          <Route exact path="/product/:id">
-            <Sofa
-              userId={userId}
-              favorites={favorites}
-              setItems={setItems}
-              items={items}
-            />
-          </Route>
-          <Route exact path="/cart">
-            <Cart userId={userId} items={items} setItems={setItems} />
-          </Route>
-          <Route exact path="/success">
-            <Success />
-          </Route>
-          <Route exact path="/look/:id">
-            <Look />
-          </Route>
+          <Route
+            render={({ location }) => (
+              <AnimatePresence exitBeforeEnter>
+                <Switch location={location} key={location.pathname}>
+                  <Route exact path="/">
+                    {/* <ChairThree /> */}
+                    <Home />
+                    {/* <Favs /> */}
+                    <Review />
+                  </Route>
+
+                  <Route exact path="/favorite">
+                    <Favorite setItems={setItems} items={items} />
+                  </Route>
+                  <Route exact path="/signup">
+                    <SignUp />
+                  </Route>
+                  <Route exact path="/login">
+                    <LogIn changeUser={changeUser} />
+                  </Route>
+                  <Route exact path="/item/:cat">
+                    <Sofas />
+                  </Route>
+                  <Route exact path="/product/:id">
+                    <Sofa
+                      userId={userId}
+                      favorites={favorites}
+                      setItems={setItems}
+                      items={items}
+                    />
+                  </Route>
+                  <Route exact path="/cart">
+                    <Cart userId={userId} items={items} setItems={setItems} />
+                  </Route>
+                  <Route exact path="/success">
+                    <Success />
+                  </Route>
+                  <Route exact path="/look/:id">
+                    <Look />
+                  </Route>
+                  <Route path="/bestsellers">
+                    <MostLoved />
+                  </Route>
+                </Switch>
+              </AnimatePresence>
+            )}
+          />
         </Switch>
       </Router>
     </>

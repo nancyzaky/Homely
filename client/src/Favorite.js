@@ -46,6 +46,7 @@ const Favorite = ({ changeCount, items, setItems }) => {
                 transition: {
                   type: "spring",
                   stifness: "0.5",
+                  duration: "0.5",
                 },
               },
             }}

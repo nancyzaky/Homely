@@ -17,10 +17,14 @@ const Cart = ({ changeCount, items, setItems }) => {
   const [showMap, setShowMap] = useState(false);
   const [address, setAddress] = useState("");
   const [discountApplied, setDiscountApplied] = useState(false);
+  const [error, setError] = useState(false);
   const checkDiscount = () => {
     if (val === "Final-week-20") {
       setDiscountApplied(true);
+      setError(false);
       setTotPrice(totPrice - totPrice / 5);
+    } else {
+      setError(true);
     }
   };
   const adjustAddress = (ad) => {
@@ -39,6 +43,7 @@ const Cart = ({ changeCount, items, setItems }) => {
       .then((resp) => resp.json())
       .then((d) => {
         setItems(d);
+        calcTot(d);
       });
   };
   const calcTot = (arr) => {
@@ -62,6 +67,7 @@ const Cart = ({ changeCount, items, setItems }) => {
       .then((resp) => resp.json())
       .then((d) => {
         setItems(d);
+        calcTot(d);
       });
   };
   useEffect(() => {
@@ -128,7 +134,13 @@ const Cart = ({ changeCount, items, setItems }) => {
               </ul>
             </AnimatePresence>
             <ul className="cart-summary">
-              <h3 style={{ textAlign: "center", color: "grey" }}>
+              <h3
+                style={{
+                  textAlign: "center",
+                  color: "grey",
+                  paddingBottom: "2rem",
+                }}
+              >
                 Check Out Summary
               </h3>
               <h4>
@@ -157,22 +169,37 @@ const Cart = ({ changeCount, items, setItems }) => {
                 <input
                   style={{
                     height: "1.5rem",
-                    width: "8rem",
-                    marginLeft: "3rem",
+                    width: "10rem",
+                    marginLeft: "1.5rem",
                   }}
                   value={val}
                   onChange={(e) => {
                     setVal(e.target.value);
                   }}
                 ></input>{" "}
-                <button onClick={checkDiscount}>Apply</button>
+                <button
+                  onClick={checkDiscount}
+                  className="btn"
+                  style={{
+                    width: "3rem",
+                    borderRadius: "50%",
+                    height: "3rem",
+                    letterSpacing: "1px",
+                    fontSize: "12px",
+                    backgroundColor: "black",
+                    marginLeft: "3rem",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Apply
+                </button>
               </h5>
-
+              {!error && discountApplied && <h6>Discount Applied</h6>}
+              {error && <h6>Wrong code please try again</h6>}
               <h6
                 style={{
-                  paddingTop: "4rem",
                   color: "red",
-                  paddingLeft: "10rem",
+                  paddingLeft: "9rem",
                   fontWeight: "bold",
                   fontSize: "15px",
                 }}
@@ -182,7 +209,7 @@ const Cart = ({ changeCount, items, setItems }) => {
               <button
                 onClick={fetchCheckOut}
                 className="btn"
-                style={{ marginTop: "1rem", marginLeft: "8rem" }}
+                style={{ marginLeft: "8rem" }}
               >
                 Pay
               </button>
