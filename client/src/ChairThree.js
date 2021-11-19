@@ -40,6 +40,7 @@ const ChairThree = () => {
           height: "100%",
           display: "flex",
         }}
+        className="three-bg"
       >
         <motion.div
           // drag
@@ -109,7 +110,7 @@ const ChairThree = () => {
             </Plane> */}
           </Canvas>
         </motion.div>
-        <motion.div
+        {/* <motion.div
           // drag
           style={{
             height: "100%",
@@ -144,7 +145,7 @@ const ChairThree = () => {
               />
             </Suspense>
           </Canvas>
-        </motion.div>
+        </motion.div> */}
       </div>
     </>
   );

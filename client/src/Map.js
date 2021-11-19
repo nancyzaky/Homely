@@ -52,11 +52,13 @@ const Map = ({ adjustAddress, hideMap, address }) => {
         zoom={20}
       >
         <Marker position={{ lat: center.lat, lng: center.lng }}></Marker>
-        <InfoWindow position={{ lat: center.lat, lng: center.lng }}>
-          <div style={{ marginTop: "1rem", width: "8rem" }}>
-            <h6>{address}</h6>
-          </div>
-        </InfoWindow>
+        {address.length && (
+          <InfoWindow position={{ lat: center.lat, lng: center.lng }}>
+            <div style={{ marginTop: "1rem", width: "8rem" }}>
+              <h6>{address}</h6>
+            </div>
+          </InfoWindow>
+        )}
       </GoogleMap>
     </>
   ) : (
@@ -78,8 +80,14 @@ function Search({ changeLongLat, adjustAddress, hideMap }) {
     location: { lat: () => 33.66196255264221, long: () => -112.00027975747798 },
   });
   return (
-    <div style={{ height: "50px", width: "100%" }}>
-      <button onClick={() => hideMap()}>Confirm</button>
+    <div style={{ height: "120px", width: "100%" }}>
+      <button
+        onClick={() => hideMap()}
+        className="btn"
+        style={{ marginTop: "1rem" }}
+      >
+        Confirm
+      </button>
       <Combobox
         onSelect={async (address) => {
           adjustAddress(address);
@@ -108,7 +116,15 @@ function Search({ changeLongLat, adjustAddress, hideMap }) {
           disabled={!ready}
           placeHolder={"Enter your adress"}
         ></ComboboxInput>
-        <ComboboxPopover style={{ border: "0.2rem solid black" }}>
+        <ComboboxPopover
+          style={{
+            padding: "20px",
+            width: "467px",
+            display: "grid",
+            cursor: "pointer",
+            backgroundColor: "white",
+          }}
+        >
           {status === "OK" &&
             data.map((item, index) => {
               return <ComboboxOption value={item.description} key={index} />;

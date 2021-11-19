@@ -8,6 +8,8 @@ const Sofas = () => {
   const { cat } = useParams();
   const [sofas, setAllSofas] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [filter, setFilter] = useState(false);
+  const [search, setSearch] = useState("");
   const fetchUrl = () => {
     console.log(cat);
     setLoading(true);
@@ -35,14 +37,44 @@ const Sofas = () => {
             display: "flex",
             justifyContent: "flex-end",
             paddingRight: "6rem",
-            paddingTop: "1rem",
+            paddingTop: "0.2rem",
+            fontWeight: "bold",
+            letterSpacing: "2px",
           }}
         >
           Sort by{" "}
           <IoIosArrowDown
+            onClick={() => {
+              setFilter(!filter);
+            }}
             style={{ paddingLeft: "1rem", paddingTop: "0.2rem" }}
           />
         </p>
+        <motion.aside
+          className={filter ? "filter-select active-select" : "filter-select"}
+        >
+          <ul
+            style={{
+              width: "100%",
+              paddingTop: "1rem",
+              justifyContent: "center",
+              textAlign: "center",
+              alignItems: "center",
+            }}
+            onClick={(e) => {
+              fetch(`/product/${cat}/${e.target.innerText}`)
+                .then((resp) => resp.json())
+                .then((d) => {
+                  setAllSofas(d);
+                });
+            }}
+          >
+            <li className="filter-list">Price_Low</li>
+            <li className="filter-list">Price_High</li>
+            <li className="filter-list">Below $1000</li>
+            <li className="filter-list">Below $500</li>
+          </ul>
+        </motion.aside>
       </section>
       {!loading && (
         <ul

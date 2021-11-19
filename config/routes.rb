@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :products, only: [:show]
   resources :checkout, only: [:create]
   get "/product/:cat", to: "products#getcat"
+  get "/product/:cat/:filter", to: "products#getfilter"
  delete "/logout", to: "sessions#destroy"
 get "/bestsellers", to: "favorites#most_fav"
   get "/me", to: "users#show"

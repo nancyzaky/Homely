@@ -4,7 +4,7 @@ before_action :authorize
 
   def create
     user = User.find_by(email: params[:email])
-    # PostMailer.post_created.deliver_now
+    #  PostMailer.post_created.deliver_now
 
     if user&.authenticate(params[:password])
 
@@ -17,8 +17,10 @@ before_action :authorize
   end
 
   def destroy
-    session.delete :user_id
-    head :no_content
+   session.delete :user_id
+  head :no_content
+   reset_session
+   session[:user_id] = nil
   end
 
   private

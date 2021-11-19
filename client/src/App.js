@@ -24,7 +24,10 @@ function App() {
   const [userId, setUserId] = useState(0);
   const [favorites, setFavorites] = useState([]);
   const [items, setItems] = useState([]);
-
+  const [subMenu, setSubMenu] = useState(false);
+  const closeSub = () => {
+    setSubMenu(false);
+  };
   let count = 0;
   items.forEach((item) => {
     count += item.quantity;
@@ -50,19 +53,27 @@ function App() {
             });
         }
       });
-  }, [setUser]);
+  }, [user]);
 
   return (
     <>
       <Router>
-        <Nav user={user} changeUser={changeUser} count={count} />
+        <Nav
+          user={user}
+          changeUser={changeUser}
+          setItems={setItems}
+          count={count}
+          subMenu={subMenu}
+          setSubMenu={setSubMenu}
+          closeSub={closeSub}
+        />
         <Switch>
           <Route
             render={({ location }) => (
               <AnimatePresence exitBeforeEnter>
                 <Switch location={location} key={location.pathname}>
                   <Route exact path="/">
-                    {/* <ChairThree /> */}
+                    <ChairThree />
                     <Home />
                     {/* <Favs /> */}
                     <Review />

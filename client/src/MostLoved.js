@@ -7,15 +7,20 @@ const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
 const MostLoved = () => {
   const [bestSellers, setBestSellers] = useState([]);
   const [details, setDetails] = useState(true);
+  const [loading, setLoading] = useState(false);
   const greenChair = [{ id: 1, img: "../greenChair.png" }];
   const { scrollYProgress } = useViewportScroll();
   const [bigModal, setBigModal] = useState(false);
   const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
+    setLoading(true);
     fetch(`/bestsellers`)
       .then((resp) => resp.json())
-      .then((d) => setBestSellers(d));
+      .then((d) => {
+        setLoading(false);
+        setBestSellers(d);
+      });
   }, []);
 
   return (
@@ -86,7 +91,7 @@ const MostLoved = () => {
         >
           See Our Best Sellers
         </button>
-        {bigModal && <ModalBig bestSellers={bestSellers} />}
+        {bigModal && !loading && <ModalBig bestSellers={bestSellers} />}
       </motion.section>
     </>
   );

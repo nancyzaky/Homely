@@ -16,6 +16,7 @@ const Sofa = ({ userId, changeCount, changeSuccess, setItems, items }) => {
   const [image, setImage] = useState("");
   const [liked, setLiked] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const handleCart = () => {
     setModal(!modal);
   };
@@ -31,8 +32,12 @@ const Sofa = ({ userId, changeCount, changeSuccess, setItems, items }) => {
     })
       .then((resp) => resp.json())
       .then((d) => {
-        if (d.error) {
+        if (d.errors) {
           setError(true);
+          setErrorMessage("Please Log In First");
+        } else if (d.error) {
+          setError(true);
+          setErrorMessage("Item Already Added To Cart");
         } else {
           setSuccess(true);
         }
@@ -135,7 +140,7 @@ const Sofa = ({ userId, changeCount, changeSuccess, setItems, items }) => {
         </div>
       </div>
       <div className="line"></div>
-      {error && <SmallModal />}
+      {error && <SmallModal errorMessage={errorMessage} />}
       <motion.div
         className="heart"
         style={{ fontSize: "35px", float: "right" }}

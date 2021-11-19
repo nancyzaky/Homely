@@ -12,6 +12,7 @@ const Subscribe = () => {
             textAlign: "center",
             fontSize: "30px",
             letterSpacing: "3px",
+            paddingTop: "3rem",
           }}
         >
           <h1>Love modern </h1>
@@ -20,7 +21,7 @@ const Subscribe = () => {
         <section
           style={{
             paddingLeft: "8rem",
-            paddingTop: "1rem",
+            paddingTop: "2rem",
             letterSpacing: "3px",
           }}
         >

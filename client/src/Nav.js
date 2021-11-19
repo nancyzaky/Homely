@@ -18,19 +18,23 @@ import { FaTwitterSquare } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { ImFacebook2 } from "react-icons/im";
 
-const Nav = ({ user, changeUser, count }) => {
-  const [subMenu, setSubMenu] = useState(false);
-  const closeSub = () => {
-    setSubMenu(false);
-  };
+const Nav = ({
+  user,
+  changeUser,
+  setItems,
+  count,
+  subMenu,
+  setSubMenu,
+  closeSub,
+}) => {
   const handlLogOut = () => {
-    console.log("hi");
-    changeUser("");
-    fetch(`/logout`, {
+    fetch("/logout", {
       method: "DELETE",
-    })
-      .then((resp) => resp.json())
-      .then((d) => console.log(d));
+    });
+
+    changeUser("");
+    setItems([]);
+    console.log(count);
   };
   return (
     <>
@@ -147,22 +151,6 @@ const Nav = ({ user, changeUser, count }) => {
               duration: "2",
             }}
           >
-            {/* {" "}
-            <div
-              style={{
-                color: "white",
-                fontSize: "14px",
-                backgroundColor: "red",
-                borderRadius: "50%",
-                width: "20px",
-                height: "20px",
-                fontWeight: "bold",
-                float: "right",
-                display: "absolute",
-              }}
-            >
-              {count}
-            </div>{" "} */}
             <Link to="/cart">
               <Badge color="secondary" badgeContent={count}>
                 <AiOutlineShoppingCart

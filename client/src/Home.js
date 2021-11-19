@@ -4,6 +4,7 @@ import { shopLook } from "./Data";
 import { Link } from "react-router-dom";
 import Subscribe from "./Subscribe";
 import MostLoved from "./MostLoved";
+import { FaChevronCircleDown } from "react-icons/fa";
 import ProgressiveImage from "react-progressive-image";
 
 const Home = () => {
@@ -54,29 +55,49 @@ const Home = () => {
         })}
         <div className="line-wide"></div>
 
-        {/* <div style={{ height: "200px", width: "100%" }}></div> */}
+        <div style={{ height: "200px", width: "100%" }}></div>
         <motion.div
           exit={{ opacity: 0 }}
           transition={transition}
           className="main-cont"
         >
           <div>
-            <div>
-              <div style={{ width: "850px", height: "500px" }}>
-                <div>
-                  <Link to={"/bestsellers"}>
-                    <ProgressiveImage>
-                      {() => (
-                        <motion.img
-                          src="../greenChair.png"
-                          whileHover={{ scale: 1.1 }}
-                          transition={transition}
-                          style={{ width: "750px", height: "500px" }}
-                        />
-                      )}
-                    </ProgressiveImage>
-                  </Link>
-                </div>
+            <div
+              style={{
+                fontSize: "45px",
+                float: "right",
+                // paddingTop: "1rem",
+                paddingRight: "26rem",
+                display: "flex",
+                color: "white",
+                cursor: "pointer",
+                width: "50px",
+              }}
+            >
+              <Link to={"/bestsellers"} style={{ color: "white" }}>
+                <h3>
+                  Our<br></br> Best Sellers Catalogue
+                </h3>
+                <FaChevronCircleDown
+                  style={{ color: "white", paddingLeft: "3rem" }}
+                />
+              </Link>
+            </div>
+
+            <div style={{ width: "850px", height: "500px" }}>
+              <div>
+                <Link to={"/bestsellers"}>
+                  <ProgressiveImage>
+                    {() => (
+                      <motion.img
+                        src="../greenChair.png"
+                        whileHover={{ scale: 1.1 }}
+                        transition={transition}
+                        style={{ width: "850px", height: "500px" }}
+                      />
+                    )}
+                  </ProgressiveImage>
+                </Link>
               </div>
             </div>
           </div>

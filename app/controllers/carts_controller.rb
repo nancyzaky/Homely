@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
   def create
     find_item = Cart.find_by(product_id: params[:product_id], user_id:params[:user_id])
@@ -41,5 +42,9 @@ params.permit(:user_id, :product_id, :quantity)
 
   def record_not_found
 render json: {error: "Record not found"}, status: :not_found
+  end
+
+    def render_unprocessable_entity_response(invalid)
+    render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
   end
 end

@@ -12,8 +12,6 @@ const SubCartItem = ({ product, changeCount, index, items, setItems }) => {
       .then((resp) => resp.json())
       .then((d) => {
         setItems(d);
-        // console.log(d);
-        // changeCount(d);
       });
   };
   useEffect(() => {
@@ -66,7 +64,7 @@ const SubCartItem = ({ product, changeCount, index, items, setItems }) => {
         }}
       >
         <h5>{product.product.name}</h5>
-        <h5>${product.product.price}</h5>
+        <h5>${product.product.price * quantity}</h5>
       </li>
       <li
         style={{

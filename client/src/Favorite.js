@@ -36,7 +36,7 @@ const Favorite = ({ changeCount, items, setItems }) => {
             variants={{
               hidden: {
                 opacity: 0,
-                y: -100,
+                y: -200,
               },
               visible: {
                 opacity: 1,
@@ -56,11 +56,11 @@ const Favorite = ({ changeCount, items, setItems }) => {
             YOUR FAVORITES
           </motion.h3>
           <motion.h4
-            style={{ paddingTop: "6rem" }}
+            style={{ paddingTop: "5rem" }}
             variants={{
               hidden: {
                 opacity: 0,
-                x: -100,
+                x: -200,
               },
               visible: {
                 opacity: 1,

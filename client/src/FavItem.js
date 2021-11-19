@@ -97,7 +97,7 @@ const FavItem = ({ fav, changeFav, changeCount, user, setItems }) => {
             </div>
           )}
         </div>
-        {error.length > 0 && <SmallModal />}
+        {error.length > 0 && <SmallModal errorMessage={error} />}
       </li>
 
       {/* <div className="line"></div> */}

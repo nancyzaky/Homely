@@ -11,6 +11,7 @@ import {
 import Map from "./Map";
 const Cart = ({ changeCount, items, setItems }) => {
   const [user, setUser] = useState("");
+  const [cart, setCart] = useState([]);
   const [val, setVal] = useState("");
   const [loading, setLoading] = useState(false);
   const [totPrice, setTotPrice] = useState(0);
@@ -18,13 +19,18 @@ const Cart = ({ changeCount, items, setItems }) => {
   const [address, setAddress] = useState("");
   const [discountApplied, setDiscountApplied] = useState(false);
   const [error, setError] = useState(false);
+  const [logIn, setLogIn] = useState(false);
   const checkDiscount = () => {
     if (val === "Final-week-20") {
       setDiscountApplied(true);
       setError(false);
-      setTotPrice(totPrice - totPrice / 5);
+      // setTotPrice(totPrice - totPrice / 5);
+      let result = calcTot(cart);
+      setTotPrice(result - result / 5);
     } else {
       setError(true);
+      let result = calcTot(cart);
+      setTotPrice(result);
     }
   };
   const adjustAddress = (ad) => {
@@ -76,13 +82,19 @@ const Cart = ({ changeCount, items, setItems }) => {
       .then((resp) => resp.json())
       .then((d) => {
         setUser(d.id);
-        fetch(`/carts/${d.id}`)
-          .then((resp) => resp.json())
-          .then((d) => {
-            setItems(d);
-            calcTot(d);
-            setLoading(false);
-          });
+        if (d.id > 0) {
+          fetch(`/carts/${d.id}`)
+            .then((resp) => resp.json())
+            .then((d) => {
+              setCart(d);
+              setItems(d);
+              calcTot(d);
+              setLoading(false);
+            });
+        } else {
+          setLogIn(true);
+          setLoading(false);
+        }
       });
   }, []);
 
@@ -113,8 +125,9 @@ const Cart = ({ changeCount, items, setItems }) => {
   return (
     <>
       <div className="cart-main">
+        {logIn && <h3>Please Log In </h3>}
         {loading && <Loading />}
-        {!loading && (
+        {!loading && user > 0 && (
           <>
             <AnimatePresence>
               <ul className="cart-details">
@@ -147,20 +160,23 @@ const Cart = ({ changeCount, items, setItems }) => {
                 Deliver To:{" "}
                 {address ? (
                   <h4>
-                    {address}{" "}
+                    {address} <br></br>
                     <a href="#" onClick={() => setShowMap(true)}>
                       Click to change address
                     </a>
                   </h4>
                 ) : (
-                  <a
-                    href="#"
-                    onClick={() => {
-                      setShowMap(true);
-                    }}
-                  >
-                    Click to view on map
-                  </a>
+                  <>
+                    <br></br>
+                    <a
+                      href="#"
+                      onClick={() => {
+                        setShowMap(true);
+                      }}
+                    >
+                      Click to view on map
+                    </a>
+                  </>
                 )}
               </h4>
               <h5>Subtotal ${totPrice}</h5>
