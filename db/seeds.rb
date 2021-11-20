@@ -197,26 +197,258 @@ features_p12 = Feature.create([
 
 
 
-product_12 = Product.create(price:299, description:"*Whispers* Who are they? The Scindo nesting tables possess that understated cool that says “Yes I’m beautiful. No, I didn’t have to try.” With a Carrara marble top and black powder-coated metal base, the Scindo tables take a basic design concept and elevate it to top shelf status. They can spread out when you need extra spots to display bouquets from your fans, and tuck back together when those flowers have seen better days. Who wore it best? I think you know the answer.", material:"Marble",cat:"table", name:"Scindo Black Nesting Table")
+# product_12 = Product.create(price:299, description:"*Whispers* Who are they? The Scindo nesting tables possess that understated cool that says “Yes I’m beautiful. No, I didn’t have to try.” With a Carrara marble top and black powder-coated metal base, the Scindo tables take a basic design concept and elevate it to top shelf status. They can spread out when you need extra spots to display bouquets from your fans, and tuck back together when those flowers have seen better days. Who wore it best? I think you know the answer.", material:"Marble",cat:"table", name:"Scindo Black Nesting Table")
 
-pictures_p12 = Picture.create([{url:"https://cdn-images.article.com/products/SKU13619/2890x1500/image50594.jpg?fit=max&w=2740&q=60&fm=webp", product_id:12}, {url:"https://cdn-images.article.com/products/SKU13619/2890x1500/image50595.jpg?fit=max&w=2740&q=60&fm=webp",product_id:12},{url:"https://cdn-images.article.com/products/SKU13619/2890x1500/image50596.jpg?fit=max&w=2740&q=60&fm=webp",product_id:12}, {url:"https://cdn-images.article.com/products/SKU13619/2890x1500/image50597.jpg?fit=max&w=2740&q=60&fm=webp",product_id:12}, {url:"https://cdn-images.article.com/products/SKU13619/2890x1500/image50601.jpg?fit=max&w=2740&q=60&fm=webp",product_id:12}, {url:"https://cdn-images.article.com/products/SKU13619/2890x1500/image65030.jpg?fit=max&w=2740&q=60&fm=webp", product_id:12} ])
+# pictures_p12 = Picture.create([{url:"https://cdn-images.article.com/products/SKU13619/2890x1500/image50594.jpg?fit=max&w=2740&q=60&fm=webp", product_id:12}, {url:"https://cdn-images.article.com/products/SKU13619/2890x1500/image50595.jpg?fit=max&w=2740&q=60&fm=webp",product_id:12},{url:"https://cdn-images.article.com/products/SKU13619/2890x1500/image50596.jpg?fit=max&w=2740&q=60&fm=webp",product_id:12}, {url:"https://cdn-images.article.com/products/SKU13619/2890x1500/image50597.jpg?fit=max&w=2740&q=60&fm=webp",product_id:12}, {url:"https://cdn-images.article.com/products/SKU13619/2890x1500/image50601.jpg?fit=max&w=2740&q=60&fm=webp",product_id:12}, {url:"https://cdn-images.article.com/products/SKU13619/2890x1500/image65030.jpg?fit=max&w=2740&q=60&fm=webp", product_id:12} ])
 
-specifics_p12 = Specific.create(style:"
+# specifics_p12 = Specific.create(style:"
 
-Industrial", height:17, width:17, depth:18,materials:"
-
-
-Carrera marble, steel", color:"
-
-Black", product_id:12)
+# Industrial", height:17, width:17, depth:18,materials:"
 
 
-features_p12 = Feature.create([
-  {feat:"15mm solid white marble", product_id:12},
-  {feat:"Italian Carrera marble", product_id:12} ,
-  {feat:"Marble is a natural stone material and will vary in color tone, vein markings and surface texture", product_id:12},
-  {feat:"Powder coated metal legs", product_id:12},
-  {feat:"Assembly not required",product_id:12}])
+# Carrera marble, steel", color:"
+
+# Black", product_id:12)
+
+
+# features_p12 = Feature.create([
+#   {feat:"15mm solid white marble", product_id:12},
+#   {feat:"Italian Carrera marble", product_id:12} ,
+#   {feat:"Marble is a natural stone material and will vary in color tone, vein markings and surface texture", product_id:12},
+#   {feat:"Powder coated metal legs", product_id:12},
+#   {feat:"Assembly not required",product_id:12}])
+
+
+# /////////////////////////////////////////
+product_13 = Product.create(price:1499, description:"The Burrard seasalt gray sofa fits your space like a well-tailored suit. Sharp corners, slip-covered cushions make this light gray sofa easy to pair with tons of different decor styles. The slender arms and mid-century silhouette are both timeless and modern. Honestly what more can a person want in a sofa? How bout solid walnut legs? Okay fine.", material:"Fabric",cat:"sofa", name:"Burrard Seasalt Gray Sofa")
+
+pictures_p13 = Picture.create([{url:"https://cdn-images.article.com/products/SKU431A/2890x1500/image22841.jpg?fit=max&w=2740&q=60&fm=webp", product_id:13}, {url:"https://cdn-images.article.com/products/SKU431A/2890x1500/image46769.jpg?fit=max&w=2740&q=60&fm=webp",product_id:13},{url:"https://cdn-images.article.com/products/SKU431A/2890x1500/image37590.jpg?fit=max&w=2740&q=60&fm=webp",product_id:13}, {url:"https://cdn-images.article.com/products/SKU431A/2890x1500/image16280.jpg?fit=max&w=2740&q=60&fm=webp",product_id:13}, {url:"https://cdn-images.article.com/products/SKU431A/2890x1500/image16447.jpg?fit=max&w=2740&q=60&fm=webp",product_id:13}, {url:"https://cdn-images.article.com/products/SKU431A/2890x1500/image16282.jpg?fit=max&w=2740&q=60&fm=webp", product_id:13} ])
+
+specifics_p13 = Specific.create(style:"Scandinavian", height:33, width:83.5, depth:35,materials:"
+Kiln dried pine wood frame. Solid wood legs. High resiliency foam (2.27 PCF) with duck down feathers and fiber. Fabric - 100% Polyester, Martindale test - 100,000 rubs", color:"Seasalt Grey", product_id:13)
+
+
+features_p13 = Feature.create([
+   {feat:"Seat cushions are high resiliency foam with Polyester", product_id:13},
+   {feat:"Reversible back cushions are fiber down blend in a down proof cambric shell", product_id:13} ,
+   {feat:"Loose cushions with removable covers", product_id:13},
+   {feat:"Rubber webbing suspension", product_id:13},
+   {feat:"Some assembly required (approximately 5 minutes)",product_id:13}])
+
+
+#/////////////////////////////////////////////
+product_14 = Product.create(price:949, description:"Both stylish and effortless, the Nord Chair is upholstered in full-aniline leather that will take on a patina that gets better and better with age. Set atop beautiful curved wooden legs, it's a great example of a “new classic.", material:"Leather",cat:"chair", name:"Nord Charme Black Chair")
+
+pictures_p14 = Picture.create([{url:"https://cdn-images.article.com/products/SKU502A/2890x1500/image59008.jpg?fit=max&w=2740&q=60&fm=webp", product_id:14}, {url:"https://cdn-images.article.com/products/SKU502A/2890x1500/image59010.jpg?fit=max&w=2740&q=60&fm=webp",product_id:14},{url:"https://cdn-images.article.com/products/SKU502A/2890x1500/image59011.jpg?fit=max&w=2740&q=60&fm=webp",product_id:14}, {url:"https://cdn-images.article.com/products/SKU502A/2890x1500/image59012.jpg?fit=max&w=2740&q=60&fm=webp",product_id:14}, {url:"https://cdn-images.article.com/products/SKU502A/2890x1500/image59013.jpg?fit=max&w=2740&q=60&fm=webp",product_id:14}, {url:"https://cdn-images.article.com/products/SKU502A/2890x1500/image59009.jpg?fit=max&w=2740&q=60&fm=webp", product_id:14} ])
+
+specifics_p14 = Specific.create(style:"
+
+Mid-century modern", height:32, width:29, depth:32,materials:"
+Kiln dried wood, high density foam, full-grain aniline leather", color:"
+
+Charme Black", product_id:14)
+
+
+features_p14 = Feature.create([
+  {feat:"Sturdy corner blocked wooden frame
+", product_id:14},
+  {feat:"Wooden base in a Walnut stain", product_id:14} ,
+  {feat:"Upholstered in full-aniline Italian-tanned leather", product_id:14},
+  {feat:"Pirelli webbing", product_id:14},
+  {feat:"Assembly not required",product_id:14}])
+#  /////////////////////////////////////////////////////////
+product_15 = Product.create(price:129, description:"Luxuriously dense and silky, Lanna can be used as a plush floor rug, a cozy throw on a bed or seat, or a sumptuous accent draped over furniture. These furs are ethically sourced, natural products, so slight variations in color, size and pile are to be expected. The fur is luxurious and soft with a minimum pile length of 1.5", material:"Sheepskin",cat:"decor", name:"Lanna Ivory Sheepskin Throw 2 x 3")
+
+pictures_p15 = Picture.create([{url:"https://cdn-images.article.com/products/SKU525/2890x1500/image19443.jpg?fit=max&w=2740&q=60&fm=webp", product_id:15}, {url:"https://cdn-images.article.com/products/SKU525/2890x1500/image19431.jpg?fit=max&w=2740&q=60&fm=webp",product_id:15},{url:"https://cdn-images.article.com/products/SKU525/2890x1500/image19432.jpg?fit=max&w=2740&q=60&fm=webp",product_id:15}, {url:"https://cdn-images.article.com/products/SKU525/2890x1500/image19435.jpg?fit=max&w=2740&q=60&fm=webp",product_id:15}, {url:"https://cdn-images.article.com/products/SKU525/2890x1500/image19437.jpg?fit=max&w=2740&q=60&fm=webp",product_id:15}, {url:"https://cdn-images.article.com/products/SKU525/2890x1500/image66260.jpg?fit=max&w=2740&q=60&fm=webp", product_id:15} ])
+
+specifics_p15 = Specific.create(style:"
+
+Mid-century modern", height:2, width:3, depth:nil ,materials:"
+Australian / New Zealand Sheepskin", color:"
+Ivory", product_id:15)
+
+
+features_p15 = Feature.create([
+  {feat:"100% New Zealand and Australian sheepskins", product_id:15},
+  {feat:"Ethically sourced and non toxic", product_id:15} ,
+  {feat:"Woolmark certified", product_id:15},
+ ])
+
+ #//////////////////////////////////
+
+
+ product_16 = Product.create(price:299, description:"We love a grand gesture. The graceful arch of the crescent floor lamp makes an impact while keeping your space light – literally and figuratively. With an adjustable shade and sturdy marble base, the crescent lamp casts you in a good light.", material:"Steel,",cat:"decor", name:"	Crescent Black Floor Lamp")
+
+pictures_p16 = Picture.create([{url:"https://cdn-images.article.com/products/SKU3568/2890x1500/image30053.jpg?fit=max&w=2740&q=60&fm=webp", product_id:16}, {url:"https://cdn-images.article.com/products/SKU3568/2890x1500/image30054.jpg",product_id:16},{url:"https://cdn-images.article.com/products/SKU3568/2890x1500/image30052.jpg",product_id:16}, {url:"https://cdn-images.article.com/products/SKU3568/2890x1500/image30055.jpg",product_id:16}, {url:"https://cdn-images.article.com/products/SKU3568/2890x1500/image30056.jpg",product_id:16}, {url:"https://cdn-images.article.com/products/SKU3568/2890x1500/image50729.jpg", product_id:16} ])
+
+specifics_p16 = Specific.create(style:"Scandinavian", height:83, width:15, depth:64,materials:"Steel, marble, plastic", color:"Black", product_id:16)
+
+
+features_p16 = Feature.create([
+  {feat:"Sturdy marble base", product_id:16},
+  {feat:"Black and white cord with floor switch", product_id:16} ,
+  {feat:"Rated for a standard 40W maximum incandescent bulb, included", product_id:16}, {feat:"Compatible with a wide range of LEDs", product_id:16},
+  {feat:"Simple assembly required (approximately 5 minutes)", product_id:16}
+ ])
 
 
 
+
+
+#  ///////////////////////////////////
+product_17 = Product.create(price:599, description:"Like your favorite sweater, made better. Hand-woven wool is tightly looped into a sophisticated, soft rug for your floors. This is a perfect option for wood or stone floors and organic-chic, all-natural spaces.", material:"Wool",cat:"decor", name:"Texa Vanilla Ivory Rug 8 x 10")
+
+pictures_p17 = Picture.create([{url:"https://cdn-images.article.com/products/SKU496B/2890x1500/image18451.jpg?fit=max&w=2740&q=60&fm=webp", product_id:17}, {url:"https://cdn-images.article.com/products/SKU496B/2890x1500/image18407.jpg?fit=max&w=2740&q=60&fm=webp",product_id:17},{url:"https://cdn-images.article.com/products/SKU496B/2890x1500/image18408.jpg?fit=max&w=2740&q=60&fm=webp",product_id:17}, {url:"https://cdn-images.article.com/products/SKU496B/2890x1500/image18410.jpg?fit=max&w=2740&q=60&fm=webp",product_id:17}, {url:"https://cdn-images.article.com/products/SKU496B/2890x1500/image75417.jpg?fit=max&w=2740&q=60&fm=webp",product_id:17}, {url:"https://cdn-images.article.com/products/SKU496B/2890x1500/image54062.jpg?fit=max&w=2740&q=60&fm=webp", product_id:17} ])
+
+specifics_p17 = Specific.create(style:"
+
+Contemporary Rug", height:8, width:10, depth:nil ,materials:"
+70% Wool 30% Rayon", color:"
+Vanilla Ivory", product_id:17)
+
+
+features_p17 = Feature.create([
+  {feat:"Handwoven rug", product_id:17},
+  {feat:"Handmade rugs may vary slightly in size and colour", product_id:17} ,
+  {feat:"New handcrafted rugs will typically shed loose fibers. This is normal and will diminish with regular vacuuming, usually in 3 to 6 months", product_id:17}, {feat: "Rug pad recommended", product_id:17}
+ ])
+
+ #//////////////////////////////////
+product_18 = Product.create(price:1299, description:"There’s a reason this is our most popular sofa. This modern take on a mid-century classic features crisp lines, a tufted benchseat, and two luxuriously stuffed back cushions. Two matching round bolsters complete the look.", material:"Fabric",cat:"sofa", name:"Sven Neptune Blue Sofa")
+
+pictures_p18 = Picture.create([{url:"https://cdn-images.article.com/products/SKU15197/2890x1500/image64200.jpg?fit=max&w=2740&q=60&fm=webp", product_id:18}, {url:"https://cdn-images.article.com/products/SKU15197/2890x1500/image64201.jpg?fit=max&w=2740&q=60&fm=webp",product_id:18},{url:"https://cdn-images.article.com/products/SKU15197/2890x1500/image64207.jpg?fit=max&w=2740&q=60&fm=webp",product_id:18}, {url:"https://cdn-images.article.com/products/SKU15197/2890x1500/image64208.jpg?fit=max&w=2740&q=60&fm=webp",product_id:18}, {url:"https://cdn-images.article.com/products/SKU15197/2890x1500/image64205.jpg?fit=max&w=2740&q=60&fm=webp",product_id:18}, {url:"https://cdn-images.article.com/products/SKU15197/2890x1500/image67188.jpg?fit=max&w=2740&q=60&fm=webp", product_id:18} ])
+
+specifics_p18 = Specific.create(style:"
+
+
+Mid-century modern", height:34, width:88, depth:38 ,materials:"
+
+Kiln dried solid wood, high density foam, Polyester, Duck feathers, Fabric- 73% Polyester, 27% Acrylic, Martindale test - 50,000 rubs", color:"
+Neptune Blue", product_id:18)
+
+
+features_p18 = Feature.create([
+  {feat:"Sturdy corner blocked wooden frame", product_id:18},
+  {feat:"High density foam with polyester filling", product_id:18} ,
+  {feat:"Pirelli webbing", product_id:18}, {feat: "Loose seat and back cushions", product_id:18}, {feat:"Simple assembly required (approximately 5 minutes)" , product_id:18}
+ ])
+
+
+ #/////////////////////////////////
+ product_19 = Product.create(price:399, description:"Smoke screen. The Vitri teases smooth, powder-coated metal legs and walnut shelf through tempered smoke-glass. Perfect for resting your drink, the Vitri brings intrigue and a sixties edge to your living space.", material:"Glass",cat:"table", name:"	Vitri Walnut Coffee Table")
+
+pictures_p19 = Picture.create([{url:"https://cdn-images.article.com/products/SKU3706/2890x1500/image56196.jpg?fit=max&w=2740&q=60&fm=webp", product_id:19}, {url:"https://cdn-images.article.com/products/SKU3706/2890x1500/image56198.jpg?fit=max&w=2740&q=60&fm=webp",product_id:19},{url:"https://cdn-images.article.com/products/SKU3706/2890x1500/image56199.jpg?fit=max&w=2740&q=60&fm=webp",product_id:19}, {url:"https://cdn-images.article.com/products/SKU3706/2890x1500/image56200.jpg?fit=max&w=2740&q=60&fm=webp",product_id:19}, {url:"https://cdn-images.article.com/products/SKU3706/2890x1500/image56201.jpg?fit=max&w=2740&q=60&fm=webp",product_id:19}, {url:"https://cdn-images.article.com/products/SKU3706/2890x1500/image56197.jpg?fit=max&w=2740&q=60&fm=webp", product_id:19} ])
+
+specifics_p19 = Specific.create(style:"
+
+Mid-century modern", height:15, width:36.5, depth:36.5 ,materials:"Glass, veneered Walnut, MDF, metal", color:"Walnut", product_id:19)
+
+
+features_p19 = Feature.create([
+  {feat:"Smoke colored glass top", product_id:19},
+  {feat:"Veneered Walnut shelf", product_id:19} ,
+  {feat:"Assembly not required", product_id:19},
+ ])
+#//////////////////////////////////
+
+
+
+product_20 = Product.create(price:799, description:"Our most popular sofa, reimagined as a large, cozy lounge chair. This modern take on a mid-century classic features clean lines, a tufted seat, and a luxuriously stuffed back cushion. Two matching round bolsters complete the look.", material:"Fabric",cat:"chair", name:"Sven Birch Ivory Chair")
+
+pictures_p20 = Picture.create([{url:"https://cdn-images.article.com/products/SKU3221/2890x1500/image57882.jpg?fit=max&w=2740&q=60&fm=webp", product_id:20}, {url:"https://cdn-images.article.com/products/SKU3221/2890x1500/image57884.jpg?fit=max&w=2740&q=60&fm=webp",product_id:20},{url:"https://cdn-images.article.com/products/SKU3221/2890x1500/image57885.jpg?fit=max&w=2740&q=60&fm=webp",product_id:20}, {url:"https://cdn-images.article.com/products/SKU3221/2890x1500/image57886.jpg?fit=max&w=2740&q=60&fm=webp",product_id:20}, {url:"https://cdn-images.article.com/products/SKU3221/2890x1500/image57887.jpg?fit=max&w=2740&q=60&fm=webp",product_id:20}, {url:"https://cdn-images.article.com/products/SKU3221/2890x1500/image73681.jpg?fit=max&w=2740&q=60&fm=webp", product_id:20} ])
+
+specifics_p20 = Specific.create(style:"
+
+Mid-century modern", height:34, width:42, depth:38 ,materials:"Kiln dried solid wood, high density foam, Polyester, Duck feathers, Fabric- 73% Polyester, 27% Acrylic, Martindale test - 50,000 rubs", color:"Birch Ivory", product_id:20)
+
+
+features_p20 = Feature.create([
+  {feat:"Sturdy corner blocked wooden frame", product_id:20},
+  {feat:"High density foam with polyester filling", product_id:20} ,
+  {feat:"Loose seat and back cushions", product_id:20}, {feat:"Simple assembly required (approximately 5 minutes)", product_id:20}
+ ])
+
+ #////////////////////////
+ product_21 = Product.create(price:349, description:"The Sven Ottoman in Birch Ivory is your new BFF. The tufted topper supports short and long legs alike. Sturdy and adaptable, this ivory ottoman is a great supporting character in your living space.", material:"Fabric",cat:"sofa", name:"Sven Birch Ivory Chair")
+
+pictures_p21 = Picture.create([{url:"https://cdn-images.article.com/products/SKU12786/2890x1500/image69613.jpg?fit=max&w=2740&q=60&fm=webp", product_id:21}, {url:"https://cdn-images.article.com/products/SKU12786/2890x1500/image69614.jpg",product_id:21},{url:"https://cdn-images.article.com/products/SKU12786/2890x1500/image69615.jpg",product_id:21}, {url:"https://cdn-images.article.com/products/SKU12786/2890x1500/image69620.jpg",product_id:21}, {url:"https://cdn-images.article.com/products/SKU12786/2890x1500/image69618.jpg",product_id:21}, {url:"https://cdn-images.article.com/products/SKU12786/2890x1500/image73679.jpg", product_id:21} ])
+
+specifics_p21 = Specific.create(style:"
+
+Mid-century modern", height:18, width:30, depth:25 ,materials:"
+Kiln dried solid wood, high density foam, Polyester, Duck feathers, Fabric- 73% Polyester, 27% Acrylic, Martindale test - 50,000 rubs", color:"Birch Ivory", product_id:21)
+
+
+features_p21 = Feature.create([
+  {feat:"High density foam with polyester filling", product_id:21},
+  {feat:"Pirelli webbing", product_id:21} ,
+  {feat:"Simple assembly required (approximately 5 minutes)", product_id:21}
+ ])
+
+
+ #////////////////////////
+ product_22 = Product.create(price:499, description:"Low square footage? No problem. The Fantol bookshelf indulges you with five shelves that are stacked to take full advantage of your vertical space. Solid wood gables hold up veneered shelves that feature unique dark oak-grain cathedrals. Use one Fantol as a strong and solitary bookshelf, pair them up for a symmetrical look on either side of your fireplace, or line up a few Fantols in your organic candle shop to show off the products. It’s like the chameleon of bookshelves.", material:"Wood",cat:"office", name:"	Fantol Dark Oak Narrow Bookcase")
+
+pictures_p22 = Picture.create([{url:"https://cdn-images.article.com/products/SKU16388/2890x1500/image63634.jpg?fit=max&w=2740&q=60&fm=webp", product_id:22}, {url:"https://cdn-images.article.com/products/SKU16388/2890x1500/image63636.jpg?fit=max&w=2740&q=60&fm=webp",product_id:22},{url:"https://cdn-images.article.com/products/SKU16388/2890x1500/image63637.jpg",product_id:22}, {url:"https://cdn-images.article.com/products/SKU16388/2890x1500/image63685.jpg",product_id:22}, {url:"https://cdn-images.article.com/products/SKU16388/2890x1500/image63686.jpg",product_id:22}, {url:"https://cdn-images.article.com/products/SKU16388/2890x1500/image67806.jpg", product_id:22} ])
+
+specifics_p22 = Specific.create(style:"
+
+
+Scandinavian", height:79, width:26.5, depth:16 ,materials:"
+Solid oak, engineered wood, oak veneer", color:"
+Dark Oak", product_id:22)
+
+
+features_p22 = Feature.create([
+  {feat:"Solid Oak frame", product_id:22},
+  {feat:"Wood is a natural material with diverse patterning and color. Variations should be expected and treasured as a unique element", product_id:22} ,
+  {feat:"Warning! To ensure the safety of you, your family, and your guests, this item must be secured to the wall according to the product’s assembly instructions.", product_id:22},
+  {feat:"Simple assembly required (approximately 5 minutes)", product_id:22}
+ ])
+
+ #//////////////////
+
+
+  product_23 = Product.create(price:499, description:"Natural cowhide, a timeless look. The Cossa Rug will tie together your cabin, study, or serve as the perfect place to get cozy in front of the fireplace with ease.", material:"Cowhide",cat:"decor", name:" Cossa Cowhide Brown Rug 5 x 8")
+
+pictures_p23 = Picture.create([{url:"https://cdn-images.article.com/products/SKU16385/2890x1500/image66521.jpg?fit=max&w=2740&q=60&fm=webp", product_id:23}, {url:"https://cdn-images.article.com/products/SKU16385/2890x1500/image66522.jpg?fit=max&w=2740&q=60&fm=webp",product_id:23},{url:"https://cdn-images.article.com/products/SKU16385/2890x1500/image66523.jpg",product_id:23}, {url:"https://cdn-images.article.com/products/SKU16385/2890x1500/image66527.jpg",product_id:23}, {url:"https://cdn-images.article.com/products/SKU16385/2890x1500/image66524.jpg",product_id:23}, {url:"https://cdn-images.article.com/products/SKU16385/2890x1500/image68192.jpg", product_id:23} ])
+
+specifics_p23 = Specific.create(style:"
+
+
+Industrial", height:5, width:8, depth:nil ,materials:"
+100% Cowhide", color:"
+Golden Ecru", product_id:23)
+
+
+features_p23 = Feature.create([
+  {feat:"Made in India", product_id:23},
+  {feat:"Cowhide rugs may vary slightly in size and colour", product_id:23} ,
+
+ ])
+
+
+ #????/////////////////////////////
+
+  product_24 = Product.create(price:369, description:"A graceful mid-century modern look that’s set in stone. Solid wood legs are topped off by an elegant marble slab for a clean, compact look that’s perfect for small spaces. It's a classic design that will transition through any style of seating. Mix and match with solid wood tables.", material:"Marble",cat:"table", name:"	Mara Oak Coffee Table")
+
+pictures_p24 = Picture.create([{url:"https://cdn-images.article.com/products/SKU418A/2890x1500/image45691.jpg?fit=max&w=2740&q=60&fm=webp", product_id:24}, {url:"https://cdn-images.article.com/products/SKU418A/2890x1500/image50164.jpg?fit=max&w=2740&q=60&fm=webp",product_id:24},{url:"https://cdn-images.article.com/products/SKU418A/2890x1500/image50162.jpg?fit=max&w=2740&q=60&fm=webp",product_id:24}, {url:"https://cdn-images.article.com/products/SKU418A/2890x1500/image50163.jpg?fit=max&w=2740&q=60&fm=webp",product_id:24}, {url:"https://cdn-images.article.com/products/SKU418A/2890x1500/image45694.jpg?fit=max&w=2740&q=60&fm=webp",product_id:24}, {url:"https://cdn-images.article.com/products/SKU418A/2890x1500/image66462.jpg?fit=max&w=2740&q=60&fm=webp", product_id:24} ])
+
+specifics_p24 = Specific.create(style:"
+
+
+
+Mid-century modern", height:14, width:31.5, depth:nil ,materials:"
+
+American White Oak, engineered wood, Italian Carrara Marble", color:"
+
+Oiled Oak", product_id:24)
+
+
+features_p24 = Feature.create([
+  {feat:"14mm solid white sealed marble", product_id:24},
+  {feat:"Solid Oak legs with a low-sheen lacquer", product_id:24} , {
+    feat:"Marble is a natural stone material and will vary significantly in color tone, vein markings and surface texture", product_id:24
+  }, {feat:"Some assembly required (approximately 15 minutes)", product_id:24}
+
+ ])

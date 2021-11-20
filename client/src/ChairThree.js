@@ -14,23 +14,25 @@ import Model from "./Model";
 import OfficeModel from "./OfficeModel";
 import { motion, AnimatePresence } from "framer-motion";
 import SmallModal from "./SmallModal";
-const Texts = ({ word }) => {
+const Texts = ({ user }) => {
   return (
     <mesh position={[0, 0.7, 0]}>
-      <Text
-        scale={[3, 3, 3]}
-        color="pink"
-        // default
-        castShadow
-        anchorX="center" // default
-        anchorY="middle" // default
-      >
-        {word}
-      </Text>
+      {user && (
+        <Text
+          scale={[3, 3, 3]}
+          color="pink"
+          // default
+          castShadow
+          anchorX="center" // default
+          anchorY="middle" // default
+        >
+          Hi {user}
+        </Text>
+      )}
     </mesh>
   );
 };
-const ChairThree = () => {
+const ChairThree = ({ user }) => {
   const [spin, setSpin] = useState(true);
   return (
     <>
@@ -54,9 +56,11 @@ const ChairThree = () => {
           }}
         >
           <button
+            className="btn"
             onClick={() => {
               setSpin(!spin);
             }}
+            style={{ backgroundColor: "black", width: "4rem" }}
           >
             Spin
           </button>
@@ -84,7 +88,7 @@ const ChairThree = () => {
 
             <Suspense fallback={null}>
               <Model castShadow />
-              <Texts word={"Furniture"} />
+              <Texts user={user} />
               <meshStandardMaterial attach="material" color="0x808080" />
 
               {spin && (

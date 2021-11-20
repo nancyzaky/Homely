@@ -73,7 +73,7 @@ function App() {
               <AnimatePresence exitBeforeEnter>
                 <Switch location={location} key={location.pathname}>
                   <Route exact path="/">
-                    <ChairThree />
+                    <ChairThree user={user} />
                     <Home />
                     {/* <Favs /> */}
                     <Review />

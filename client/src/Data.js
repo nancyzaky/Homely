@@ -7,6 +7,7 @@ import {
   GiBedLamp,
   GiSofa,
   GiRockingChair,
+  GiBed,
 } from "react-icons/gi";
 import { FaUsers, FaHome } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
@@ -104,17 +105,17 @@ export const sideBarItems = [
     id: 4,
     url: "/",
     text: "Bedroom",
-    icon: <GiBedLamp className="icon-small" />,
+    icon: <GiBed className="icon-small" />,
   },
   {
     id: 5,
-    url: "/",
-    text: "Kitchen",
-    icon: <GiKitchenKnives className="icon-small" />,
+    url: "/item/decor",
+    text: "Decor",
+    icon: <GiBedLamp className="icon-small" />,
   },
   {
     id: 6,
-    url: "/",
+    url: "/item/office",
     text: "Home Office",
     icon: <GiOfficeChair className="icon-small" />,
   },
@@ -250,9 +251,121 @@ export const shopLook = [
   {
     id: 3,
     url: "https://cdn-media-lib.article.com/mediaLibrary/5822c4c1-77ec-4f70-8543-cd1d94efaf1d.jpg?h=0.5&q=40",
+    items: [
+      {
+        id: 10,
+        productId: 13,
+        top: "300px",
+        left: "150px",
+        point: "arrow-down",
+        arrowTop: "364px",
+        arrowLeft: "200px",
+        image:
+          "https://cdn-images.article.com/products/SKU431A/2890x1500/image22841.jpg?fit=max&w=2740&q=60&fm=webp",
+        price: 1499,
+      },
+      {
+        id: 11,
+        productId: 14,
+        top: "300px",
+        left: "980px",
+        point: "arrow-down",
+        arrowTop: "364px",
+        arrowLeft: "1200px",
+        image:
+          "https://cdn-images.article.com/products/SKU502A/2890x1500/image59008.jpg?fit=max&w=2740&q=60&fm=webp",
+        price: 949,
+      },
+      {
+        id: 11,
+        productId: 15,
+        top: "400px",
+        left: "490px",
+        point: "arrow-left",
+        arrowTop: "414px",
+        arrowLeft: "480px",
+        image:
+          "https://cdn-images.article.com/products/SKU525/2890x1500/image19443.jpg?fit=max&w=2740&q=60&fm=webp",
+        price: 129,
+      },
+      {
+        id: 12,
+        productId: 16,
+        top: "180px",
+        left: "220px",
+        point: "arrow-right",
+        arrowTop: "200px",
+        arrowLeft: "540px",
+        image:
+          "https://cdn-images.article.com/products/SKU3568/2890x1500/image30053.jpg?fit=max&w=2740&q=60&fm=webp",
+        price: 299,
+      },
+      {
+        id: 13,
+        productId: 17,
+        top: "666px",
+        left: "950px",
+        point: "arrow-left",
+        arrowTop: "680px",
+        arrowLeft: "940px",
+        image:
+          "https://cdn-images.article.com/products/SKU496B/2890x1500/image18407.jpg?fit=max&w=2740&q=60&fm=webp",
+        price: 599,
+      },
+    ],
   },
   {
     id: 4,
-    url: "https://cdn-media-lib.article.com/mediaLibrary/33de4ae9-4ca4-42c6-aabf-8934f2ddabbc.jpg?h=0.5&q=40",
+    url: "https://cdn-media-lib.article.com/mediaLibrary/828469cf-3b1e-47a2-b29d-9399084b805b.jpg?h=0.5&q=40",
+    items: [
+      {
+        id: 14,
+        productId: 18,
+        top: "300px",
+        left: "150px",
+        point: "arrow-down",
+        arrowTop: "364px",
+        arrowLeft: "200px",
+        image:
+          "https://cdn-images.article.com/products/SKU15197/2890x1500/image64200.jpg?fit=max&w=2740&q=60&fm=webp",
+        price: 1299,
+      },
+      {
+        id: 15,
+        productId: 19,
+        top: "400px",
+        left: "490px",
+        point: "arrow-down",
+        arrowTop: "464px",
+        arrowLeft: "600px",
+        image:
+          "https://cdn-images.article.com/products/SKU3706/2890x1500/image56196.jpg?fit=max&w=2740&q=60&fm=webp",
+        price: 399,
+      },
+      {
+        id: 16,
+        productId: 20,
+        top: "300px",
+        left: "980px",
+        point: "arrow-down",
+        arrowTop: "364px",
+        arrowLeft: "1200px",
+        image:
+          "https://cdn-images.article.com/products/SKU3221/2890x1500/image57882.jpg?fit=max&w=2740&q=60&fm=webp",
+        price: 799,
+      },
+      {
+        id: 17,
+        product_id: 22,
+        top: "180px",
+        left: "50px",
+        point: "arrow-right",
+        arrowTop: "200px",
+        arrowLeft: "370px",
+        image:
+          "https://cdn-images.article.com/products/SKU16388/2890x1500/image63634.jpg?fit=max&w=2740&q=60&fm=webp",
+        price: 499,
+      },
+    ],
   },
 ];

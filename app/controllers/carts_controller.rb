@@ -3,7 +3,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
   def create
-    find_item = Cart.find_by(product_id: params[:product_id], user_id:params[:user_id])
+    find_item = @user.carts.find_by(product_id: params[:product_id])
     if find_item
       return render json: {error: "Item Already Added To Cart"}
     else
@@ -24,7 +24,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
   def update
     cart = Cart.find_by(user_id:params[:id], product_id: params[:product_id])
     cart.update(quantity: params[:quantity])
-        all_user_carts = User.find(params[:id]).carts
+    all_user_carts = User.find(params[:id]).carts
 
     render json: all_user_carts
   end

@@ -1,7 +1,7 @@
 class CheckoutController < ApplicationController
 
   def create
-
+    #products = @user.products
    products =  params[:items].map do |item|
    if params[:discountApplied]
     item_price = item[:product][:price]*100 - ((item[:product][:price]*100) /5)

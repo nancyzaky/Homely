@@ -52,8 +52,8 @@ code {
 
 .sub-menu {
   width: 280px;
-  top: 10;
   height: 300vh;
+  right: 0;
   position: fixed;
   justify-content: center;
   display: flex;
@@ -64,7 +64,9 @@ code {
   left: -100%;
   letter-spacing: 3px;
   font-weight: bold;
-
+  overflow: scroll;
+  float: left;
+  scroll-margin-right: 5rem;
   /* padding-top: 4.2rem; */
 }
 .active {
@@ -231,7 +233,6 @@ code {
   width: 10rem;
   height: 2.4rem;
   color: white;
-  /* background-color: black; */
   border-radius: 0.2rem;
   font-size: 1rem;
   cursor: pointer;
@@ -272,8 +273,7 @@ code {
 }
 .sub-cart {
   width: 400px;
-  min-height: 100vh;
-  height: auto;
+  height: 300vh;
   justify-content: center;
   top: 0;
   background-color: rgb(255, 255, 255);
@@ -287,7 +287,6 @@ code {
   cursor: pointer;
   padding-left: 1rem;
   margin-right: 0.7rem;
-  overflow: scroll;
   padding-bottom: 2rem;
 }
 
@@ -457,8 +456,9 @@ li {
   height: 0;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
+  border-right: 10px solid rgb(255, 255, 255);
 
-  border-right: 10px solid blue;
+  position: absolute;
 }
 .look-item {
   background-color: white;

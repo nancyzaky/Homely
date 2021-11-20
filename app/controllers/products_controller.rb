@@ -17,10 +17,10 @@ def getfilter
    elsif
     params[:filter] === "Price_High"
    products = Product.where(cat: params[:cat]).order("price DESC")
-     elsif
+  elsif
     params[:filter] === "Below $1000"
-     products = Product.where(cat: params[:cat]).where("price < ?", 1000)
-   elsif
+    products = Product.where(cat: params[:cat]).where("price < ?", 1000)
+  elsif
     params[:filter] === "Below $500"
      products = Product.where(cat: params[:cat]).where("price < ?", 500)
   end

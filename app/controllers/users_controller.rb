@@ -7,8 +7,8 @@ rescue_from ActiveRecord::RecordNotFound, with: :authorize
     render json: user, status: :created
   end
 def show
-user = User.find_by!(id: session[:user_id])
-render json: user, include: :favorites
+
+render json: @user, include: :favorites
 end
   private
 
