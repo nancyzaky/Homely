@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import Subscribe from "./Subscribe";
 import MostLoved from "./MostLoved";
 import { FaChevronCircleDown } from "react-icons/fa";
-// import ProgressiveImage from "react-progressive-image";
 
 const Home = () => {
   const transition = { duration: 0.7, ease: [0.43, 0.13, 0.23, 0.96] };
@@ -87,16 +86,12 @@ const Home = () => {
             <div style={{ width: "850px", height: "500px" }}>
               <div>
                 <Link to={"/bestsellers"}>
-                  {/* <ProgressiveImage>
-                    {() => (
-                      <motion.img
-                        src="../greenChair.png"
-                        whileHover={{ scale: 1.1 }}
-                        transition={transition}
-                        style={{ width: "850px", height: "500px" }}
-                      />
-                    )}
-                  </ProgressiveImage> */}
+                  <motion.img
+                    src="../greenChair.png"
+                    whileHover={{ scale: 1.1 }}
+                    transition={transition}
+                    style={{ width: "850px", height: "500px" }}
+                  />
                 </Link>
               </div>
             </div>
