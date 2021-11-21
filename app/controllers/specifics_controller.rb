@@ -10,3 +10,5 @@ class SpecificsController < ApplicationController
 def spec_params
    params.permit(:product_id, :height, :width, :depth, :color, :style, :materials)
 end
+
+end
