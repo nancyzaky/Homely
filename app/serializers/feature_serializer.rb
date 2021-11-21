@@ -1,3 +1,3 @@
 class FeatureSerializer < ActiveModel::Serializer
-  attributes :id, :feat, product_id
+  attributes :id, :feat, :product_id
 end
