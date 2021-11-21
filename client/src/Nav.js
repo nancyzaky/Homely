@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import { navItems } from "./Data";
-// import {
-//   AiOutlineMenuUnfold,
-//   AiFillInstagram,
-//   AiOutlineShoppingCart,
-// } from "react-icons/ai";
+import {
+  AiOutlineMenuUnfold,
+  AiFillInstagram,
+  AiOutlineShoppingCart,
+} from "react-icons/ai";
 import Badge from "@material-ui/core/Badge";
 
 import { TiHeart } from "react-icons/ti";
@@ -108,7 +108,7 @@ const Nav = ({
               duration: "2",
             }}
           >
-            {/* <AiFillInstagram style={{ marginTop: "8px" }} /> */}
+            <AiFillInstagram style={{ marginTop: "8px" }} />
           </motion.li>
           <motion.li
             className="header"
@@ -153,12 +153,12 @@ const Nav = ({
           >
             <Link to="/cart">
               <Badge color="secondary" badgeContent={count}>
-                {/* <AiOutlineShoppingCart
+                <AiOutlineShoppingCart
                   style={{
                     color: "white",
                     marginTop: "8px",
                   }}
-                /> */}
+                />
               </Badge>
             </Link>
           </motion.li>
