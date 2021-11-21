@@ -40,7 +40,7 @@ function App() {
     fetch("/me")
       .then((resp) => resp.json())
       .then((d) => {
-        if (d.id > 0) {
+        if (d && d.id > 0) {
           console.log(d);
           setUser(d.name);
           setUserId(d.id);

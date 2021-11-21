@@ -104,14 +104,6 @@ const ChairThree = ({ user }) => {
                 />
               )}
             </Suspense>
-            {/* <Plane
-              receiveShadow
-              rotation={[-Math.PI / 2, 0, 0]}
-              position={[0, 0, 0]}
-              args={[5, 5, 5, 5]}
-            >
-              <meshPhongMaterial attach="material" color="grey" />
-            </Plane> */}
           </Canvas>
         </motion.div>
         {/* <motion.div
