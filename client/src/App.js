@@ -37,7 +37,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetch("/me")
+    fetch("/api/me")
       .then((resp) => resp.json())
       .then((d) => {
         if (d && d.id > 0) {
@@ -46,7 +46,7 @@ function App() {
           setUserId(d.id);
           setFavorites(d.favorites);
           let allItemsCount = 0;
-          fetch(`/carts/${d.id}`)
+          fetch(`/api/carts/${d.id}`)
             .then((resp) => resp.json())
             .then((d) => {
               setItems(d);

@@ -15,13 +15,13 @@ const FavItem = ({ fav, changeFav, changeCount, user, setItems }) => {
     return () => clearTimeout(timer);
   }, [error, success]);
   const deleteFav = () => {
-    fetch(`/users/${user}/favorites/${fav.id}`, {
+    fetch(`/api/users/${user}/api/favorites/${fav.id}`, {
       method: "DELETE",
     });
     changeFav(fav.id);
   };
   const addToCart = () => {
-    fetch(`/carts`, {
+    fetch(`/api/carts`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

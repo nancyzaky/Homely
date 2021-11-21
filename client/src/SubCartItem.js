@@ -4,7 +4,7 @@ const SubCartItem = ({ product, changeCount, index, items, setItems }) => {
   const [quantity, setQuantity] = useState(product.quantity);
   const [user, setUser] = useState(0);
   const handleUpdate = (value, ids) => {
-    fetch(`/carts/${user}`, {
+    fetch(`/api/carts/${user}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ quantity: value, product_id: ids }),
@@ -15,7 +15,7 @@ const SubCartItem = ({ product, changeCount, index, items, setItems }) => {
       });
   };
   useEffect(() => {
-    fetch("/me")
+    fetch("/api/me")
       .then((resp) => resp.json())
       .then((d) => setUser(d.id));
   }, []);

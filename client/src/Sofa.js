@@ -21,7 +21,7 @@ const Sofa = ({ userId, changeCount, changeSuccess, setItems, items }) => {
     setModal(!modal);
   };
   const addToCart = () => {
-    fetch(`/carts`, {
+    fetch(`/api/carts`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -45,7 +45,7 @@ const Sofa = ({ userId, changeCount, changeSuccess, setItems, items }) => {
   };
   const handleFav = () => {
     setLiked(true);
-    fetch(`/users/${userId}/favorites`, {
+    fetch(`/api/users/${userId}/favorites`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ user_id: userId, product_id: id }),
@@ -56,7 +56,7 @@ const Sofa = ({ userId, changeCount, changeSuccess, setItems, items }) => {
 
   const fetchUrl = () => {
     setLoading(true);
-    fetch(`/products/${id}`)
+    fetch(`/api/products/${id}`)
       .then((resp) => resp.json())
       .then((data) => {
         console.log(data);
@@ -69,7 +69,7 @@ const Sofa = ({ userId, changeCount, changeSuccess, setItems, items }) => {
     fetchUrl();
   }, []);
   useEffect(() => {
-    fetch("/me")
+    fetch("/api/me")
       .then((resp) => resp.json())
       .then((d) => {
         if (d.id > 0) {

@@ -19,14 +19,14 @@ const SubCart = ({
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
-    fetch("/me")
+    fetch("/api/me")
       .then((resp) => resp.json())
       .then((d) => {
         if (d.id <= 0) {
           setError(true);
           return;
         }
-        fetch(`/carts/${d.id}`)
+        fetch(`/api/carts/${d.id}`)
           .then((resp) => resp.json())
           .then((d) => {
             console.log(d);

@@ -14,12 +14,12 @@ const Favorite = ({ changeCount, items, setItems }) => {
     setFavs(newArr);
   };
   useEffect(() => {
-    fetch(`/me`)
+    fetch(`/api/me`)
       .then((resp) => resp.json())
       .then((d) => {
         if (d.id > 0) {
           setUser(d.id);
-          fetch(`/users/${d.id}/favorites`)
+          fetch(`/api/users/${d.id}/favorites`)
             .then((resp) => resp.json())
             .then((d) => setFavs(d));
         } else {

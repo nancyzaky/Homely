@@ -8,7 +8,7 @@ const LogIn = ({ changeUser }) => {
   const history = useHistory();
   const handleLogIn = (e) => {
     e.preventDefault();
-    fetch("/sessions", {
+    fetch("/api/sessions", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: userEmail, password: userPassWord }),

@@ -28,7 +28,7 @@ const Nav = ({
   closeSub,
 }) => {
   const handlLogOut = () => {
-    fetch("/logout", {
+    fetch("/api/logout", {
       method: "DELETE",
     });
 

@@ -15,7 +15,7 @@ const MostLoved = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`/bestsellers`)
+    fetch(`/api/bestsellers`)
       .then((resp) => resp.json())
       .then((d) => {
         setLoading(false);

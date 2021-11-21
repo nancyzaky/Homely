@@ -42,10 +42,10 @@ const Cart = ({ changeCount, items, setItems }) => {
   };
 
   const deleteItem = (key) => {
-    fetch(`/carts/${key}`, {
+    fetch(`/api/carts/${key}`, {
       method: "DELETE",
     });
-    fetch(`/carts/${user}`)
+    fetch(`/api/carts/${user}`)
       .then((resp) => resp.json())
       .then((d) => {
         setItems(d);
@@ -65,7 +65,7 @@ const Cart = ({ changeCount, items, setItems }) => {
     return tot;
   };
   const handleUpdate = (value, ids) => {
-    fetch(`/carts/${user}`, {
+    fetch(`/api/carts/${user}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ quantity: value, product_id: ids }),
@@ -78,12 +78,12 @@ const Cart = ({ changeCount, items, setItems }) => {
   };
   useEffect(() => {
     setLoading(true);
-    fetch(`/me`)
+    fetch(`/api/me`)
       .then((resp) => resp.json())
       .then((d) => {
         setUser(d.id);
         if (d.id > 0) {
-          fetch(`/carts/${d.id}`)
+          fetch(`/api/carts/${d.id}`)
             .then((resp) => resp.json())
             .then((d) => {
               setCart(d);
@@ -102,7 +102,7 @@ const Cart = ({ changeCount, items, setItems }) => {
     /* global Stripe */
     const key = process.env.REACT_APP_API_STRIPE;
     var stripe = Stripe(key);
-    fetch("/checkout", {
+    fetch("/api/checkout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ items: items, discountApplied: discountApplied }),

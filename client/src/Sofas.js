@@ -13,7 +13,7 @@ const Sofas = () => {
   const fetchUrl = () => {
     console.log(cat);
     setLoading(true);
-    fetch(`/product/${cat}`)
+    fetch(`/api/product/${cat}`)
       .then((resp) => resp.json())
       .then((d) => {
         console.log(d);
@@ -62,7 +62,7 @@ const Sofas = () => {
               alignItems: "center",
             }}
             onClick={(e) => {
-              fetch(`/product/${cat}/${e.target.innerText}`)
+              fetch(`/api/product/${cat}/${e.target.innerText}`)
                 .then((resp) => resp.json())
                 .then((d) => {
                   setAllSofas(d);
