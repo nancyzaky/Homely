@@ -1,4 +1,4 @@
-class Api::ApplicationController < ActionController::API
+class ApplicationController < ActionController::API
   include ActionController::Cookies
   before_action :set_user
 
