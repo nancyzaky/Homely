@@ -356,7 +356,7 @@ export const shopLook = [
       },
       {
         id: 17,
-        product_id: 22,
+        productId: 22,
         top: "180px",
         left: "50px",
         point: "arrow-right",
