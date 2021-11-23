@@ -60,7 +60,11 @@ const ChairThree = ({ user }) => {
             onClick={() => {
               setSpin(!spin);
             }}
-            style={{ backgroundColor: "black", width: "4rem" }}
+            style={{
+              backgroundColor: "black",
+              width: "4rem",
+              borderRadius: "50%",
+            }}
           >
             Spin
           </button>
