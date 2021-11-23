@@ -18,6 +18,7 @@ import Review from "./Review";
 import MostLoved from "./MostLoved";
 import Error from "./Error";
 import Card from "./Card";
+import Orders from "./Orders";
 
 import { AnimatePresence } from "framer-motion";
 
@@ -36,8 +37,9 @@ function App() {
       count += item.quantity;
     });
   }
-  const changeUser = (name) => {
+  const changeUser = (name, num) => {
     setUser(name);
+    setUserId(num);
   };
 
   useEffect(() => {
@@ -57,6 +59,11 @@ function App() {
                 setItems(d);
               }
             });
+        } else {
+          setUserId(0);
+          setFavorites([]);
+          setItems([]);
+          setUser("");
         }
       });
   }, [user]);
@@ -119,6 +126,9 @@ function App() {
                   </Route>
                   <Route path="/bestsellers">
                     <MostLoved />
+                  </Route>
+                  <Route path="/orders">
+                    <Orders />
                   </Route>
                 </Switch>
               </AnimatePresence>

@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { navItems } from "./Data";
 import {
   AiOutlineMenuUnfold,
@@ -27,15 +28,16 @@ const Nav = ({
   setSubMenu,
   closeSub,
 }) => {
+  const history = useHistory();
   const handlLogOut = () => {
     fetch("/api/logout", {
       method: "DELETE",
     });
-
-    changeUser("");
+    changeUser("", 0);
     setItems([]);
     console.log(count);
     setSubMenu(!subMenu);
+    history.push("/");
   };
   return (
     <div>
@@ -76,18 +78,21 @@ const Nav = ({
         </Link>
 
         {user && (
-          <motion.h6 className="user-name" animate={{ x: 600, opacity: 1 }}>
-            <span>
-              {" "}
-              <VscCircleFilled style={{ color: "green" }} />
-            </span>
-            Welcome {user}
-          </motion.h6>
+          <>
+            <motion.h6 className="user-name" animate={{ x: 600, opacity: 1 }}>
+              <span>
+                {" "}
+                <VscCircleFilled style={{ color: "green" }} />
+              </span>
+              Welcome {user}
+            </motion.h6>
+          </>
         )}
+
         <ul style={{ display: "flex" }}>
           <motion.li
             className="header"
-            animate={{ x: 930, opacity: 1 }}
+            animate={{ x: 880, opacity: 1 }}
             whileHover={{ scale: 1.5, color: "pink" }}
             initial={{ opacity: 0.1 }}
             transition={{
@@ -99,7 +104,7 @@ const Nav = ({
           </motion.li>
           <motion.li
             className="header"
-            animate={{ x: 940, opacity: 1 }}
+            animate={{ x: 890, opacity: 1 }}
             whileHover={{ scale: 1.5, color: "lightBlue" }}
             initial={{ opacity: 0.1 }}
             transition={{
@@ -113,7 +118,7 @@ const Nav = ({
           <motion.li
             className="header"
             style={{ fontSize: "22px" }}
-            animate={{ x: 950, opacity: 1 }}
+            animate={{ x: 900, opacity: 1 }}
             whileHover={{ scale: 1.5, color: "lightBlue" }}
             initial={{ opacity: 0.1 }}
             transition={{
@@ -126,7 +131,7 @@ const Nav = ({
           </motion.li>
           <motion.li
             className="header"
-            animate={{ x: 960, opacity: 1 }}
+            animate={{ x: 910, opacity: 1 }}
             whileHover={{ scale: 1.5, color: "lightBlue" }}
             initial={{ opacity: 0.1 }}
             transition={{
@@ -142,7 +147,7 @@ const Nav = ({
           <motion.li
             style={{ display: "grid" }}
             className="header"
-            animate={{ x: 970, opacity: 1 }}
+            animate={{ x: 920, opacity: 1 }}
             whileHover={{ scale: 1.5, color: "lightBlue" }}
             initial={{ opacity: 0.1 }}
             transition={{
@@ -170,7 +175,6 @@ const Nav = ({
             width: "100%",
             overFlowY: "scroll",
             position: "absolute",
-            border: "0.2rem solid red",
           }}
         >
           {sideBarItems.map((item) => {
@@ -186,7 +190,7 @@ const Nav = ({
           <div
             className="link-icon"
             onClick={handlLogOut}
-            style={{ border: "0.2rem solid red" }}
+            // style={{ border: "0.2rem solid red" }}
           >
             <btn className="icon">
               <span style={{ marginLeft: "15px" }}>Log Out</span>

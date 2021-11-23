@@ -82,8 +82,8 @@ const Cart = ({ changeCount, items, setItems }) => {
     fetch(`/api/me`)
       .then((resp) => resp.json())
       .then((d) => {
-        setUser(d.id);
-        if (d.id > 0) {
+        if (d) {
+          setUser(d.id);
           fetch(`/api/carts/${d.id}`)
             .then((resp) => resp.json())
             .then((d) => {

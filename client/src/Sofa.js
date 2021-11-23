@@ -6,12 +6,13 @@ import SubCart from "./SubCart";
 import SmallModal from "./SmallModal";
 import Loading from "./Loading";
 
-const Sofa = ({ userId, changeCount, changeSuccess, setItems, items }) => {
+const Sofa = ({ changeCount, changeSuccess, setItems, items }) => {
   const [quantity, setQuantity] = useState(1);
   const [modal, setModal] = useState(false);
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
   const { id } = useParams();
+  const [userId, setUserId] = useState(0);
   const [product, setProduct] = useState({});
   const [image, setImage] = useState("");
   const [liked, setLiked] = useState(false);
@@ -21,29 +22,34 @@ const Sofa = ({ userId, changeCount, changeSuccess, setItems, items }) => {
     setModal(!modal);
   };
   const addToCart = () => {
-    fetch(`/api/carts`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        user_id: userId,
-        product_id: id,
-        quantity: quantity,
-      }),
-    })
-      .then((resp) => resp.json())
-      .then((d) => {
-        if (d.errors) {
-          console.log(d);
-          setError(true);
-          setErrorMessage("Please Log In First");
-        } else if (d.error) {
-          setError(true);
-          console.log(d);
-          setErrorMessage("Item Already Added To Cart");
-        } else {
-          setSuccess(true);
-        }
-      });
+    console.log(userId);
+    if (userId) {
+      fetch(`/api/carts`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          user_id: userId,
+          product_id: id,
+          quantity: quantity,
+        }),
+      })
+        .then((resp) => resp.json())
+        .then((d) => {
+          if (d.errors) {
+            setError(true);
+            setErrorMessage("Please Log In First");
+          } else if (d.error) {
+            setError(true);
+            setErrorMessage(d.error);
+            setErrorMessage("Item Already Added To Cart");
+          } else {
+            setSuccess(true);
+          }
+        });
+    } else {
+      setError(true);
+      setErrorMessage("Please Log In First");
+    }
   };
   const handleFav = () => {
     setLiked(true);
@@ -77,6 +83,8 @@ const Sofa = ({ userId, changeCount, changeSuccess, setItems, items }) => {
       .then((resp) => resp.json())
       .then((d) => {
         if (d) {
+          console.log(d);
+          setUserId(d.id);
           d.favorites.forEach((item) => {
             if (item.product_id === parseInt(id)) {
               setLiked(true);
