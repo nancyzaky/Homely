@@ -10,8 +10,10 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
       return render json: {error: "Item Already Added To Cart"}
     else
   shop_session = Shop.find_by(active: true, user_id:@user)
-
-    cart = Cart.create!(cart_params)
+      if !shop_session
+        shop_session = Shop.create(user_id: @user.id)
+      end
+    cart = Cart.create(cart_params)
     cart.shop_id = shop_session.id
     cart.save
   all_user_carts = User.find(params[:user_id]).carts.where(shop_id: shop_session.id)
@@ -49,7 +51,7 @@ def destroy
 end
   private
   def cart_params
-params.permit(:user_id, :product_id, :quantity)
+params.permit(:user_id, :product_id, :quantity, :shop_id)
   end
 
   def record_not_found
