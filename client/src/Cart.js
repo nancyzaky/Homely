@@ -54,6 +54,7 @@ const Cart = ({ changeCount, items, setItems }) => {
   };
   const calcTot = (arr) => {
     let tot = 0;
+    console.log(arr);
     if (arr.length < 0) {
       return 0;
     } else {
@@ -105,10 +106,9 @@ const Cart = ({ changeCount, items, setItems }) => {
     fetch("/api/checkout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: items, discountApplied: discountApplied }),
+      body: JSON.stringify({ items: items, discountApplied: val }),
     })
       .then(function (response) {
-        console.log(response);
         return response.json();
       })
       .then(function (session) {

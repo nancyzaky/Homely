@@ -37,6 +37,7 @@ const Sofa = ({ userId, changeCount, changeSuccess, setItems, items }) => {
           setErrorMessage("Please Log In First");
         } else if (d.error) {
           setError(true);
+          console.log(d);
           setErrorMessage("Item Already Added To Cart");
         } else {
           setSuccess(true);
@@ -59,10 +60,12 @@ const Sofa = ({ userId, changeCount, changeSuccess, setItems, items }) => {
     fetch(`/api/products/${id}`)
       .then((resp) => resp.json())
       .then((data) => {
-        console.log(data);
-        setImage(data.pictures[0].url);
-        setProduct(data);
-        setLoading(false);
+        if (data.pictures) {
+          console.log(data);
+          setImage(data.pictures[0].url);
+          setProduct(data);
+          setLoading(false);
+        }
       });
   };
   useEffect(() => {
@@ -123,7 +126,7 @@ const Sofa = ({ userId, changeCount, changeSuccess, setItems, items }) => {
             marginLeft: "56rem",
           }}
         >
-          <ul style={{ display: "grid" }}></ul>
+          {/* <ul style={{ display: "grid" }}></ul> */}
           <h5>${product.price * quantity}</h5>
           <section className="heart">
             <button
