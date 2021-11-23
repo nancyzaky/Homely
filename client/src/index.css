@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
   height: "100%";
+  /* overflow: auto; */
 }
 html,
 body,
@@ -15,7 +16,7 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: auto;
+  /* overflow: auto; */
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -39,7 +40,6 @@ code {
 }
 .nav {
   background-color: #242526;
-
   height: 100px;
   align-items: center;
   display: flex;
@@ -51,10 +51,11 @@ code {
 }
 
 .sub-menu {
+  top: 10;
   width: 280px;
   height: 300vh;
   right: 0;
-  position: fixed;
+  display: fixed;
   justify-content: center;
   display: flex;
   background-color: #242526;
@@ -65,8 +66,9 @@ code {
   letter-spacing: 3px;
   font-weight: bold;
   overflow: scroll;
-  float: left;
-  scroll-margin-right: 5rem;
+  margin: 0;
+  /* float: left; */
+  /* scroll-margin-right: 5rem; */
   /* padding-top: 4.2rem; */
 }
 .active {
@@ -697,8 +699,9 @@ li {
 .single {
   width: 100%;
   position: fixed;
-  display: flex;
+  display: fixed;
   overflow: hidden;
+  height: 600px;
 }
 .big-modal {
   height: 550px;
