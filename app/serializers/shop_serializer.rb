@@ -1,3 +1,3 @@
 class ShopSerializer < ActiveModel::Serializer
-attributes :id, :product, :quantity, :cart
+attributes :id, :products, :carts
 end
