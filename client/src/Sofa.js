@@ -33,6 +33,7 @@ const Sofa = ({ userId, changeCount, changeSuccess, setItems, items }) => {
       .then((resp) => resp.json())
       .then((d) => {
         if (d.errors) {
+          console.log(d);
           setError(true);
           setErrorMessage("Please Log In First");
         } else if (d.error) {
@@ -75,7 +76,7 @@ const Sofa = ({ userId, changeCount, changeSuccess, setItems, items }) => {
     fetch("/api/me")
       .then((resp) => resp.json())
       .then((d) => {
-        if (d.id > 0) {
+        if (d) {
           d.favorites.forEach((item) => {
             if (item.product_id === parseInt(id)) {
               setLiked(true);

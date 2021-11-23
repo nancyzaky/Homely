@@ -19,7 +19,7 @@ const Look = () => {
     console.log(look);
   }, []);
   return (
-    <div style={{ display: "fixed" }}>
+    <div style={{ display: "fixed", overflow: "hidden" }}>
       <img
         style={{ height: "650px", width: "100%" }}
         src={img}

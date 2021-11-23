@@ -17,7 +17,7 @@ const Favorite = ({ changeCount, items, setItems }) => {
     fetch(`/api/me`)
       .then((resp) => resp.json())
       .then((d) => {
-        if (d.id > 0) {
+        if (d) {
           setUser(d.id);
           fetch(`/api/users/${d.id}/favorites`)
             .then((resp) => resp.json())

@@ -35,9 +35,10 @@ const Nav = ({
     changeUser("");
     setItems([]);
     console.log(count);
+    setSubMenu(!subMenu);
   };
   return (
-    <>
+    <div>
       <nav className="nav">
         <Link
           to="#"
@@ -62,7 +63,6 @@ const Nav = ({
               }}
               onClick={() => {
                 setSubMenu(!subMenu);
-                console.log("hi");
               }}
             />
           ) : (
@@ -168,21 +168,33 @@ const Nav = ({
         <div
           style={{
             width: "100%",
-            overFlowX: "auto",
+            overFlowY: "scroll",
             position: "absolute",
+            border: "0.2rem solid red",
           }}
         >
           {sideBarItems.map((item) => {
-            return <SubLink item={item} key={item.id} />;
+            return (
+              <SubLink
+                item={item}
+                key={item.id}
+                subMenu={subMenu}
+                setSubMenu={setSubMenu}
+              />
+            );
           })}
-          <div className="link-icon" onClick={handlLogOut}>
-            <Link to="/" className="icon">
+          <div
+            className="link-icon"
+            onClick={handlLogOut}
+            style={{ border: "0.2rem solid red" }}
+          >
+            <btn className="icon">
               <span style={{ marginLeft: "15px" }}>Log Out</span>
-            </Link>
+            </btn>
           </div>
         </div>
       </nav>
-    </>
+    </div>
   );
 };
 
