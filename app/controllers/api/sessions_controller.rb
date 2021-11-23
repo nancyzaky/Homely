@@ -4,11 +4,16 @@ before_action :authorize
 
   def create
     user = User.find_by(email: params[:email])
-    #  PostMailer.post_created.deliver_now
+
 
     if user&.authenticate(params[:password])
-
       session[:user_id] = user.id
+
+      shop_session = Shop.find_by(active:true, user_id: user.id)
+      if !shop_session
+        shop_session = Shop.create(user_id: user.id)
+
+      end
       render json: user, status: :created
 
     else
