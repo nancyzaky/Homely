@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Subscribe from "./Subscribe";
 import MostLoved from "./MostLoved";
 import { FaChevronCircleDown } from "react-icons/fa";
+import Footer from "./Footer";
 
 const Home = () => {
   const transition = { duration: 0.7, ease: [0.43, 0.13, 0.23, 0.96] };
@@ -98,6 +99,9 @@ const Home = () => {
           </div>
         </motion.div>
         <Subscribe />
+        <section style={{ width: "100%", height: "20px" }}></section>
+        <div className="line-wide" style={{ marginBottom: "7rem" }}></div>
+        <Footer />
       </div>
     </>
   );
