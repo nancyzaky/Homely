@@ -16,6 +16,8 @@ import SubCart from "./SubCart";
 import Favorite from "./Favorite";
 import Review from "./Review";
 import MostLoved from "./MostLoved";
+import Error from "./Error";
+import Card from "./Card";
 
 import { AnimatePresence } from "framer-motion";
 
@@ -29,9 +31,11 @@ function App() {
     setSubMenu(false);
   };
   let count = 0;
-  items.forEach((item) => {
-    count += item.quantity;
-  });
+  if (items.length > 0) {
+    items.forEach((item) => {
+      count += item.quantity;
+    });
+  }
   const changeUser = (name) => {
     setUser(name);
   };
@@ -49,7 +53,9 @@ function App() {
           fetch(`/api/carts/${d.id}`)
             .then((resp) => resp.json())
             .then((d) => {
-              setItems(d);
+              if (d.length > 0) {
+                setItems(d);
+              }
             });
         }
       });
@@ -102,8 +108,11 @@ function App() {
                   <Route exact path="/cart">
                     <Cart userId={userId} items={items} setItems={setItems} />
                   </Route>
-                  <Route exact path="/success">
+                  <Route exact path="/success/:id">
                     <Success />
+                  </Route>
+                  <Route exact path="/error">
+                    <Error />
                   </Route>
                   <Route exact path="/look/:id">
                     <Look />
