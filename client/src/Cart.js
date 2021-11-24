@@ -156,7 +156,7 @@ const Cart = ({ changeCount, items, setItems }) => {
               >
                 Check Out Summary
               </h3>
-              <h4>
+              <h5>
                 Deliver To:{" "}
                 {address ? (
                   <h4>
@@ -178,10 +178,15 @@ const Cart = ({ changeCount, items, setItems }) => {
                     </a>
                   </>
                 )}
-              </h4>
-              <h5>Subtotal ${totPrice}</h5>
-              <h5>
-                Discount Code{" "}
+              </h5>
+              <section style={{ display: "flex" }}>
+                <h5>Subtotal </h5>
+                <h5 style={{ paddingLeft: "5rem", color: "red" }}>
+                  ${totPrice}
+                </h5>
+              </section>
+              <section style={{ display: "flex", alignItems: "center" }}>
+                <h5 style={{ width: "6rem" }}> Discount Code </h5>
                 <input
                   style={{
                     height: "1.5rem",
@@ -193,23 +198,27 @@ const Cart = ({ changeCount, items, setItems }) => {
                     setVal(e.target.value);
                   }}
                 ></input>{" "}
-                <button
-                  onClick={checkDiscount}
-                  className="btn"
-                  style={{
-                    width: "3rem",
-                    borderRadius: "50%",
-                    height: "3rem",
-                    letterSpacing: "1px",
-                    fontSize: "12px",
-                    backgroundColor: "black",
-                    marginLeft: "3rem",
-                    fontWeight: "bold",
-                  }}
-                >
-                  Apply
-                </button>
-              </h5>
+              </section>
+              <br></br>
+              <button
+                onClick={checkDiscount}
+                className="btn"
+                style={{
+                  // width: "3rem",
+                  // borderRadius: "50%",
+                  // height: "3rem",
+                  letterSpacing: "1px",
+                  fontSize: "12px",
+                  // backgroundColor: "black",
+                  // marginLeft: "3rem",
+                  fontWeight: "bold",
+                  marginTop: "1rem",
+                  marginLeft: "8rem",
+                }}
+              >
+                Apply
+              </button>
+              {/* </h5> */}
               {!error && discountApplied && <h6>Discount Applied</h6>}
               {error && <h6>Wrong code please try again</h6>}
               <h6
