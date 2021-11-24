@@ -5,7 +5,7 @@ const Orders = () => {
     fetch("/api/me")
       .then((resp) => resp.json())
       .then((d) => {
-        if (d.id > 0) {
+        if (d.id && d.id > 0) {
           fetch(`/api/shops/${d.id}`)
             .then((resp) => resp.json())
             .then((d) => console.log(d));

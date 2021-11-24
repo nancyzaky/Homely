@@ -131,19 +131,20 @@ const Cart = ({ changeCount, items, setItems }) => {
           <>
             <AnimatePresence>
               <ul className="cart-details">
-                {items.map((item, index) => {
-                  return (
-                    <CartItem
-                      key={item.id}
-                      item={item}
-                      handleUpdate={handleUpdate}
-                      user={user}
-                      deleteItem={deleteItem}
-                      changeCount={changeCount}
-                      index={index}
-                    />
-                  );
-                })}
+                {items.length > 0 &&
+                  items.map((item, index) => {
+                    return (
+                      <CartItem
+                        key={item.id}
+                        item={item}
+                        handleUpdate={handleUpdate}
+                        user={user}
+                        deleteItem={deleteItem}
+                        changeCount={changeCount}
+                        index={index}
+                      />
+                    );
+                  })}
               </ul>
             </AnimatePresence>
             <ul className="cart-summary">
