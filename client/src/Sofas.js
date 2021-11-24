@@ -15,7 +15,6 @@ const Sofas = () => {
     fetch(`/api/product/${cat}`)
       .then((resp) => resp.json())
       .then((d) => {
-        console.log(d);
         setAllSofas(d);
         setLoading(false);
       });
@@ -65,6 +64,7 @@ const Sofas = () => {
                 .then((resp) => resp.json())
                 .then((d) => {
                   setAllSofas(d);
+                  setFilter(!filter);
                 });
             }}
           >
@@ -85,9 +85,10 @@ const Sofas = () => {
             justifyContent: "center",
           }}
         >
-          {sofas.map((sofa) => {
-            return <SofaItem key={sofa.id} sofa={sofa} />;
-          })}
+          {sofas.length > 0 &&
+            sofas.map((sofa) => {
+              return <SofaItem key={sofa.id} sofa={sofa} />;
+            })}
         </ul>
       )}
     </>

@@ -82,8 +82,8 @@ const Sofa = ({ changeCount, changeSuccess, setItems, items }) => {
     fetch("/api/me")
       .then((resp) => resp.json())
       .then((d) => {
-        if (d) {
-          console.log(d);
+        console.log(d);
+        if (d && d.id && d.id > 0) {
           setUserId(d.id);
           d.favorites.forEach((item) => {
             if (item.product_id === parseInt(id)) {
@@ -106,7 +106,12 @@ const Sofa = ({ changeCount, changeSuccess, setItems, items }) => {
     return () => clearTimeout(timer);
   }, [success, error]);
   return (
-    <div style={{ width: "100%", height: "100%" }}>
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+      }}
+    >
       {loading && <Loading />}
 
       {success && (
@@ -163,6 +168,7 @@ const Sofa = ({ changeCount, changeSuccess, setItems, items }) => {
           className={liked ? "heart-fill" : "heart-void"}
           onClick={handleFav}
         />
+        <h3></h3>
       </motion.div>
       <motion.div style={{ height: "90%", width: "90%" }} drag>
         <img src={image} alt="pic" className="pic-big" />{" "}
