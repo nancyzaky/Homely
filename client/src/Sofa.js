@@ -167,7 +167,6 @@ const Sofa = ({ changeCount, changeSuccess, setItems, items }) => {
       <motion.div style={{ height: "90%", width: "90%" }} drag>
         <img src={image} alt="pic" className="pic-big" />{" "}
       </motion.div>
-      {/* <div className="line-small"></div> */}
       <ul style={{ display: "flex", marginTop: "-8rem" }}>
         {product.pictures &&
           product.pictures.map((pic) => {

@@ -71,7 +71,6 @@ const Nav = ({
             <RiMenuUnfoldFill
               onClick={() => {
                 setSubMenu(!subMenu);
-                console.log("hi");
               }}
             />
           )}
