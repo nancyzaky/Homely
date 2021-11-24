@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 
-const Card = ({ item, text, colorTwo, code, codeApplied, setCodeApplied }) => {
+const Card = ({
+  item,
+  text,
+  colorTwo,
+  code,
+  codeApplied,
+  setCodeApplied,
+  user,
+}) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const rotateX = useTransform(x, [100, -100], [30, -30]);
@@ -43,7 +51,7 @@ const Card = ({ item, text, colorTwo, code, codeApplied, setCodeApplied }) => {
             className="btn"
             style={{ marginLeft: "6rem", marginTop: "3rem" }}
             onClick={() => {
-              if (!codeApplied) {
+              if (!codeApplied && user) {
                 setRevealCode(true);
                 setCodeApplied(true);
               } else {
@@ -57,8 +65,11 @@ const Card = ({ item, text, colorTwo, code, codeApplied, setCodeApplied }) => {
         {revealCode && (
           <h3 style={{ textAlign: "center" }}>Discount Code: {code}</h3>
         )}
-        {error && (
+        {error && user && (
           <h3 style={{ textAlign: "center" }}>Sorry, You revealed one card</h3>
+        )}
+        {error && !user && (
+          <h3 style={{ textAlign: "center" }}>Please Log In</h3>
         )}
       </motion.div>
     </motion.div>
