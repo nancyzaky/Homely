@@ -13,7 +13,7 @@ const Sofas = () => {
   const fetchUrl = () => {
     console.log(cat);
     setLoading(true);
-    fetch(`/api/product/${cat}`)
+    fetch(`/api/furniture/${cat}`)
       .then((resp) => resp.json())
       .then((d) => {
         console.log(d);
