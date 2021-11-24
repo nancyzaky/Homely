@@ -12,7 +12,7 @@ const Sofas = () => {
   const [search, setSearch] = useState("");
   const fetchUrl = () => {
     setLoading(true);
-    fetch(`/api/furniture/${cat}`)
+    fetch(`/api/product/${cat}`)
       .then((resp) => resp.json())
       .then((d) => {
         console.log(d);

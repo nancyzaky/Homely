@@ -9,7 +9,7 @@ namespace :api do
   resources :sessions, only: [:create]
   resources :products, only: [:show]
   resources :checkout, only: [:create]
-  get "/furniture/:cat", to: "products#getcat"
+  get "/product/:cat", to: "products#getcat"
   get "/product/:cat/:filter", to: "products#getfilter"
  delete "/logout", to: "sessions#destroy"
 get "/bestsellers", to: "favorites#most_fav"
