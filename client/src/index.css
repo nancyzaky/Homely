@@ -54,7 +54,7 @@ code {
   overflow-y: scroll;
   position: fixed;
   width: 293px;
-  /* z-index: -3; */
+  z-index: -3;
   overflow-x: hidden;
   opacity: 0;
   left: 0;
