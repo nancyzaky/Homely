@@ -11,7 +11,6 @@ const Sofas = () => {
   const [filter, setFilter] = useState(false);
   const [search, setSearch] = useState("");
   const fetchUrl = () => {
-    console.log(cat);
     setLoading(true);
     fetch(`/api/furniture/${cat}`)
       .then((resp) => resp.json())
