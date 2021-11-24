@@ -5,7 +5,7 @@ namespace :api do
 
   end
   resources :carts, only: [:create, :show, :update, :destroy]
-  resources :shops, only: [:update]
+  resources :shops, only: [:update, :show]
   resources :sessions, only: [:create]
   resources :products, only: [:show]
   resources :checkout, only: [:create]
