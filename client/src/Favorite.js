@@ -41,12 +41,12 @@ const Favorite = ({ changeCount, items, setItems }) => {
               visible: {
                 opacity: 1,
                 y: 0,
-                delay: 1,
 
                 transition: {
                   type: "spring",
                   stifness: "0.5",
                   duration: "0.5",
+                  delay: 1,
                 },
               },
             }}
@@ -66,7 +66,10 @@ const Favorite = ({ changeCount, items, setItems }) => {
                 opacity: 1,
                 x: 0,
                 transition: {
-                  delay: 0.6,
+                  type: "spring",
+                  stifness: "0.5",
+                  duration: "1",
+                  delay: 2,
                 },
               },
             }}
