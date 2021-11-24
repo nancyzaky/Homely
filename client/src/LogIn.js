@@ -17,6 +17,7 @@ const LogIn = ({ changeUser }) => {
         resp.json().then((d) => {
           console.log(d);
           changeUser(d.name);
+          history.push("/");
         });
       } else {
         resp.json().then((d) => {
@@ -27,7 +28,6 @@ const LogIn = ({ changeUser }) => {
     });
     setUserEmail("");
     setUserPassword("");
-    history.push("/");
   };
   return (
     <div
@@ -38,6 +38,7 @@ const LogIn = ({ changeUser }) => {
         justifyContent: "center",
         backgroundImage:
           "linear-gradient(to bottom, #ffffff, #dedcdf, #c0b9be, #a5989b, #897878)",
+        overFlow: "hidden",
       }}
     >
       <form type="submit" style={{ paddingTop: "3rem", paddingBottom: "1rem" }}>
@@ -93,6 +94,7 @@ const LogIn = ({ changeUser }) => {
         >
           Log In
         </button>
+        {errors.length > 0 && <h5>{errors}</h5>}
       </form>
     </div>
   );
