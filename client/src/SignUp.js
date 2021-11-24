@@ -32,9 +32,22 @@ const SignUp = () => {
     });
   };
   return (
-    <div style={{ height: "100%", width: "100%" }}>
-      <form type="submit">
-        <label htmlFor="name" id="name">
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
+        backgroundImage:
+          "linear-gradient(to bottom, #ffffff, #dedcdf, #c0b9be, #a5989b, #897878)",
+      }}
+    >
+      <form type="submit" style={{ paddingTop: "3rem", paddingBottom: "1rem" }}>
+        <label
+          htmlFor="name"
+          id="name"
+          style={{ fontWeight: "bold", letterSpacing: "2px" }}
+        >
           Name
         </label>
         <br></br>
@@ -43,9 +56,20 @@ const SignUp = () => {
           onChange={(e) => {
             setName(e.target.value);
           }}
+          style={{
+            width: "16rem",
+            height: "2rem",
+            marginTop: "1rem",
+            marginBottom: "1.5rem",
+            fontWeight: "bold",
+          }}
         ></input>
         <br></br>
-        <label htmlFor="email" id="email">
+        <label
+          htmlFor="email"
+          id="email"
+          style={{ fontWeight: "bold", letterSpacing: "2px" }}
+        >
           Email
         </label>
         <br></br>
@@ -54,9 +78,20 @@ const SignUp = () => {
           onChange={(e) => {
             setEmail(e.target.value);
           }}
+          style={{
+            width: "16rem",
+            height: "2rem",
+            marginTop: "1rem",
+            marginBottom: "1.5rem",
+            fontWeight: "bold",
+          }}
         ></input>
         <br></br>
-        <label htmlFor="password" id="password">
+        <label
+          htmlFor="password"
+          id="password"
+          style={{ fontWeight: "bold", letterSpacing: "2px" }}
+        >
           PassWord
         </label>
 
@@ -67,10 +102,21 @@ const SignUp = () => {
           onChange={(e) => {
             setPassword(e.target.value);
           }}
+          style={{
+            width: "16rem",
+            height: "2rem",
+            marginTop: "1rem",
+            marginBottom: "1.5rem",
+            fontWeight: "bold",
+          }}
         ></input>
         <br></br>
-        <label htmlFor="passwordC" id="passwordC">
-          PassWord Confirmation
+        <label
+          htmlFor="passwordC"
+          id="passwordC"
+          style={{ fontWeight: "bold", letterSpacing: "2px" }}
+        >
+          Password Confirmation
         </label>
         <br></br>
         <input
@@ -79,9 +125,22 @@ const SignUp = () => {
           onChange={(e) => {
             setPasswordC(e.target.value);
           }}
+          style={{
+            width: "16rem",
+            height: "2rem",
+            marginTop: "1rem",
+            marginBottom: "1.5rem",
+            fontWeight: "bold",
+          }}
         ></input>
         <br></br>
-        <button onClick={handleSignUp}>Sign Up</button>
+        <button
+          onClick={handleSignUp}
+          className="btn"
+          style={{ backgroundColor: "black" }}
+        >
+          Sign Up
+        </button>
       </form>
       {errors.length > 0 && (
         <ul>

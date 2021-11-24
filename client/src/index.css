@@ -228,6 +228,7 @@ code {
   font-size: 20px;
   cursor: pointer;
   height: 90px;
+
   display: flex;
   justify-content: center;
 }
@@ -289,7 +290,7 @@ code {
   cursor: pointer;
   padding-left: 1rem;
   padding-bottom: 2rem;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .active-cart {
@@ -330,7 +331,7 @@ li {
   /* margin-top: -1rem; */
   display: flex;
   padding-bottom: 2rem;
-  min-height: 500px;
+  min-height: 80vh;
 }
 .cart-details {
   width: 65%;
@@ -342,10 +343,11 @@ li {
   margin-right: 3rem;
   margin-top: 4rem;
   box-shadow: 0px 10px 18px #c7d0d6;
+  min-height: 80vh;
 }
 .cart-summary {
   width: 35%;
-  height: 70vh;
+  height: 80vh;
   display: inline-block;
   background-color: white;
   margin-left: 2rem;
@@ -354,6 +356,7 @@ li {
   /* border: 0.1rem solid black; */
   padding-left: 1rem;
   box-shadow: 0px 10px 18px #b8bcbe;
+  letter-spacing: 3px;
 }
 
 .loading {

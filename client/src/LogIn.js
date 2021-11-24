@@ -16,7 +16,6 @@ const LogIn = ({ changeUser }) => {
       if (resp.ok) {
         resp.json().then((d) => {
           console.log(d);
-          history.push("/");
           changeUser(d.name);
         });
       } else {
@@ -28,6 +27,7 @@ const LogIn = ({ changeUser }) => {
     });
     setUserEmail("");
     setUserPassword("");
+    history.push("/");
   };
   return (
     <div
@@ -36,12 +36,26 @@ const LogIn = ({ changeUser }) => {
         height: "100%",
         display: "flex",
         justifyContent: "center",
+        backgroundImage:
+          "linear-gradient(to bottom, #ffffff, #dedcdf, #c0b9be, #a5989b, #897878)",
       }}
     >
-      <form type="submit">
-        <label Htmlfor="user-email">User Email</label>
+      <form type="submit" style={{ paddingTop: "3rem", paddingBottom: "1rem" }}>
+        <label
+          Htmlfor="user-email"
+          style={{ fontWeight: "bold", letterSpacing: "2px" }}
+        >
+          User Email
+        </label>
         <br></br>
         <input
+          style={{
+            width: "16rem",
+            height: "2rem",
+            marginTop: "1rem",
+            marginBottom: "1.5rem",
+            fontWeight: "bold",
+          }}
           type="email"
           value={userEmail}
           onChange={(e) => {
@@ -50,9 +64,20 @@ const LogIn = ({ changeUser }) => {
         ></input>
         <br></br>
 
-        <label htmlFor="user-password">User Password</label>
+        <label
+          htmlFor="user-password"
+          style={{ fontWeight: "bold", letterSpacing: "2px" }}
+        >
+          User Password
+        </label>
         <br></br>
         <input
+          style={{
+            width: "16rem",
+            height: "2rem",
+            marginTop: "1rem",
+            marginBottom: "2rem",
+          }}
           type="password"
           value={userPassWord}
           onChange={(e) => {
@@ -60,7 +85,12 @@ const LogIn = ({ changeUser }) => {
           }}
         ></input>
         <br></br>
-        <button type="submit" onClick={handleLogIn}>
+        <button
+          type="submit"
+          onClick={handleLogIn}
+          className="btn"
+          style={{ marginLeft: "3rem", backgroundColor: "black" }}
+        >
           Log In
         </button>
       </form>
