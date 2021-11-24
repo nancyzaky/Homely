@@ -51,7 +51,7 @@ const MostLoved = () => {
       <motion.section
         style={{
           height: "600px",
-          width: "350px",
+          width: "400px",
           letterSpacing: "3px",
           justifyContent: "center",
           textAlign: "center",
@@ -64,7 +64,7 @@ const MostLoved = () => {
         initial={{ opacity: 0.1, x: -200 }}
         transition={{
           type: "spring",
-          stifness: 180,
+          stifness: 200,
         }}
       >
         <p>

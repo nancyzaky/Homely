@@ -7,7 +7,7 @@ import MostLoved from "./MostLoved";
 import { FaChevronCircleDown } from "react-icons/fa";
 import Footer from "./Footer";
 
-const Home = () => {
+const Home = ({ user }) => {
   const transition = { duration: 0.7, ease: [0.43, 0.13, 0.23, 0.96] };
 
   return (
@@ -101,7 +101,7 @@ const Home = () => {
         <Subscribe />
         <section style={{ width: "100%", height: "20px" }}></section>
         <div className="line-wide" style={{ marginBottom: "7rem" }}></div>
-        <Footer />
+        <Footer user={user} />
       </div>
     </>
   );

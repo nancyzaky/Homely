@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Card from "./Card";
-const Footer = () => {
+const Footer = ({ user }) => {
   const [codeApplied, setCodeApplied] = useState(false);
 
   return (
@@ -20,6 +20,7 @@ const Footer = () => {
       }}
     >
       <Card
+        user={user}
         item={"../greenChair.png"}
         text={"Pick One Card"}
         colorTwo={
@@ -30,6 +31,7 @@ const Footer = () => {
         setCodeApplied={setCodeApplied}
       />
       <Card
+        user={user}
         item={"../img2.png"}
         text={"To Reveal"}
         colorOne={""}
@@ -42,6 +44,7 @@ const Footer = () => {
       />
 
       <Card
+        user={user}
         item={"../img.png"}
         text={"Discount Code"}
         colorTwo={

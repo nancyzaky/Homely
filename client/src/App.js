@@ -51,7 +51,6 @@ function App() {
           setUser(d.name);
           setUserId(d.id);
           setFavorites(d.favorites);
-          let allItemsCount = 0;
           fetch(`/api/carts/${d.id}`)
             .then((resp) => resp.json())
             .then((d) => {
@@ -66,7 +65,7 @@ function App() {
           setUser("");
         }
       });
-  }, [user]);
+  }, []);
 
   return (
     <>
@@ -87,7 +86,7 @@ function App() {
                 <Switch location={location} key={location.pathname}>
                   <Route exact path="/">
                     <ChairThree user={user} />
-                    <Home />
+                    <Home user={user} />
                     {/* <Favs /> */}
                     <Review />
                   </Route>
