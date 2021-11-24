@@ -3,7 +3,8 @@ import SofaItem from "./SofaItem";
 import ModalBig from "./ModalBig";
 
 import { useViewportScroll, useTransform, motion } from "framer-motion";
-const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
+// const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
+const transition = { duration: 1.4, ease: [0.6, 0.01, -0.02, -0.2] };
 const MostLoved = () => {
   const [bestSellers, setBestSellers] = useState([]);
   const [details, setDetails] = useState(true);
@@ -28,12 +29,12 @@ const MostLoved = () => {
       <motion.div initial={{ opacity: 1 }} className="single">
         <motion.div
           initial={{
-            y: "-40%",
+            y: "-100%",
           }}
           animate={{
             y: 0,
             width: "100%",
-            transition: { delay: 0.2, ...transition },
+            transition: { delay: 0.3, ...transition },
           }}
         >
           <motion.div transition={transition}>
