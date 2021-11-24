@@ -55,19 +55,6 @@ const ChairThree = ({ user }) => {
             console.log("hi");
           }}
         >
-          <button
-            className="btn"
-            onClick={() => {
-              setSpin(!spin);
-            }}
-            style={{
-              backgroundColor: "black",
-              width: "4rem",
-              borderRadius: "50%",
-            }}
-          >
-            Spin
-          </button>
           <Canvas
             colorManagement
             shadowMap
@@ -110,6 +97,22 @@ const ChairThree = ({ user }) => {
             </Suspense>
           </Canvas>
         </motion.div>
+        <div style={{ width: "30%" }}></div>
+        <button
+          className="btn"
+          onClick={() => {
+            setSpin(!spin);
+          }}
+          style={{
+            backgroundColor: "black",
+            width: "4rem",
+            // float: "right",
+            display: "absolute",
+            top: "20%",
+          }}
+        >
+          Spin
+        </button>
         {/* <motion.div
           // drag
           style={{

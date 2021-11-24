@@ -21,12 +21,22 @@ const Cart = ({ changeCount, items, setItems }) => {
   const [error, setError] = useState(false);
   const [logIn, setLogIn] = useState(false);
   const checkDiscount = () => {
-    if (val === "Final-week-20") {
+    if (
+      val === "Final-week-20" ||
+      val === "Final-week-10" ||
+      val === "Final-week-5"
+    ) {
       setDiscountApplied(true);
       setError(false);
       // setTotPrice(totPrice - totPrice / 5);
       let result = calcTot(cart);
-      setTotPrice(result - result / 5);
+      if (val === "Final-week-20") {
+        setTotPrice(result - result / 5);
+      } else if (val === "Final-week-10") {
+        setTotPrice(result - result / 10);
+      } else if (val === "Final-week-5") {
+        setTotPrice(result - result / 20);
+      }
     } else {
       setError(true);
       let result = calcTot(cart);
