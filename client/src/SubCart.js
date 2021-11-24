@@ -38,67 +38,70 @@ const SubCart = ({
       });
   }, [setItems]);
   return (
-    <nav className={modal ? "sub-cart active-cart" : "sub-cart"}>
-      {error && <h3>Please Log in first</h3>}
-      <div className="scroller"></div>
-      <span
-        style={{
-          float: "right",
-          fontSize: "28px",
-          paddingTop: "1rem",
-          color: "red",
-          cursor: "pointer",
-        }}
-      >
-        <GrFormClose onClick={handleCart} />
-      </span>
-      {loading && <Loading />}
-      <ul
-        style={{
-          textAlign: "center",
-          display: "grid",
-          height: "130px",
-        }}
-      >
-        <li
+    <div className="wrapper">
+      <nav className={modal ? "sub-cart active-cart" : "sub-cart"}>
+        {error && <h3>Please Log in first</h3>}
+        <div className="scroller"></div>
+        <span
           style={{
-            display: "inline-block",
-            height: "50px",
+            float: "right",
+            fontSize: "28px",
+            paddingTop: "1rem",
+            color: "red",
+            cursor: "pointer",
           }}
         >
-          {/* <h2>Your Total ${product.price * quantity}</h2> */}
-        </li>
-        <li
+          <GrFormClose onClick={handleCart} />
+        </span>
+        {loading && <Loading />}
+        <ul
           style={{
-            display: "inline",
-            height: "50px",
+            textAlign: "center",
+            display: "grid",
+            height: "130px",
           }}
         >
-          <Link to="/cart">
-            <button className="btn" style={{ color: "white" }}>
-              Check Out
-            </button>
-          </Link>
-        </li>
-      </ul>
-      {!loading && (
-        <AnimatePresence>
-          <li>
-            {data.map((product, index) => {
-              return (
-                <SubCartItem
-                  key={product.id}
-                  index={index}
-                  product={product}
-                  items={items}
-                  setItems={setItems}
-                />
-              );
-            })}
+          <li
+            style={{
+              display: "inline-block",
+              height: "50px",
+            }}
+          >
+            {/* <h2>Your Total ${product.price * quantity}</h2> */}
           </li>
-        </AnimatePresence>
-      )}
-    </nav>
+          <li
+            style={{
+              display: "inline",
+              height: "50px",
+            }}
+          >
+            <Link to="/cart">
+              <button className="btn" style={{ color: "white" }}>
+                Check Out
+              </button>
+            </Link>
+          </li>
+        </ul>
+        {!loading && (
+          <AnimatePresence>
+            <li>
+              {data.length > 0 &&
+                data.map((product, index) => {
+                  return (
+                    <SubCartItem
+                      key={product.id}
+                      index={index}
+                      product={product}
+                      items={items}
+                      setItems={setItems}
+                    />
+                  );
+                })}
+            </li>
+          </AnimatePresence>
+        )}
+      </nav>
+    </div>
   );
 };
 

@@ -96,7 +96,8 @@ const Nav = ({
             initial={{ opacity: 0.1 }}
             transition={{
               type: "spring",
-              stifness: 80,
+              stifness: 280,
+              duration: "1",
             }}
           >
             <FaTwitterSquare style={{ marginTop: "8px" }} />
@@ -108,7 +109,7 @@ const Nav = ({
             initial={{ opacity: 0.1 }}
             transition={{
               type: "spring",
-              stifness: 80,
+              stifness: 280,
               duration: "2",
             }}
           >
@@ -122,8 +123,8 @@ const Nav = ({
             initial={{ opacity: 0.1 }}
             transition={{
               type: "spring",
-              stifness: 80,
-              duration: "2",
+              stifness: 280,
+              duration: "3",
             }}
           >
             <ImFacebook2 style={{ marginTop: "11px" }} />
@@ -135,8 +136,8 @@ const Nav = ({
             initial={{ opacity: 0.1 }}
             transition={{
               type: "spring",
-              stifness: 80,
-              duration: "2",
+              stifness: 280,
+              duration: "4",
             }}
           >
             <Link to="/favorite">
@@ -146,13 +147,13 @@ const Nav = ({
           <motion.li
             style={{ display: "grid" }}
             className="header"
-            animate={{ x: 920, opacity: 1 }}
+            animate={{ y: 2, opacity: 1, x: 920 }}
             whileHover={{ scale: 1.5, color: "lightBlue" }}
-            initial={{ opacity: 0.1 }}
+            initial={{ opacity: 0.1, y: -100 }}
             transition={{
               type: "spring",
-              stifness: 80,
-              duration: "2",
+              stifness: 280,
+              duration: "5",
             }}
           >
             <Link to="/cart">
@@ -168,35 +169,37 @@ const Nav = ({
           </motion.li>
         </ul>
       </nav>
-      <nav className={subMenu ? "sub-menu active" : "sub-menu"}>
-        <div
-          style={{
-            width: "100%",
-            overFlowY: "scroll",
-            position: "absolute",
-          }}
-        >
-          {sideBarItems.map((item) => {
-            return (
-              <SubLink
-                item={item}
-                key={item.id}
-                subMenu={subMenu}
-                setSubMenu={setSubMenu}
-              />
-            );
-          })}
+      <div className={subMenu ? "nav-wrapper active-wrapper" : "nav-wrapper "}>
+        <nav className={subMenu ? "sub-menu active" : "sub-menu"}>
           <div
-            className="link-icon"
-            onClick={handlLogOut}
-            // style={{ border: "0.2rem solid red" }}
+            style={{
+              width: "100%",
+              overFlowY: "scroll",
+              position: "absolute",
+            }}
           >
-            <btn className="icon">
-              <span style={{ marginLeft: "15px" }}>Log Out</span>
-            </btn>
+            {sideBarItems.map((item) => {
+              return (
+                <SubLink
+                  item={item}
+                  key={item.id}
+                  subMenu={subMenu}
+                  setSubMenu={setSubMenu}
+                />
+              );
+            })}
+            <div
+              className="link-icon"
+              onClick={handlLogOut}
+              // style={{ border: "0.2rem solid red" }}
+            >
+              <btn className="icon">
+                <span style={{ marginLeft: "15px" }}>Log Out</span>
+              </btn>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </div>
   );
 };
