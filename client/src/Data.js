@@ -9,6 +9,7 @@ import {
   GiRockingChair,
   GiBed,
 } from "react-icons/gi";
+import { MdBorderColor } from "react-icons/md";
 import { FaUsers, FaHome } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
@@ -77,6 +78,12 @@ export const sideBarItems = [
         text: "Cart",
         icon: <ImCart className="icon-small" />,
       },
+      {
+        id: 4,
+        url: "/orders",
+        text: "Orders",
+        icon: <MdBorderColor className="icon-small" />,
+      },
     ],
   },
   {
@@ -88,13 +95,13 @@ export const sideBarItems = [
     arrowDown: <IoMdArrowDropdown />,
     subLinks: [
       {
-        id: 4,
+        id: 5,
         url: "/item/sofa",
         text: "Sofas",
         icon: <GiSofa className="icon-small" />,
       },
       {
-        id: 5,
+        id: 6,
         url: "/item/chair",
         text: "Chairs",
         icon: <GiRockingChair className="icon-small" />,
