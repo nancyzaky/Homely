@@ -36,6 +36,7 @@ const FavItem = ({ fav, changeFav, changeCount, user, setItems }) => {
           console.log(d.error);
           setError(d.error);
         } else if (d.length > 0) {
+          console.log(d);
           setSuccess(true);
           setItems(d);
         }
@@ -54,6 +55,7 @@ const FavItem = ({ fav, changeFav, changeCount, user, setItems }) => {
           textAlign: "center",
           paddingTop: "2rem",
           paddingBottom: "6rem",
+          zIndex: "99",
         }}
       >
         <motion.span

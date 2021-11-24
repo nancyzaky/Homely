@@ -35,6 +35,7 @@ const MostLoved = () => {
             y: 0,
             width: "100%",
             transition: { delay: 0.3, ...transition },
+            duration: 2,
           }}
         >
           <motion.div transition={transition}>
