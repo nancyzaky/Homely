@@ -129,6 +129,9 @@ function App() {
                   <Route path="/orders">
                     <Orders />
                   </Route>
+                  <Route path="*">
+                    <Error />
+                  </Route>
                 </Switch>
               </AnimatePresence>
             )}
