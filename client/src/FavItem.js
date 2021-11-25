@@ -15,7 +15,8 @@ const FavItem = ({ fav, changeFav, changeCount, user, setItems }) => {
     return () => clearTimeout(timer);
   }, [error, success]);
   const deleteFav = () => {
-    fetch(`/api/users/${user}/api/favorites/${fav.id}`, {
+    console.log(fav);
+    fetch(`/api/users/${user}/favorites/${fav.id}`, {
       method: "DELETE",
     });
     changeFav(fav.id);
