@@ -114,7 +114,10 @@ const Nav = ({
             }}
           >
             <a href="https://twitter.com/">
-              <FaTwitterSquare style={{ marginTop: "8px" }} target="_blank" />
+              <FaTwitterSquare
+                style={{ marginTop: "8px", color: "white" }}
+                target="_blank"
+              />
             </a>
           </motion.li>
           <motion.li
@@ -129,7 +132,7 @@ const Nav = ({
             }}
           >
             <a href="https://www.instagram.com/" target="_blank">
-              <AiFillInstagram style={{ marginTop: "8px" }} />
+              <AiFillInstagram style={{ marginTop: "8px", color: "white" }} />
             </a>
           </motion.li>
           <motion.li
@@ -145,7 +148,7 @@ const Nav = ({
             }}
           >
             <a href="https://www.facebook.com/" target="_blank">
-              <ImFacebook2 style={{ marginTop: "11px" }} />
+              <ImFacebook2 style={{ marginTop: "11px", color: "white" }} />
             </a>
           </motion.li>
           <motion.li
