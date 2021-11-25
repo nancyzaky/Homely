@@ -97,22 +97,65 @@ const ChairThree = ({ user }) => {
             </Suspense>
           </Canvas>
         </motion.div>
-        <div style={{ width: "30%" }}></div>
-        <button
-          className="btn"
-          onClick={() => {
-            setSpin(!spin);
-          }}
-          style={{
-            backgroundColor: "black",
-            width: "4rem",
-            // float: "right",
-            display: "absolute",
-            top: "20%",
-          }}
-        >
-          Spin
-        </button>
+        <div style={{ width: "30%" }}>
+          <h3
+            style={{ color: "white", fontSize: "30px", letterSpacing: "6px" }}
+          >
+            Our{" "}
+          </h3>
+          <h3
+            style={{
+              color: "orange",
+              fontSize: "36px",
+              letterSpacing: "6px",
+              paddingLeft: "3rem",
+            }}
+          >
+            Best
+          </h3>
+          <h3
+            style={{
+              color: "white",
+              fontSize: "50px",
+              paddingLeft: "8rem",
+              letterSpacing: "6px",
+
+              color: "yellow",
+            }}
+          >
+            Selling
+          </h3>
+          <h3
+            style={{
+              color: "white",
+              fontSize: "60px",
+              paddingLeft: "19rem",
+              letterSpacing: "6px",
+
+              color: "red",
+            }}
+          >
+            Product
+          </h3>
+          <button
+            className="btn"
+            onClick={() => {
+              setSpin(!spin);
+            }}
+            style={{
+              backgroundColor: "orange",
+              width: "10rem",
+              // float: "right",
+              display: "absolute",
+              marginTop: "2rem",
+              marginRight: "20rem",
+              paddingTop: "0.3rem",
+              paddingBottom: "0.3rem",
+            }}
+          >
+            {spin ? "Stop Spin" : "Spin"}
+          </button>
+        </div>
         {/* <motion.div
           // drag
           style={{
