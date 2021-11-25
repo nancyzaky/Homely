@@ -102,6 +102,9 @@ const Home = ({ user }) => {
         <section style={{ width: "100%", height: "20px" }}></section>
         <div className="line-wide" style={{ marginBottom: "7rem" }}></div>
         <Footer user={user} />
+        <footer
+          style={{ height: "300px", width: "100%", backgroundColor: "black" }}
+        ></footer>
       </div>
     </>
   );
