@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BsTrash } from "react-icons/bs";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const CartItem = ({ item, handleUpdate, user, deleteItem, index }) => {
   const [num, setNum] = useState(item.quantity);
@@ -44,11 +45,13 @@ const CartItem = ({ item, handleUpdate, user, deleteItem, index }) => {
             width: "25%",
           }}
         >
-          <img
-            src={item.pictures[0].url}
-            className="pic-smallest"
-            style={{ display: "inline-block" }}
-          />
+          <Link to={`/product/${item.product.id}`}>
+            <img
+              src={item.pictures[0].url}
+              className="pic-smallest"
+              style={{ display: "inline-block" }}
+            />
+          </Link>
         </li>
 
         <li style={{ display: "inline-block", width: "30%" }}>
@@ -76,6 +79,7 @@ const CartItem = ({ item, handleUpdate, user, deleteItem, index }) => {
         <li style={{ display: "inline-block", width: "10%" }}>
           ${item.product.price * num}
         </li>
+
         <li style={{ width: "10%", fontSize: "22px", color: "red" }}>
           <BsTrash onClick={() => deleteItem(item.id)} />
         </li>
