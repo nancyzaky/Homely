@@ -15,8 +15,10 @@ const Sofas = () => {
     fetch(`/api/product/${cat}`)
       .then((resp) => resp.json())
       .then((d) => {
-        setAllSofas(d);
-        setLoading(false);
+        if (d) {
+          setAllSofas(d);
+          setLoading(false);
+        }
       });
   };
   const handleHover = (key) => {};
@@ -91,6 +93,7 @@ const Sofas = () => {
             })}
         </ul>
       )}
+      {sofas.length === 0 && <h3>No Products found</h3>}
     </>
   );
 };
