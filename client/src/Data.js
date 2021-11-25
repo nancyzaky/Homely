@@ -110,7 +110,7 @@ export const sideBarItems = [
   },
   {
     id: 4,
-    url: "/",
+    url: "/item/bed",
     text: "Bedroom",
     icon: <GiBed className="icon-small" />,
   },
@@ -128,7 +128,7 @@ export const sideBarItems = [
   },
   {
     id: 7,
-    url: "/",
+    url: "/item/outdoor",
     text: "Out Door",
     icon: <GiFlowerPot className="icon-small" />,
   },
