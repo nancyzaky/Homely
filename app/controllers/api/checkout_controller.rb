@@ -8,6 +8,10 @@ class Api::CheckoutController < ApplicationController
 
    if params[:discountApplied] === "Final-week-20"
     item_price = find_product.price * 100 - ((find_product.price * 100) /5)
+   elsif params[:discountApplied] === "Final-week-10"
+    item_price = find_product.price * 100 - ((find_product.price * 100) /10)
+   elsif params[:discountApplied] === "Final-week-5"
+    item_price = find_product.price * 100 - ((find_product.price * 100) /20)
    else
     item_price = find_product.price * 100
    end
