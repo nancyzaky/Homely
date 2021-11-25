@@ -13,7 +13,12 @@ const MostLoved = () => {
   const { scrollYProgress } = useViewportScroll();
   const [bigModal, setBigModal] = useState(false);
   const [opacity, setOpacity] = useState(1);
-
+  const componentDidMount = () => {
+    window.scrollTo(0, 0);
+  };
+  useEffect(() => {
+    componentDidMount();
+  }, []);
   useEffect(() => {
     setLoading(true);
     fetch(`/api/bestsellers`)
