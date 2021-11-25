@@ -370,7 +370,7 @@ li {
 }
 .cart-summary {
   width: 35%;
-  height: 80vh;
+  height: 90vh;
   display: inline-block;
   background-color: white;
   margin-left: 2rem;
@@ -746,4 +746,7 @@ li {
     #e3f4f6,
     #dcf1eb
   );
+}
+a {
+  color: white;
 }
