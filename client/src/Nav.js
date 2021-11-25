@@ -78,7 +78,16 @@ const Nav = ({
 
         {user && (
           <>
-            <motion.h6 className="user-name" animate={{ x: 600, opacity: 1 }}>
+            <motion.h6
+              className="user-name"
+              animate={{ y: 1, x: 8, opacity: 1 }}
+              initial={{ y: -100, opacity: 0 }}
+              transition={{
+                type: "spring",
+                stifness: 1,
+                duration: "1",
+              }}
+            >
               <span>
                 {" "}
                 <VscCircleFilled style={{ color: "green" }} />
@@ -88,7 +97,11 @@ const Nav = ({
           </>
         )}
 
-        <ul style={{ display: "flex" }}>
+        <ul
+          style={{
+            display: "flex",
+          }}
+        >
           <motion.li
             className="header"
             animate={{ x: 880, opacity: 1 }}
@@ -100,7 +113,9 @@ const Nav = ({
               duration: "1",
             }}
           >
-            <FaTwitterSquare style={{ marginTop: "8px" }} />
+            <a href="https://twitter.com/">
+              <FaTwitterSquare style={{ marginTop: "8px" }} target="_blank" />
+            </a>
           </motion.li>
           <motion.li
             className="header"
@@ -113,7 +128,9 @@ const Nav = ({
               duration: "2",
             }}
           >
-            <AiFillInstagram style={{ marginTop: "8px" }} />
+            <a href="https://www.instagram.com/" target="_blank">
+              <AiFillInstagram style={{ marginTop: "8px" }} />
+            </a>
           </motion.li>
           <motion.li
             className="header"
@@ -127,7 +144,9 @@ const Nav = ({
               duration: "3",
             }}
           >
-            <ImFacebook2 style={{ marginTop: "11px" }} />
+            <a href="https://www.facebook.com/" target="_blank">
+              <ImFacebook2 style={{ marginTop: "11px" }} />
+            </a>
           </motion.li>
           <motion.li
             className="header"
