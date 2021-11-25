@@ -13,6 +13,7 @@ const MostLoved = () => {
   const { scrollYProgress } = useViewportScroll();
   const [bigModal, setBigModal] = useState(false);
   const [opacity, setOpacity] = useState(1);
+
   const componentDidMount = () => {
     window.scrollTo(0, 0);
   };
@@ -81,7 +82,7 @@ const MostLoved = () => {
           aliquip ex ea commodo consequat. Duis aute irure dolor in
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          culpa qui officia deserunt mollit anim id est.
         </p>
         <button
           className="btn"

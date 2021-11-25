@@ -172,7 +172,11 @@ const Cart = ({ changeCount, items, setItems }) => {
                 {address ? (
                   <h4>
                     {address} <br></br>
-                    <a href="#" onClick={() => setShowMap(true)}>
+                    <a
+                      href="#"
+                      onClick={() => setShowMap(true)}
+                      style={{ color: "black" }}
+                    >
                       Click to change address
                     </a>
                   </h4>
