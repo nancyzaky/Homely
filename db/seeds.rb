@@ -452,3 +452,151 @@ features_p24 = Feature.create([
   }, {feat:"Some assembly required (approximately 15 minutes)", product_id:24}
 
  ])
+#//////////////////////////////////
+
+  product_25 = Product.create(price:1499, description:"An aesthetic blast from the past. The Nera is finished with veneered American walnut. Dark and moody, it’s Don Draper without the personal shortcomings. Nightstand extensions give the Nera a commanding presence with thoughtful touches, such as the wire-nook that you can thread your phone-charger through, and soft-close nightstand drawers to discreetly hide your midnight snacks.", material:"Wood",cat:"bed", name:"Nera Walnut King Bed with Nightstands")
+
+pictures_p25 = Picture.create([{url:"https://cdn-images.article.com/products/SKU12863/2890x1500/image72834.jpg?fit=max&w=2740&q=60&fm=webp", product_id:25}, {url:"https://cdn-images.article.com/products/SKU12863/2890x1500/image72835.jpg?fit=max&w=2740&q=60&fm=webp",product_id:25},{url:"https://cdn-images.article.com/products/SKU12863/2890x1500/image72836.jpg?fit=max&w=2740&q=60&fm=webp",product_id:25}, {url:"https://cdn-images.article.com/products/SKU12863/2890x1500/image62332.jpg?fit=max&w=2740&q=60&fm=webp",product_id:25}, {url:"https://cdn-images.article.com/products/SKU12863/2890x1500/image62333.jpg?fit=max&w=2740&q=60&fm=webp",product_id:25}, {url:"https://cdn-images.article.com/products/SKU12863/2890x1500/image62329.jpg?fit=max&w=2740&q=60&fm=webp", product_id:25} ])
+
+specifics_p25 = Specific.create(style:"
+
+
+
+Mid-century modern", height:38, width:117, depth:82 ,materials:"
+
+Veneered American Black Walnut, engineered wood, solid Beech, steel, aluminum", color:"
+
+Walnut", product_id:25)
+
+
+features_p25 = Feature.create([
+  {feat:"Wood is a natural material with diverse patterning and color. Variations should be expected and treasured as a unique element.", product_id:25},
+  {feat:"Under-mounted soft-close headboard drawers", product_id:25} , {
+    feat:"Photographed with 10 H mattress; mattress and bedding not included", product_id:25
+  }, {feat:"Bed may be suitable for use with adjustable bed frames. Please contact customer care for further assistance", product_id:25}
+
+ ])
+#/////////////////////////////////////
+
+  product_26 = Product.create(price:999, description:"Our beloved Sven collection has moved to the bedroom. Supported by a sturdy iron and wood frame, the Sven Bed’s Mid-Century Modern roots are showcased in the design of its plush headboard. Reach REM sleep in style.", material:"Fabric Headboard",cat:"bed", name:"Sven Birch Ivory King Bed")
+
+pictures_p26 = Picture.create([{url:"https://cdn-images.article.com/products/SKU15629/2890x1500/image68088.jpg?fit=max&w=2740&q=60&fm=webp", product_id:26}, {url:"https://cdn-images.article.com/products/SKU15629/2890x1500/image68090.jpg?fit=max&w=2740&q=60&fm=webp",product_id:26},{url:"https://cdn-images.article.com/products/SKU15629/2890x1500/image68091.jpg?fit=max&w=2740&q=60&fm=webp",product_id:26}, {url:"https://cdn-images.article.com/products/SKU15629/2890x1500/image68092.jpg?fit=max&w=2740&q=60&fm=webp",product_id:26}, {url:"https://cdn-images.article.com/products/SKU15629/2890x1500/image68094.jpg?fit=max&w=2740&q=60&fm=webp",product_id:26}, {url:"https://cdn-images.article.com/products/SKU15629/2890x1500/image70609.jpg?fit=max&w=2740&q=60&fm=webp", product_id:26} ])
+
+specifics_p26 = Specific.create(style:"
+
+
+
+Mid-century modern", height:40.5, width:81.5, depth:90.5 ,materials:"
+
+
+Kiln dried pine, Rubberwood, iron, foam. Fabric - 73% Polyester, 27% Acrylic, Martindale test - 50,000 rubs", color:"
+
+Birch Ivory", product_id:26)
+
+
+features_p26 = Feature.create([
+  {feat:"Wooden slat base included", product_id:26},
+  {feat:"Mattresses photographed range from 10 to 14 in height; mattress and bedding not included", product_id:26} , {
+    feat:"Bed may be suitable for use with adjustable bed frames. Please contact customer care for further assistance", product_id:26
+  }, {feat:"Some assembly required (approximately 1 hour)", product_id:26}
+
+ ])
+
+ #/////////////////////////////////////
+
+  product_27 = Product.create(price:1399, description:"Extremely polished. The Nera 6-drawer double dresser features a subtle chevron wood grain pattern. Finished with veneered American walnut, each drawer blends seamlessly with the front facade, and is distinguished by a modern metal pull.", material:"Wood",cat:"bed", name:"Nera Walnut 6 Drawer Low Double Dresser")
+
+pictures_p27 = Picture.create([{url:"https://cdn-images.article.com/products/SKU12921/2890x1500/image50479.jpg?fit=max&w=2740&q=60&fm=webp", product_id:27}, {url:"https://cdn-images.article.com/products/SKU12921/2890x1500/image50480.jpg?fit=max&w=2740&q=60&fm=webp",product_id:27},{url:"https://cdn-images.article.com/products/SKU12921/2890x1500/image50481.jpg?fit=max&w=2100&q=60&fm=webp",product_id:27}, {url:"https://cdn-images.article.com/products/SKU12921/2890x1500/image50482.jpg?fit=max&w=2100&q=60&fm=webp",product_id:27}, {url:"https://cdn-images.article.com/products/SKU12921/2890x1500/image50483.jpg?fit=max&w=2100&q=60&fm=webp",product_id:27}, {url:"https://cdn-images.article.com/products/SKU12921/2890x1500/image65959.jpg?fit=max&w=2100&q=60&fm=webp", product_id:27} ])
+
+specifics_p27 = Specific.create(style:"
+
+
+
+Mid-century modern", height:28, width:75, depth:17 ,materials:"
+
+
+
+Veneered American Black Walnut, engineered wood, steel, aluminum
+", color:"
+
+Walnut", product_id:27)
+
+
+features_p27 = Feature.create([
+  {feat:"Veneered American Black Walnut", product_id:27},
+  {feat:"Wood is a natural material with diverse patterning and color. Variations should be expected and treasured as a unique element.", product_id:27} , {
+    feat:"Under-mounted soft-close drawers", product_id:27
+  }, {feat:"Warning! To ensure the safety of you, your family, and your guests, this item must be secured to the wall according to the product assembly instructions.", product_id:27}
+
+ ])
+
+ #/////////////////////////////////////
+
+  product_28 = Product.create(price:749, description:"Don’t let the relaxed look of the Onya Sofa fool you. Durable resin wicker, a powder-coated aluminum frame, and outdoor-friendly cushions create a sofa that’s backyard and rooftop-ready.", material:"Aluminum",cat:"outdoor", name:"Onya Lily White Sofa")
+
+pictures_p28 = Picture.create([{url:"https://cdn-images.article.com/products/SKU16275/2890x1500/image63879.jpg?fit=max&w=2100&q=60&fm=webp", product_id:28}, {url:"https://cdn-images.article.com/products/SKU16275/2890x1500/image63880.jpg?fit=max&w=2100&q=60&fm=webp",product_id:28},{url:"https://cdn-images.article.com/products/SKU16275/2890x1500/image63881.jpg?fit=max&w=2100&q=60&fm=webp",product_id:28}, {url:"https://cdn-images.article.com/products/SKU16275/2890x1500/image63882.jpg?fit=max&w=2100&q=60&fm=webp",product_id:28}, {url:"https://cdn-images.article.com/products/SKU16275/2890x1500/image63883.jpg?fit=max&w=2100&q=60&fm=webp",product_id:28}, {url:"https://cdn-images.article.com/products/SKU16275/2890x1500/image65714.jpg?fit=max&w=2100&q=60&fm=webp", product_id:28} ])
+
+specifics_p28 = Specific.create(style:"
+
+
+
+
+Scandinavian", height:36.5, width:63.5, depth:30 ,materials:"
+Aluminum, steel, resin wicker, foam, polyester fiber. Fabric - 100% polyester
+", color:"
+
+Lily White", product_id:28)
+
+
+features_p28 = Feature.create([
+  {feat:"Synthetic wicker construction", product_id:28},
+  {feat:"Durable synthetic binding", product_id:28} , {
+    feat:"Powder-coated aluminum frame", product_id:28
+  }, {feat:"Powder coated steel legs", product_id:28}, {feat:"Some assembly required (approximately 15 minutes)", product_id:28}])
+
+
+
+
+  #/////////////////////////////////////
+
+  product_29 = Product.create(price:749, description:"Stretch out in the sun—or under the stars. The Biya Sofa is a comfy solution for all of your outdoor lounging needs, with its sturdy acacia wood frame topped with made-to-melt-into foam cushions.", material:"polyester",cat:"outdoor", name:"Biya Beach Sand Sofa")
+
+pictures_p29 = Picture.create([{url:"https://cdn-images.article.com/products/SKU16280/2890x1500/image64033.jpg?fit=max&w=2100&q=60&fm=webp", product_id:29}, {url:"https://cdn-images.article.com/products/SKU16280/2890x1500/image64034.jpg?fit=max&w=2100&q=60&fm=webp",product_id:29},{url:"https://cdn-images.article.com/products/SKU16280/2890x1500/image65967.jpg?fit=max&w=2100&q=60&fm=webp",product_id:29}, {url:"https://cdn-images.article.com/products/SKU16280/2890x1500/image64035.jpg?fit=max&w=2100&q=60&fm=webp",product_id:29}, {url:"https://cdn-images.article.com/products/SKU16280/2890x1500/image64036.jpg?fit=max&w=2100&q=60&fm=webp",product_id:29}, {url:"https://cdn-images.article.com/products/SKU16280/2890x1500/image65688.jpg?fit=max&w=2100&q=60&fm=webp", product_id:29} ])
+
+specifics_p29 = Specific.create(style:"
+Boho", height:36.5, width:75, depth:30 ,materials:"
+Acacia, foam, polyester fiber. Fabric: 100% Polyester
+", color:"
+Beach Sand
+", product_id:29)
+
+
+features_p29 = Feature.create([
+  {feat:"Seat cushion secured with velcro, loose back cushions.", product_id:29},
+  {feat:"Character and grain of the wood will vary for each piece.", product_id:29} , {
+    feat:"Small cracks and fissures may develop with changes in humidity and temperature. This is a natural, uncontrollable characteristic of solid wood furniture", product_id:29
+  }, {feat:"Solid Acacia.", product_id:29}, {feat:"Some assembly required (approximately 15 minutes)", product_id:29}
+
+ ])
+
+
+ #////////////////////////////
+
+
+  product_30 = Product.create(price:649, description:"Easy living. The Beltaine Rocking Chair, made from durable synthetic wicker and a powder-coated aluminum frame, is the perfect locale for afternoons in the backyard with a book and a lemonade.", material:"
+Aluminum",cat:"outdoor", name:"Beltaine Natural Rocking Chair")
+
+pictures_p30 = Picture.create([{url:"https://cdn-images.article.com/products/SKU15442/2890x1500/image64726.jpg?fit=max&w=2100&q=60&fm=webp", product_id:30}, {url:"https://cdn-images.article.com/products/SKU15442/2890x1500/image64728.jpg?fit=max&w=2100&q=60&fm=webp",product_id:30},{url:"https://cdn-images.article.com/products/SKU15442/2890x1500/image64729.jpg?fit=max&w=2100&q=60&fm=webp",product_id:30}, {url:"https://cdn-images.article.com/products/SKU15442/2890x1500/image64730.jpg?fit=max&w=2100&q=60&fm=webp",product_id:30}, {url:"https://cdn-images.article.com/products/SKU15442/2890x1500/image64731.jpg?fit=max&w=2100&q=60&fm=webp",product_id:30}, {url:"https://cdn-images.article.com/products/SKU15442/2890x1500/image65725.jpg?fit=max&w=2100&q=60&fm=webp", product_id:30} ])
+
+specifics_p30 = Specific.create(style:"
+Mid-century modern", height:37.5, width:30.5, depth:40 ,materials:"
+Powder coated aluminum", color:"Natural", product_id:30)
+
+
+features_p30 = Feature.create([
+  {feat:"Durable synthetic wicker and powder coated aluminum frame", product_id:30},
+  {feat:"Suitable for indoor and outdoor use", product_id:30} , {
+    feat:"Resistant to sea and chlorinated water", product_id:30
+  }, {feat:"Assembly not required", product_id:30}
+
+ ])
