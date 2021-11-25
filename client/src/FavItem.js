@@ -55,7 +55,7 @@ const FavItem = ({ fav, changeFav, changeCount, user, setItems }) => {
           textAlign: "center",
           paddingTop: "2rem",
           paddingBottom: "6rem",
-          zIndex: "99",
+          // zIndex: "10",
         }}
       >
         <motion.span

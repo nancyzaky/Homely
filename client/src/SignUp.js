@@ -36,7 +36,7 @@ const SignUp = () => {
       style={{
         width: "100%",
         height: "100%",
-        display: "flex",
+        display: "grid",
         justifyContent: "center",
         backgroundImage:
           "linear-gradient(to bottom, #ffffff, #dedcdf, #c0b9be, #a5989b, #897878)",
@@ -141,18 +141,18 @@ const SignUp = () => {
         >
           Sign Up
         </button>
+        {errors.length > 0 && (
+          <ul style={{ top: "0" }}>
+            {errors.map((error) => {
+              return (
+                <li>
+                  <h5>{error}</h5>
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </form>
-      {errors.length > 0 && (
-        <ul>
-          {errors.map((error) => {
-            return (
-              <li>
-                <h5>{error}</h5>
-              </li>
-            );
-          })}
-        </ul>
-      )}
     </div>
   );
 };

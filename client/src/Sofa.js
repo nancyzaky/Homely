@@ -21,6 +21,12 @@ const Sofa = ({ changeCount, changeSuccess, setItems, items }) => {
   const handleCart = () => {
     setModal(!modal);
   };
+  const componentDidMount = () => {
+    window.scrollTo(0, 0);
+  };
+  useEffect(() => {
+    componentDidMount();
+  }, []);
   const addToCart = () => {
     console.log(userId);
     if (userId) {
@@ -109,7 +115,7 @@ const Sofa = ({ changeCount, changeSuccess, setItems, items }) => {
     <div
       style={{
         width: "100%",
-        height: "100%",
+        height: "600px",
       }}
     >
       {loading && <Loading />}
@@ -197,7 +203,7 @@ const Sofa = ({ changeCount, changeSuccess, setItems, items }) => {
           })}
       </ul>
       <div className="line-wide"></div>
-      <ul style={{ height: "100%", display: "flex", paddingTop: "3rem" }}>
+      <ul style={{ height: "400px", display: "flex", paddingTop: "3rem" }}>
         <section
           style={{
             width: "25%",
