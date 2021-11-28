@@ -41,15 +41,15 @@ const MostLoved = () => {
             y: 0,
             width: "100%",
             transition: { delay: 0.3, ...transition },
-            duration: 2,
+            duration: 4,
           }}
         >
           <motion.div transition={transition}>
             <motion.img
               src="../greenChair.png"
               animate={{
-                transition: { delay: 0.6, ...transition },
-                y: -60,
+                transition: { delay: 0.3, ...transition },
+                y: -50,
                 opacity: opacity,
               }}
             />
@@ -59,7 +59,7 @@ const MostLoved = () => {
       <motion.section
         style={{
           height: "600px",
-          width: "400px",
+          width: "350px",
           letterSpacing: "3px",
           justifyContent: "center",
           textAlign: "center",
@@ -89,8 +89,10 @@ const MostLoved = () => {
           style={{
             backgroundColor: "black",
             width: "14rem",
-            height: "3rem",
+            height: "4rem",
             marginTop: "2rem",
+            paddingTop: "0.5rem",
+            paddingBottom: "1rem",
           }}
           onClick={() => {
             setOpacity(0);
@@ -99,8 +101,10 @@ const MostLoved = () => {
         >
           See Our Best Sellers
         </button>
-        {bigModal && !loading && <ModalBig bestSellers={bestSellers} />}
       </motion.section>
+      <div style={{ width: "100%" }}>
+        {bigModal && !loading && <ModalBig bestSellers={bestSellers} />}
+      </div>
     </>
   );
 };

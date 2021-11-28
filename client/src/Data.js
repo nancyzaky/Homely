@@ -56,8 +56,8 @@ export const sideBarItems = [
     url: "#",
     text: "Profile",
     icon: <CgProfile className="icon-small" />,
-    arrowUp: <IoMdArrowDropup />,
-    arrowDown: <IoMdArrowDropdown />,
+    arrowUp: <IoMdArrowDropup className="icon-menu" />,
+    arrowDown: <IoMdArrowDropdown className="icon-menu" />,
     subLinks: [
       {
         id: 1,
@@ -91,8 +91,8 @@ export const sideBarItems = [
     url: "#",
     text: "Dinning Room",
     icon: <GiTable className="icon-small" />,
-    arrowUp: <IoMdArrowDropup />,
-    arrowDown: <IoMdArrowDropdown />,
+    arrowUp: <IoMdArrowDropup className="icon-menu" />,
+    arrowDown: <IoMdArrowDropdown className="icon-menu" />,
     subLinks: [
       {
         id: 5,
@@ -375,4 +375,5 @@ export const shopLook = [
       },
     ],
   },
+  // { id: 5, url :" "},
 ];

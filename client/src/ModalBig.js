@@ -20,28 +20,27 @@ const ModalBig = ({ bestSellers }) => {
     }
   };
   return (
-    <>
+    <div>
       {bestSellers[index] && (
-        <motion.aside
+        <motion.div
           className="big-modal"
           initial={{ opacity: 0, y: -200 }}
           animate={{ opacity: 1, transition: { duration: 1 }, y: 20 }}
         >
           <div
             style={{
-              top: "20%",
-              width: "1200px",
-              height: "100px",
+              top: "10%",
               justifyContent: "center",
               textAlign: "center",
+              minWidth: "480px",
+              width: "100%",
             }}
-            className="big-modal-bg"
           >
             <Link to={`/product/${bestSellers[index].id}`}>
               <img
                 src={bestSellers[index].pictures[0].url}
                 className="pic-small"
-                style={{ paddingTop: "2rem" }}
+                style={{ paddingTop: "2rem", minWidth: "260px" }}
               />
             </Link>
             <h4>{bestSellers[index].name}</h4>
@@ -68,9 +67,9 @@ const ModalBig = ({ bestSellers }) => {
               />
             </section>
           </div>
-        </motion.aside>
+        </motion.div>
       )}
-    </>
+    </div>
   );
 };
 

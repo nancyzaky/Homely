@@ -255,7 +255,7 @@ const Cart = ({ changeCount, items, setItems }) => {
               </button>
             </ul>
             {showMap && (
-              <aside className="modal-big">
+              <aside className="modal-map">
                 <Map
                   adjustAddress={adjustAddress}
                   hideMap={hideMap}

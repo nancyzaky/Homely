@@ -48,7 +48,7 @@ const FavItem = ({ fav, changeFav, changeCount, user, setItems }) => {
     <>
       <li
         style={{
-          width: "400px",
+          minWidth: "400px",
           height: "300px",
           paddingLeft: "2rem",
           paddingRight: "2rem",
@@ -72,13 +72,17 @@ const FavItem = ({ fav, changeFav, changeCount, user, setItems }) => {
           <FcDislike onClick={deleteFav} />
         </motion.span>
         <div
-          style={{ height: "70%", border: "0.1px solid rgb(243, 237, 237)" }}
+          style={{
+            height: "auto",
+            border: "0.1px solid rgb(243, 237, 237)",
+            paddingBottom: "2rem",
+          }}
         >
           <img
             src={fav.pictures[0].url}
             alt="pic"
             className="pic-smallest"
-            style={{ width: "340px", height: "220px" }}
+            style={{ minWidth: "370px", height: "220px" }}
           />
           <h5>{fav.product.name}</h5>
           <h5>${fav.product.price}</h5>

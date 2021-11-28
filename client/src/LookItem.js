@@ -10,9 +10,7 @@ const LookItem = ({ product, active }) => {
           style={{ top: product.top, left: product.left }}
         >
           <img src={product.image} alt="pic" className="look-pic" />
-          <h5 style={{ paddingLeft: "8rem", color: "red" }}>
-            ${product.price}
-          </h5>
+          <h5 style={{ color: "red", width: "10%" }}>${product.price}</h5>
         </div>
         <div
           className={product.point}

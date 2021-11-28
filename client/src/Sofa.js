@@ -115,7 +115,8 @@ const Sofa = ({ changeCount, changeSuccess, setItems, items }) => {
     <div
       style={{
         width: "100%",
-        height: "600px",
+        height: "auto",
+        minHeight: "600px",
       }}
     >
       {loading && <Loading />}
@@ -135,51 +136,51 @@ const Sofa = ({ changeCount, changeSuccess, setItems, items }) => {
       )}
 
       <div className="top-section">
-        <h2 style={{ color: "grey", paddingLeft: "1rem", paddingTop: "1rem" }}>
-          {product.name}
-        </h2>
-        <div
+        <h2
           style={{
-            height: "110%",
-            display: "grid",
-            justifyContent: "end",
-            marginLeft: "56rem",
+            color: "grey",
+            paddingLeft: "1rem",
+            paddingTop: "1rem",
+            width: "60%",
           }}
         >
-          {/* <ul style={{ display: "grid" }}></ul> */}
-          <h5>${product.price * quantity}</h5>
-          <section className="heart">
-            <button
-              className="btn"
-              style={{ color: "white", marginTop: "1rem" }}
-              onClick={() => {
-                addToCart();
-                handleCart();
-              }}
-            >
-              Add To Cart
-            </button>
-          </section>
-        </div>
+          {product.name}
+        </h2>
+
+        <button
+          className="btn"
+          style={{ color: "white", minWidth: "25%", marginTop: "2rem" }}
+          onClick={() => {
+            addToCart();
+            handleCart();
+          }}
+        >
+          Add To Cart
+        </button>
       </div>
-      <div className="line"></div>
+      <div className="line" style={{ paddingTop: "2rem" }}></div>
+      <section className="heart">
+        <motion.div
+          style={{ fontSize: "35px", float: "right" }}
+          whileTap={{ scale: 3 }}
+          transition={{ duration: 0.5 }}
+        >
+          <ImHeart
+            className={liked ? "heart-fill" : "heart-void"}
+            onClick={handleFav}
+          />
+        </motion.div>
+      </section>
+
       {error && <SmallModal errorMessage={errorMessage} />}
-      <motion.div
-        className="heart"
-        style={{ fontSize: "35px", float: "right" }}
-        whileTap={{ scale: 3 }}
-        transition={{ duration: 0.5 }}
-      >
-        <ImHeart
-          className={liked ? "heart-fill" : "heart-void"}
-          onClick={handleFav}
-        />
-        <h3></h3>
-      </motion.div>
-      <motion.div style={{ height: "90%", width: "90%" }} drag>
+
+      {/* <h5>${product.price * quantity}</h5> */}
+
+      <motion.div style={{ height: "auto", width: "100%" }}>
         <img src={image} alt="pic" className="pic-big" />{" "}
       </motion.div>
-      <ul style={{ display: "flex", marginTop: "-8rem" }}>
+      <div className="line"></div>
+      <ul className="pics-list">
         {product.pictures &&
           product.pictures.map((pic) => {
             return (
@@ -188,6 +189,8 @@ const Sofa = ({ changeCount, changeSuccess, setItems, items }) => {
                 style={{
                   display: "inline",
                   cursor: "pointer",
+                  maxWidth: "170px",
+                  width: "100%",
                 }}
                 whileHover={{ scale: 1.2 }}
                 animate={{ boxShadow: "1px 1px 0 rgba(0, 0, 0, 0.1)" }}
@@ -203,13 +206,12 @@ const Sofa = ({ changeCount, changeSuccess, setItems, items }) => {
           })}
       </ul>
       <div className="line-wide"></div>
-      <ul style={{ height: "400px", display: "flex", paddingTop: "3rem" }}>
+
+      <ul className="feat-list">
         <section
           style={{
-            width: "25%",
             paddingLeft: "1rem",
             color: "grey",
-            display: "inline",
           }}
         >
           <h3>Description</h3>
@@ -217,11 +219,8 @@ const Sofa = ({ changeCount, changeSuccess, setItems, items }) => {
         </section>
         <section
           style={{
-            width: "25%",
             paddingLeft: "1rem",
             color: "grey",
-            display: "inline",
-            paddingLeft: "20rem",
           }}
         >
           <h3>Features</h3>
@@ -235,11 +234,8 @@ const Sofa = ({ changeCount, changeSuccess, setItems, items }) => {
         {product.specific && (
           <section
             style={{
-              width: "30%",
               paddingLeft: "1rem",
               color: "grey",
-              display: "inline",
-              paddingLeft: "20rem",
             }}
           >
             <h3>Specifications</h3>

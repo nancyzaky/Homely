@@ -23,15 +23,8 @@ const Home = ({ user }) => {
       >
         {shopLook.map((look) => {
           return (
-            <div className="container-shop " key={look.id}>
-              <img
-                onClick={(e) => {
-                  console.log(e.clientX, e.clientY);
-                }}
-                className="image"
-                src={look.url}
-                alt="pic"
-              />
+            <div className="container-shop" key={look.id}>
+              <img className="image" src={look.url} alt="pic" />
 
               <div className={`overlay overlayLeft`}>
                 <div className="text">
@@ -55,56 +48,49 @@ const Home = ({ user }) => {
         })}
         <div className="line-wide"></div>
 
-        <div style={{ height: "200px", width: "100%" }}></div>
-        <motion.div
-          exit={{ opacity: 0 }}
-          transition={transition}
-          className="main-cont"
-        >
-          <div>
-            <div
-              style={{
-                fontSize: "45px",
-                float: "right",
-                // paddingTop: "1rem",
-                paddingRight: "26rem",
-                display: "flex",
-                color: "white",
-                cursor: "pointer",
-                width: "50px",
-              }}
-            >
-              <Link to={"/bestsellers"} style={{ color: "white" }}>
-                <h3>
-                  Our<br></br> Best Sellers Catalogue
-                </h3>
-                <FaChevronCircleDown
-                  style={{ color: "white", paddingLeft: "3rem" }}
-                />
-              </Link>
-            </div>
+        <div style={{ height: "100px", width: "100%" }}></div>
 
-            <div style={{ width: "850px", height: "500px" }}>
-              <div>
-                <Link to={"/bestsellers"}>
-                  <motion.img
-                    src="../greenChair.png"
-                    whileHover={{ scale: 1.1 }}
-                    transition={transition}
-                    style={{ width: "850px", height: "500px" }}
-                  />
-                </Link>
-              </div>
-            </div>
+        <div className="main-cont">
+          <div style={{ maxWidth: "100%" }}>
+            <Link to={"/bestsellers"}>
+              <motion.img
+                src="../greenChair.png"
+                whileHover={{ scale: 1.1 }}
+                transition={transition}
+                style={{ width: "850px", height: "auto", maxWidth: "100%" }}
+              />
+            </Link>
           </div>
-        </motion.div>
+          <div
+            style={{
+              fontSize: "20px",
+              float: "right",
+              paddingTop: "5rem",
+              paddingRight: "6rem",
+              cursor: "pointer",
+              maxWidth: "10%",
+            }}
+          >
+            <Link to={"/bestsellers"} style={{ color: "white" }}>
+              <FaChevronCircleDown />
+              <h3>
+                Our<br></br> Best Sellers Catalogue
+              </h3>
+            </Link>
+          </div>
+        </div>
         <Subscribe />
         <section style={{ width: "100%", height: "20px" }}></section>
         <div className="line-wide" style={{ marginBottom: "7rem" }}></div>
         <Footer user={user} />
-        <footer
-          style={{ height: "300px", width: "100%", backgroundColor: "black" }}
-        ></footer>
+        {/* <footer
+          style={{
+            display: "relative",
+            height: "300px",
+            width: "100%",
+            backgroundColor: "black",
+          }}
+        ></footer> */}
       </div>
     </>
   );

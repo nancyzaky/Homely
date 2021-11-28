@@ -8,7 +8,7 @@ const SubLink = ({ item, setSubMenu, subMenu }) => {
     <>
       <Link
         to={item.url}
-        className="icon"
+        className={item.subLinks ? "icon-menu icon" : "icon"}
         onClick={() => {
           if (item.subLinks) {
             setPointUp(!pointUp);
@@ -17,7 +17,7 @@ const SubLink = ({ item, setSubMenu, subMenu }) => {
           }
         }}
       >
-        <div className="link-icon">
+        <div className={item.subLinks ? "link-icon icon-menu" : "link-icon"}>
           {item.icon}
           <span style={{ marginLeft: "15px" }}>{item.text}</span>
         </div>

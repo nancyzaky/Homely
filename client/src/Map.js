@@ -35,7 +35,17 @@ const Map = ({ adjustAddress, hideMap, address }) => {
     libraries,
   });
   return isLoaded ? (
-    <>
+    <div
+      style={{
+        width: "100%",
+        // border: "0.2rem solid red",
+        justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center",
+        paddingLeft: "4rem",
+        minHeight: "350px",
+      }}
+    >
       <Search
         adjustAddress={adjustAddress}
         changeLongLat={changeLongLat}
@@ -43,13 +53,13 @@ const Map = ({ adjustAddress, hideMap, address }) => {
       />
       <GoogleMap
         mapContainerStyle={{
-          height: "300px",
+          minHeight: "300px",
           marginTop: "3rem",
           marginBottom: "3rem",
-          width: "100%",
+          width: "80%",
         }}
         center={center}
-        zoom={20}
+        zoom={10}
       >
         <Marker position={{ lat: center.lat, lng: center.lng }}></Marker>
         {address.length && (
@@ -60,7 +70,7 @@ const Map = ({ adjustAddress, hideMap, address }) => {
           </InfoWindow>
         )}
       </GoogleMap>
-    </>
+    </div>
   ) : (
     <></>
   );
@@ -80,11 +90,20 @@ function Search({ changeLongLat, adjustAddress, hideMap }) {
     location: { lat: () => 33.66196255264221, long: () => -112.00027975747798 },
   });
   return (
-    <div style={{ height: "120px", width: "100%" }}>
+    <div
+      style={{
+        minHeight: "120px",
+        width: "100%",
+        height: "auto",
+        justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center",
+      }}
+    >
       <button
         onClick={() => hideMap()}
         className="btn"
-        style={{ marginTop: "1rem" }}
+        style={{ marginTop: "1rem", marginRight: "7rem" }}
       >
         Confirm
       </button>
@@ -104,10 +123,11 @@ function Search({ changeLongLat, adjustAddress, hideMap }) {
       >
         <ComboboxInput
           style={{
-            width: "500px",
+            width: "50%",
             marginTop: "2rem",
             height: "2rem",
             backgroundColor: "white",
+            marginRight: "7rem",
           }}
           value={value}
           onChange={(e) => {
@@ -118,11 +138,9 @@ function Search({ changeLongLat, adjustAddress, hideMap }) {
         ></ComboboxInput>
         <ComboboxPopover
           style={{
-            padding: "20px",
-            width: "467px",
-            display: "grid",
             cursor: "pointer",
             backgroundColor: "white",
+            height: "auto",
           }}
         >
           {status === "OK" &&

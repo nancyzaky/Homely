@@ -21,8 +21,9 @@ const Subscribe = () => {
         <section
           style={{
             paddingLeft: "8rem",
-            paddingTop: "2rem",
+            paddingTop: "4rem",
             letterSpacing: "3px",
+            width: "70%",
           }}
         >
           <p>The dining room is a place where family can come together.</p>
@@ -40,35 +41,37 @@ const Subscribe = () => {
           </p>
         </section>
       </section>
-      <div className="sub-cont">
-        <section className="sub-img"></section>
-        <section
-          style={{
-            width: "20%",
-            height: "100%",
-            paddingLeft: "4rem",
-            paddingTop: "3rem",
-          }}
-        >
-          <h2>GET NEW PRODUCTS AND PROMOTIONS IN YOUR INBOX</h2>
-          <h3 style={{ color: "grey" }}>Keep up with what we are up to.</h3>
-          <input
-            placeholder="Enter your email address"
+      <div style={{ width: "100%", height: "100%" }}>
+        <div className="sub-cont">
+          <section className="sub-img"></section>
+          <section
             style={{
-              height: "3rem",
-              width: "18rem",
-              border: "none",
-              boxShadow: " 5px 10px 18px #8cbbd4",
-              paddingLeft: "2rem",
+              paddingTop: "3rem",
             }}
-          ></input>
-          <button className="btn" style={{ marginTop: "3rem" }}>
-            Subscribe
-          </button>
-          <h3 style={{ color: "grey", paddingTop: "1rem" }}>
-            Unsubscribe any time
-          </h3>
-        </section>
+          >
+            <h2>GET NEW PRODUCTS AND PROMOTIONS IN YOUR INBOX</h2>
+            <h3 style={{ color: "grey" }}>Keep up with what we are up to.</h3>
+            <input
+              placeholder="Enter your email address"
+              style={{
+                height: "3rem",
+                // width: "18rem",
+                width: "80%",
+                border: "none",
+                boxShadow: " 5px 10px 18px #8cbbd4",
+                padding: "10px",
+                borderRadius: "0.4rem",
+                // textAlign: "center",
+              }}
+            ></input>
+            <button className="btn" style={{ marginTop: "3rem" }}>
+              Subscribe
+            </button>
+            <h3 style={{ color: "grey", paddingTop: "1rem" }}>
+              Unsubscribe any time
+            </h3>
+          </section>
+        </div>
       </div>
     </>
   );

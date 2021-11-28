@@ -11,7 +11,6 @@ import Sofas from "./Sofas";
 import Sofa from "./Sofa";
 import Cart from "./Cart";
 import Look from "./Look";
-import Favs from "./Favs";
 import SubCart from "./SubCart";
 import Favorite from "./Favorite";
 import Review from "./Review";
@@ -28,6 +27,7 @@ function App() {
   const [favorites, setFavorites] = useState([]);
   const [items, setItems] = useState([]);
   const [subMenu, setSubMenu] = useState(false);
+
   const closeSub = () => {
     setSubMenu(false);
   };
@@ -68,7 +68,15 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div
+      style={{ width: "100%", height: "100%" }}
+      onClick={(e) => {
+        console.log(e.target.classList);
+        if (!e.target.classList.contains("icon-menu")) {
+          closeSub();
+        }
+      }}
+    >
       <Router>
         <Nav
           user={user}
@@ -87,7 +95,6 @@ function App() {
                   <Route exact path="/">
                     <ChairThree user={user} />
                     <Home user={user} />
-                    {/* <Favs /> */}
                     <Review />
                   </Route>
 
@@ -138,7 +145,7 @@ function App() {
           />
         </Switch>
       </Router>
-    </>
+    </div>
   );
 }
 

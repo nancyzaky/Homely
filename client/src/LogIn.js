@@ -39,6 +39,7 @@ const LogIn = ({ changeUser }) => {
         backgroundImage:
           "linear-gradient(to bottom, #ffffff, #dedcdf, #c0b9be, #a5989b, #897878)",
         overFlow: "hidden",
+        minHeight: "540px",
       }}
     >
       <form type="submit" style={{ paddingTop: "3rem", paddingBottom: "1rem" }}>

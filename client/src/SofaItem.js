@@ -21,7 +21,6 @@ const SofaItem = ({ sofa }) => {
           onMouseEnter={() => {
             setIndex((index) => {
               return Math.floor(Math.random() * (4 - 3 + 1) + 3);
-              // return 1;
             });
           }}
           onMouseLeave={() => {

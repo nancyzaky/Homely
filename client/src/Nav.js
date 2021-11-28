@@ -42,71 +42,76 @@ const Nav = ({
   return (
     <div>
       <nav className="nav">
-        <Link
-          to="#"
-          style={{
-            color: "white",
-            marginLeft: "2rem",
-            display: "flex",
-            justifyContent: "flexStart",
-            height: "80px",
-            alignItems: "center",
-          }}
-        >
-          {subMenu ? (
-            <IoMdCloseCircle
-              style={{
-                color: "white",
-                display: "flex",
-                justifyContent: "flexStart",
-                height: "80px",
-                alignItems: "center",
-                fontSize: "30px",
-              }}
-              onClick={() => {
-                setSubMenu(!subMenu);
-              }}
-            />
-          ) : (
-            <RiMenuUnfoldFill
-              onClick={() => {
-                setSubMenu(!subMenu);
-              }}
-            />
+        <section style={{ display: "flex", width: "40%" }}>
+          <Link
+            to="#"
+            style={{
+              color: "white",
+              marginLeft: "2rem",
+              display: "flex",
+              justifyContent: "flexStart",
+              height: "80px",
+              alignItems: "center",
+            }}
+          >
+            {subMenu ? (
+              <IoMdCloseCircle
+                style={{
+                  color: "white",
+                  display: "flex",
+                  justifyContent: "flexStart",
+                  height: "80px",
+                  alignItems: "center",
+                  fontSize: "30px",
+                }}
+                onClick={() => {
+                  setSubMenu(!subMenu);
+                }}
+              />
+            ) : (
+              <RiMenuUnfoldFill
+                className="icon-menu"
+                onClick={() => {
+                  setSubMenu(true);
+                }}
+              />
+            )}
+          </Link>
+
+          {user && (
+            <>
+              <motion.h6
+                className="user-name"
+                animate={{ y: 1, x: 8, opacity: 1 }}
+                initial={{ y: -100, opacity: 0 }}
+                transition={{
+                  type: "spring",
+                  stifness: 1,
+                  duration: "1",
+                }}
+              >
+                <span>
+                  {" "}
+                  <VscCircleFilled style={{ color: "green" }} />
+                </span>
+                Welcome {user}
+              </motion.h6>
+            </>
           )}
-        </Link>
-
-        {user && (
-          <>
-            <motion.h6
-              className="user-name"
-              animate={{ y: 1, x: 8, opacity: 1 }}
-              initial={{ y: -100, opacity: 0 }}
-              transition={{
-                type: "spring",
-                stifness: 1,
-                duration: "1",
-              }}
-            >
-              <span>
-                {" "}
-                <VscCircleFilled style={{ color: "green" }} />
-              </span>
-              Welcome {user}
-            </motion.h6>
-          </>
-        )}
-
+        </section>
         <ul
           style={{
             display: "flex",
+            width: "55%",
+            float: "right",
+            justifyContent: "end",
           }}
         >
           <motion.li
             className="header"
-            animate={{ x: 880, opacity: 1 }}
+            animate={{ y: "0", opacity: 1 }}
             whileHover={{ scale: 1.5, color: "pink" }}
-            initial={{ opacity: 0.1 }}
+            initial={{ opacity: 0.1, y: "-100%" }}
             transition={{
               type: "spring",
               stifness: 280,
@@ -122,9 +127,9 @@ const Nav = ({
           </motion.li>
           <motion.li
             className="header"
-            animate={{ x: 890, opacity: 1 }}
+            animate={{ y: "0", opacity: 1 }}
             whileHover={{ scale: 1.5, color: "lightBlue" }}
-            initial={{ opacity: 0.1 }}
+            initial={{ opacity: 0.1, y: "100%" }}
             transition={{
               type: "spring",
               stifness: 280,
@@ -138,7 +143,7 @@ const Nav = ({
           <motion.li
             className="header"
             style={{ fontSize: "22px" }}
-            animate={{ x: 900, opacity: 1 }}
+            animate={{ y: "0", opacity: 1 }}
             whileHover={{ scale: 1.5, color: "lightBlue" }}
             initial={{ opacity: 0.1 }}
             transition={{
@@ -153,9 +158,9 @@ const Nav = ({
           </motion.li>
           <motion.li
             className="header"
-            animate={{ x: 910, opacity: 1 }}
+            animate={{ y: "0", opacity: 1 }}
             whileHover={{ scale: 1.5, color: "lightBlue" }}
-            initial={{ opacity: 0.1 }}
+            initial={{ opacity: 0.1, y: "100%" }}
             transition={{
               type: "spring",
               stifness: 280,
@@ -169,7 +174,7 @@ const Nav = ({
           <motion.li
             style={{ display: "grid" }}
             className="header"
-            animate={{ y: 2, opacity: 1, x: 920 }}
+            animate={{ y: 0, opacity: 1 }}
             whileHover={{ scale: 1.5, color: "lightBlue" }}
             initial={{ opacity: 0.1, y: -100 }}
             transition={{
@@ -210,11 +215,7 @@ const Nav = ({
                 />
               );
             })}
-            <div
-              className="link-icon"
-              onClick={handlLogOut}
-              // style={{ border: "0.2rem solid red" }}
-            >
+            <div className="link-icon" onClick={handlLogOut}>
               <btn className="icon">
                 <span style={{ marginLeft: "15px" }}>Log Out</span>
               </btn>

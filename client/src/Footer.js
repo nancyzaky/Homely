@@ -5,18 +5,16 @@ const Footer = ({ user }) => {
 
   return (
     <footer
+      className="footer-list"
       style={{
-        backgroundColor: "rgb(230, 238, 238)",
         width: "100%",
-        height: "600px",
+        height: "auto",
+        minHeight: "600px",
+        display: "grid",
         paddingTop: "5rem",
-        display: "flex",
-        paddingRight: "2rem",
-        paddingLeft: "7rem",
-        flexDirection: "wrap",
+
         backgroundImage:
           "linear-gradient(to bottom, #ffffff, #c8c7c8, #939293, #626061, #353333)",
-        // position: "absolute",
       }}
     >
       <Card

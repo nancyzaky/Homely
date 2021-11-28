@@ -56,7 +56,7 @@ const Favorite = ({ changeCount, items, setItems }) => {
             YOUR FAVORITES
           </motion.h3>
           <motion.h4
-            style={{ paddingTop: "5rem" }}
+            style={{ paddingTop: "2rem" }}
             variants={{
               hidden: {
                 opacity: 0,
@@ -79,15 +79,10 @@ const Favorite = ({ changeCount, items, setItems }) => {
             All your top picks, together at last
           </motion.h4>
         </div>
-        <div className="fav-right container-shop">
-          <img
-            src="https://cdn-cms-assets.article.com/7ujRkAB5QKWYVHeE3VTLLw-21d9b5058ea1ab148c5011909211cf29?w=2600&q=60&fm=webp"
-            style={{ width: "420px", height: "634px" }}
-            alt="pic"
-          />
+        <div className="fav-right cont-shop">
           <div className={`overlay overlayLeft`}>
             <div className="text">
-              <Link to={`/look/1`}>
+              <Link to={`/look/5`}>
                 <button
                   className="btn"
                   style={{
