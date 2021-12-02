@@ -1,7 +1,6 @@
 import React from "react";
 import {
   GiOfficeChair,
-  GiKitchenKnives,
   GiTable,
   GiFlowerPot,
   GiBedLamp,
@@ -13,7 +12,7 @@ import { MdBorderColor } from "react-icons/md";
 import { FaUsers, FaHome } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
-import { BiLogOutCircle, BiLogInCircle } from "react-icons/bi";
+import { BiLogInCircle } from "react-icons/bi";
 import { ImCart } from "react-icons/im";
 
 export const navItems = [
