@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CartItem from "./CartItem";
 import Loading from "./Loading";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  GoogleMap,
-  useJsApiLoader,
-  Marker,
-  InfoWindow,
-} from "@react-google-maps/api";
+import { AnimatePresence } from "framer-motion";
 import Map from "./Map";
 const Cart = ({ changeCount, items, setItems }) => {
   const [user, setUser] = useState("");

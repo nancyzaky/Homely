@@ -50,6 +50,7 @@ const CartItem = ({ item, handleUpdate, user, deleteItem, index }) => {
               src={item.pictures[0].url}
               className="pic-smallest"
               style={{ display: "inline-block" }}
+              alt="pic"
             />
           </Link>
         </li>

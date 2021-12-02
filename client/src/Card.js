@@ -49,7 +49,12 @@ const Card = ({
         <div className="lower-cont">
           <button
             className="btn"
-            style={{ marginLeft: "6rem", marginTop: "3rem" }}
+            style={{
+              marginLeft: "6rem",
+              marginTop: "3rem",
+              width: "50%",
+              height: "30%",
+            }}
             onClick={() => {
               if (!codeApplied && user) {
                 setRevealCode(true);
