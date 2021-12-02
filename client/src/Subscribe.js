@@ -41,7 +41,7 @@ const Subscribe = () => {
           </p>
         </section>
       </section>
-      <div style={{ width: "100%", height: "100%" }}>
+      <div style={{ width: "100%", height: "70%" }}>
         <div className="sub-cont">
           <section className="sub-img"></section>
           <section
