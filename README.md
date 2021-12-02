@@ -12,6 +12,12 @@ Make sure you cd into client folder
 npm install
 
 npm start
+
+
+
+
+
+
 🚀 Building and Running for Production
 Generate a full static production build
 
