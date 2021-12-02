@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import ChairThree from "./ChairThree";
 import Success from "./Success";
-import BedModel from "./Bed";
 import Home from "./Home";
 import SignUp from "./SignUp";
 import LogIn from "./LogIn";
@@ -11,12 +10,10 @@ import Sofas from "./Sofas";
 import Sofa from "./Sofa";
 import Cart from "./Cart";
 import Look from "./Look";
-import SubCart from "./SubCart";
 import Favorite from "./Favorite";
 import Review from "./Review";
 import MostLoved from "./MostLoved";
 import Error from "./Error";
-import Card from "./Card";
 import Orders from "./Orders";
 
 import { AnimatePresence } from "framer-motion";
@@ -66,13 +63,13 @@ function App() {
         }
       });
   }, []);
-
+  window.addEventListener("scroll", closeSub);
   return (
     <div
       style={{ width: "100%", height: "100%" }}
       onClick={(e) => {
-        console.log(e.target.classList);
-        if (!e.target.classList.contains("icon-menu")) {
+        console.log(window.pageYOffset);
+        if (!e.target.classList.contains("icon-menu") && !e.target.subLinks) {
           closeSub();
         }
       }}
