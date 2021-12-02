@@ -1,6 +1,6 @@
-Furniture app
+Homely
 
-Flatiron school Final project,
+Shop for furniture, check products details, price, top selling items.
 
 🛠 Installation & Set Up
 Install and use the correct version of Node using NVM
