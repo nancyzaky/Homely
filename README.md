@@ -9,6 +9,7 @@ Install gems by running -----> bundle install
 
 Install dependencies
 Make sure you cd into client folder
+
 npm install
 
 npm start
