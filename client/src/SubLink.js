@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const SubLink = ({ item, setSubMenu, subMenu }) => {
@@ -12,14 +12,15 @@ const SubLink = ({ item, setSubMenu, subMenu }) => {
         onClick={() => {
           if (item.subLinks) {
             setPointUp(!pointUp);
-          } else {
-            setSubMenu(false);
+            setSubMenu(true);
           }
         }}
       >
         <div className={item.subLinks ? "link-icon icon-menu" : "link-icon"}>
           {item.icon}
-          <span style={{ marginLeft: "15px" }}>{item.text}</span>
+          <span style={{ marginLeft: "15px" }} className="icon-menu">
+            {item.text}
+          </span>
         </div>
         {item.subLinks && <div>{pointUp ? item.arrowUp : item.arrowDown}</div>}
       </Link>

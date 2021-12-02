@@ -1,11 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { navItems } from "./Data";
-import {
-  AiOutlineMenuUnfold,
-  AiFillInstagram,
-  AiOutlineShoppingCart,
-} from "react-icons/ai";
+import { AiFillInstagram, AiOutlineShoppingCart } from "react-icons/ai";
 import Badge from "@material-ui/core/Badge";
 
 import { TiHeart } from "react-icons/ti";
@@ -42,7 +37,12 @@ const Nav = ({
   return (
     <div>
       <nav className="nav">
-        <section style={{ display: "flex", width: "40%" }}>
+        <section
+          style={{
+            display: "flex",
+            width: "40%",
+          }}
+        >
           <Link
             to="#"
             style={{
@@ -70,9 +70,19 @@ const Nav = ({
               />
             ) : (
               <RiMenuUnfoldFill
+                style={{
+                  color: "white",
+                  display: "flex",
+                  justifyContent: "flexStart",
+                  height: "80px",
+                  alignItems: "center",
+                  fontSize: "25px",
+                }}
                 className="icon-menu"
                 onClick={() => {
-                  setSubMenu(true);
+                  console.log(subMenu);
+                  setSubMenu(!subMenu);
+                  console.log(subMenu);
                 }}
               />
             )}
@@ -102,9 +112,10 @@ const Nav = ({
         <ul
           style={{
             display: "flex",
-            width: "55%",
+            width: "60%",
             float: "right",
             justifyContent: "end",
+            marginRight: "2rem",
           }}
         >
           <motion.li
@@ -216,9 +227,9 @@ const Nav = ({
               );
             })}
             <div className="link-icon" onClick={handlLogOut}>
-              <btn className="icon">
+              <li className="icon">
                 <span style={{ marginLeft: "15px" }}>Log Out</span>
-              </btn>
+              </li>
             </div>
           </div>
         </nav>
