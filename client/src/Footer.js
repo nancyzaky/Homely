@@ -11,7 +11,7 @@ const Footer = ({ user }) => {
         height: "auto",
         minHeight: "600px",
         display: "grid",
-        paddingTop: "5rem",
+        // paddingTop: "5rem",
 
         backgroundImage:
           "linear-gradient(to bottom, #ffffff, #c8c7c8, #939293, #626061, #353333)",

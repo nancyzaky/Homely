@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FavItem from "./FavItem";
 import { motion } from "framer-motion";
-import { ImHeart } from "react-icons/im";
 import { Link } from "react-router-dom";
 const Favorite = ({ changeCount, items, setItems }) => {
   const [favs, setFavs] = useState([]);

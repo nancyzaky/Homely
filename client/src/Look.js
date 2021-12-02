@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { shopLook } from "./Data";
 import LookItem from "./LookItem";
 const Look = () => {
@@ -22,6 +22,7 @@ const Look = () => {
     <div style={{ display: "fixed", overflow: "hidden" }}>
       <img
         style={{ height: "650px", width: "100%" }}
+        alt="pic"
         src={img}
         onClick={(e) => {
           console.log(e.clientX, e.clientY);
