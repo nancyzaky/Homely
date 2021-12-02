@@ -44,7 +44,6 @@ function App() {
       .then((resp) => resp.json())
       .then((d) => {
         if (d && d.id > 0) {
-          console.log(d);
           setUser(d.name);
           setUserId(d.id);
           setFavorites(d.favorites);
