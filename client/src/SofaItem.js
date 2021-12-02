@@ -8,7 +8,7 @@ const SofaItem = ({ sofa }) => {
     <motion.li
       key={sofa.id}
       className="product"
-      whileHover={{ scale: 1.05 }}
+      whileHover={{ scale: 1.01 }}
       transition={{
         type: "spring",
         stifness: 80,

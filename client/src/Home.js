@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence, useCycle } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import { shopLook } from "./Data";
 import { Link } from "react-router-dom";
 import Subscribe from "./Subscribe";
-import MostLoved from "./MostLoved";
 import { FaChevronCircleDown } from "react-icons/fa";
 import Footer from "./Footer";
 
@@ -65,10 +64,10 @@ const Home = ({ user }) => {
             style={{
               fontSize: "20px",
               float: "right",
-              paddingTop: "5rem",
+              top: "10%",
               paddingRight: "6rem",
               cursor: "pointer",
-              maxWidth: "10%",
+              maxWidth: "5%",
             }}
           >
             <Link to={"/bestsellers"} style={{ color: "white" }}>
@@ -80,17 +79,9 @@ const Home = ({ user }) => {
           </div>
         </div>
         <Subscribe />
-        <section style={{ width: "100%", height: "20px" }}></section>
-        <div className="line-wide" style={{ marginBottom: "7rem" }}></div>
+        {/* <section style={{ width: "100%", height: "20px" }}></section> */}
+        {/* <div className="line-wide" style={{ marginBottom: "2rem" }}></div> */}
         <Footer user={user} />
-        {/* <footer
-          style={{
-            display: "relative",
-            height: "300px",
-            width: "100%",
-            backgroundColor: "black",
-          }}
-        ></footer> */}
       </div>
     </>
   );

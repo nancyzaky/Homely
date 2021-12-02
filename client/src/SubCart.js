@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { GrFormClose } from "react-icons/gr";
 import SubCartItem from "./SubCartItem";
 import Loading from "./Loading";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 const SubCart = ({
   modal,
   changeQuantity,

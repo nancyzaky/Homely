@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { IoIosArrowDown } from "react-icons/io";
 import Loading from "./Loading";
@@ -9,7 +9,6 @@ const Sofas = () => {
   const [sofas, setAllSofas] = useState([]);
   const [loading, setLoading] = useState(false);
   const [filter, setFilter] = useState(false);
-  const [search, setSearch] = useState("");
   const fetchUrl = () => {
     setLoading(true);
     fetch(`/api/product/${cat}`)
@@ -21,7 +20,6 @@ const Sofas = () => {
         }
       });
   };
-  const handleHover = (key) => {};
   useEffect(() => {
     fetchUrl();
   }, [cat]);
