@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from "react";
-import SofaItem from "./SofaItem";
 import ModalBig from "./ModalBig";
 
-import { useViewportScroll, useTransform, motion } from "framer-motion";
-// const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
+import { useViewportScroll, motion } from "framer-motion";
 const transition = { duration: 1.4, ease: [0.6, 0.01, -0.02, -0.2] };
 const MostLoved = () => {
   const [bestSellers, setBestSellers] = useState([]);
-  const [details, setDetails] = useState(true);
   const [loading, setLoading] = useState(false);
   const greenChair = [{ id: 1, img: "../greenChair.png" }];
-  const { scrollYProgress } = useViewportScroll();
+  // const { scrollYProgress } = useViewportScroll();
   const [bigModal, setBigModal] = useState(false);
   const [opacity, setOpacity] = useState(1);
 

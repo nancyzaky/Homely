@@ -32,15 +32,21 @@ const ModalBig = ({ bestSellers }) => {
               top: "10%",
               justifyContent: "center",
               textAlign: "center",
-              minWidth: "480px",
+              minWidth: "375px",
               width: "100%",
             }}
           >
             <Link to={`/product/${bestSellers[index].id}`}>
               <img
                 src={bestSellers[index].pictures[0].url}
-                className="pic-small"
-                style={{ paddingTop: "2rem", minWidth: "260px" }}
+                style={{
+                  paddingTop: "2rem",
+                  minWidth: "260px",
+                  height: "300px",
+                  transition: "900ms",
+                  transitionDelay: "1s",
+                  padding: "10px",
+                }}
               />
             </Link>
             <h4>{bestSellers[index].name}</h4>

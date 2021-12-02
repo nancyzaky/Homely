@@ -13,9 +13,7 @@ import {
   Combobox,
   ComboboxInput,
   ComboboxPopover,
-  ComboboxList,
   ComboboxOption,
-  ComboboxOptionText,
 } from "@reach/combobox";
 
 const Map = ({ adjustAddress, hideMap, address }) => {
